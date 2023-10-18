@@ -6,6 +6,7 @@
     <title>Batallas Pokemon</title>
 </head>
 <body>
+
     <!--Barra superior donde va a estar la barra de busqueda y los tipos-->
     <header id="hBucar" style="background-color: aqua;">
 
@@ -79,15 +80,12 @@
     <!--Se muestran los pokemons-->
     <section id="sPokedex" style="background-color:blue">
 
-        <!--Este div es imaginario, en realidad se van a agregar dinamicamente con los pokemons pero es para que tengas una idea, otra opcion es hacerlo on listas no se que opinan-->
-        <div id="Pokemon">
+        <ol id="olMostrarpokes" style="list-style-type: none;"><!--este style va en el css-->
+            
+        </ol>
 
-            <img src="" alt="img poke">
-            <p id="pNombrepoke">Charizard</p>
-            <img src="" alt="tipo">
-            <img src="" alt="tipo 2">
-
-        </div>
+        <button id="bRetroceder" disabled = true>anterior</button>
+        <button id="bAvanzar">siguiente</button>
 
     </section>
 
@@ -130,6 +128,8 @@
 
     </footer>
 
+
+    <script src="code.js"></script>
 
 </body>
 </html>
