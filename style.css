@@ -1,0 +1,45 @@
+
+
+
+.seccion{
+    border: 12px solid;
+    border-image: url(img/Sin\ título.jpeg) 56 56 repeat;
+}
+
+.busqueda{
+    display: flex;
+
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.listadoPokes{
+    background-color: chartreuse;
+    
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.buscarPokes{
+    margin: .5rem 3rem .5rem 1rem;
+}
+
+.filtrarTipos{
+    
+    justify-content: space-around;
+}
+
+
+.imagenElegirPoke{
+    object-fit: fill;
+}
+.pokeIndividual{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+    width: 12rem;
+    height: 10rem;
+    border: 3px solid black;
+    border-radius: 5%;
+}

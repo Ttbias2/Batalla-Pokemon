@@ -76,9 +76,15 @@ function dibujarApi(dato){
     imgPoke.src = dato.sprites.front_default;
     nombrePoke.textContent = dato.name;// se carga el item de la lista             
 
+    imgPoke.className= 'imagenElegirPoke';
+    nombrePoke.className= 'nombreElegirPoke';
+    
     itemLista.appendChild(imgPoke);
     itemLista.appendChild(nombrePoke); 
 
+
+    itemLista.className= 'pokeIndividual';
+    
     olMostrarpokes.appendChild(itemLista);//se añade el item a la lista
 }
 
