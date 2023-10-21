@@ -1,0 +1,78 @@
+
+
+
+.seccion{
+    border: 20px solid;
+    border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;
+}
+
+.busqueda{
+    display: flex;
+
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.listadoPokes{    
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.buscarPokes{
+    margin: .5rem 3rem .5rem 1rem;
+}
+
+.filtrarTipos{
+    
+    justify-content: space-around;
+}
+
+
+.imagenElegirPoke{
+    object-fit: fill;
+}
+.pokeIndividual{
+    display: flex;
+    justify-content: space-around;
+    width: 12rem;
+    height: 10rem;
+    border: 10px solid;
+    border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
+}
+
+
+
+
+.elegidos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.eleccionJugador{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nombreJugadorEleccion{
+  
+}
+
+.contenendores{
+    
+
+}
+
+
+.contenedorDeEleccion{
+    
+    display: inline;
+   
+    
+   
+    border: 10px solid;
+    border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
+    margin: 10px;
+    
+}
