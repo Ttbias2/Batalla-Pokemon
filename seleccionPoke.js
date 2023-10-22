@@ -79,8 +79,9 @@ function dibujarApi(dato){
     imgPoke.className= 'imagenElegirPoke';
     nombrePoke.className= 'nombreElegirPoke';
     
-    itemLista.appendChild(imgPoke);
     itemLista.appendChild(nombrePoke); 
+    itemLista.appendChild(imgPoke);
+    
 
     itemLista.className= 'pokeIndividual';
     

@@ -2,13 +2,13 @@
 
 
 .seccion{
+    margin: 0;
     border: 20px solid;
     border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;
 }
 
 .busqueda{
     display: flex;
-
     flex-wrap: wrap;
     align-items: center;
 }
@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .buscarPokes{
@@ -29,50 +30,75 @@
 }
 
 
-.imagenElegirPoke{
-    object-fit: fill;
-}
 .pokeIndividual{
+    margin: 0;
     display: flex;
-    justify-content: space-around;
-    width: 12rem;
+    flex-direction: column;
+    width: 10rem;
     height: 10rem;
     border: 10px solid;
     border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
 }
 
+.nombreElegirPoke{
+    margin: 0;
+    text-align: center;
+}
+
+.imagenElegirPoke{
+    object-fit: cover;
+}
 
 
 
 .elegidos{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
 }
 
 .eleccionJugador{
-    display: flex;
-    justify-content: space-between;
-
+    display: grid;
+    grid-template-rows: 2.5rem 9rem;
 }
 
 .nombreJugadorEleccion{
+    margin: 0;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    
   
 }
 
-.contenendores{
-    
-
+.contenedores{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 .contenedorDeEleccion{
     
-    display: inline;
-   
-    
+    width: 10rem;
+    height: 7rem;
    
     border: 10px solid;
     border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
-    margin: 10px;
     
+    
+}
+
+.bConfirmar{
+    height: 4rem;
+    
+   
+  
+    
+}
+
+.footer{
+    text-align: center;
 }
