@@ -1,11 +1,17 @@
-
+body{
+    margin: 0;
+}
 
 
 .seccion{
     margin: 0;
-    border: 20px solid;
+    border: 15px solid;
     border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;
 }
+
+
+
+
 
 .busqueda{
     display: flex;
@@ -13,11 +19,34 @@
     align-items: center;
 }
 
-.listadoPokes{    
+.seleccionarPokemonP{
+    margin: 0;
+}
+
+.cambioPagina{
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+
+
+.seccionListadoPokes{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.listadoPokes{   
+    
+    width: 80rem; 
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 0;
+  
 }
 
 .buscarPokes{
@@ -31,11 +60,12 @@
 
 
 .pokeIndividual{
-    margin: 0;
+    margin: .05rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    width: 10rem;
-    height: 10rem;
+    width: 6.6rem;
+    height: 6.6rem;
     border: 10px solid;
     border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
 }
@@ -52,6 +82,7 @@
 
 
 .elegidos{
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: 5fr 1fr 5fr;
     align-items: center;
@@ -74,17 +105,19 @@
 }
 
 .contenedores{
+
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    
 }
 
 
 .contenedorDeEleccion{
     
-    width: 10rem;
-    height: 7rem;
-   
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 .5rem;
     border: 10px solid;
     border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;
     
@@ -102,3 +135,4 @@
 .footer{
     text-align: center;
 }
+

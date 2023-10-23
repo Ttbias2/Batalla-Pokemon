@@ -95,34 +95,36 @@
 
     <!--Se muestran los pokemons-->
     <section class="seccion" id="sPokedex">
+        <div class="cambioPagina">
+            <button id="bRetroceder" disabled = true>anterior</button>
+            <p class="seleccionarPokemonP">Seleccionar Pokemon</p>
+            <button id="bAvanzar">siguiente</button>    
+        </div>
 
-        <ol class="listadoPokes" id="olMostrarpokes" style="list-style-type: none;"><!--este style va en el css-->
-            
-        </ol>
+        <div class="seccionListadoPokes">
+            <ol class="listadoPokes" id="olMostrarpokes" style="list-style-type: none;"><!--este style va en el css-->
+            </ol>
+        </div>
+    
+         <!--Se muestran los jugadores y los pokemons que estos elijan-->
+        
+        <section class="elegidos" id="sJugadores" >
 
-        <button id="bRetroceder" disabled = true>anterior</button>
-        <button id="bAvanzar">siguiente</button>
-
-    </section>
-
-    <!--Se muestran los jugadores y los pokemons que estos elijan-->
-    <section class="seccion elegidos" id="sJugadores" >
-
-        <section class="eleccionJugador" id="sJugador1">
+            <section class="eleccionJugador" id="sJugador1">
 
             <p class="nombreJugadorEleccion" id="pNombrej1">Jugador1</p>
 
             <section class="contenedores" id="sEquipoj1">
                 <div class="contenedorDeEleccion">
-                    <img src="" alt="poke1">    
+                    <img src="" alt="">    
                 </div>
                 
                 <div class="contenedorDeEleccion">
-                    <img src="" alt="poke2">    
+                    <img src="" alt="">    
                 </div>
                 
                 <div class="contenedorDeEleccion">
-                    <img src="" alt="poke3">    
+                    <img src="" alt="">    
                 </div>
                 
             </section>
@@ -155,6 +157,11 @@
         </section>
 
     </section>
+
+        
+    </section>
+
+   
 
     <!--Parte de informacion-->
     <footer  id="fInfo" >
