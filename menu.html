@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batallas Pokemon</title>
+    <script src="./menu.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
     <header id="hMenu" style="background-color: aqua;"><!-- color elegido como la parte de busqueda -->
         <button id="bJugar" value="normal">
             <img src="" alt="">
-            <a href="https://github.com/Franspi-lol/musicatup/blob/main/index.html">Jugar</a>
+            <a href="">Jugar</a>
         </button>
         <button id="bHistorial" value="normal">
             <img src="" alt="Historial">
@@ -25,18 +27,18 @@
     </header>
     <section class="main-section" style="">
         <div id="login" style=""><!-- style luego en css -->
-            <form action="">
+            <form action="" id="login">
                 <ul>
                     <li>
                         <label for="name1">Jugador 1: </label>
-                        <input type="text" id="name1" name="Jugador1" value="Nombre Jugador">
+                        <input type="text" id="name1"  placeholder="Nombre Jugador">
                     </li>
                     <li>
                         <label for="name2">Jugador 2: </label>
-                        <input type="text" id="name2" name="Jugador2" value="Nombre Jugador">
+                        <input type="text" id="name2"  placeholder="Nombre Jugador">
                     </li>
                     <li class="button">
-                        <button type="submit">Jugar!</button>
+                        <button type="button" id="btn">Jugar!</button>
                     </li>
                 </ul>
             </form>
