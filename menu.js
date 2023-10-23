@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('btn');
 
     console.log('hola');
-    btn.onclick = function(){
+    btn.onclick = getNombre{
         console.log('nombre: ', nombre1.value);
         console.log('nombre: ', nombre2.value);
     }
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         if(nombre1.value === ''||nombre2.value==='')
         {
-
+            alert('Pone los nombres');
         }
         else
         {
