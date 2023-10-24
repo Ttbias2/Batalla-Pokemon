@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batallas Pokemon</title>
     <script src="./menu.js"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="./menu.css"> 
 </head>
 
 <body>
-    <header id="hMenu" style="background-color: aqua;"><!-- color elegido como la parte de busqueda -->
+    <header id="hMenu"><!-- color elegido como la parte de busqueda -->
         <button id="bJugar" value="normal">
             <img src="" alt="Jugar">
-            <a href="">Jugar</a>
+            <a href=""></a>
         </button>
         <button id="bHistorial" value="normal">
             <img src="" alt="Historial">
@@ -25,8 +25,8 @@
             <a href=""></a>
         </button>
     </header>
-    <section class="main-section" style="">
-        <div id="login" style=""><!-- style luego en css -->
+    <section class="main-section">
+        <div id="loginSection"><!-- style luego en css -->
             <form action="" id="login">
                 <ul>
                     <li>
@@ -38,14 +38,16 @@
                         <input type="text" id="name2"  placeholder="Nombre Jugador">
                     </li>
                     <li class="button">
-                        <button type="button" id="btn">Jugar!</button>
+                        <button type="button" id="btn">
+                            <img src="./img/enter.png" id="btn" alt="Jugar!">
+                        </button>
                     </li>
                 </ul>
             </form>
         </div>
     </section>
-    <footer id="fInfo" style="background-color: blue;">
-        <p id="pInfo">Creadores?</p>
+    <footer id="fInfo">
+        <p class="footer">Todos los derechos reservados</p>
     </footer>
 </body>
 

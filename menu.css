@@ -1,0 +1,57 @@
+#loginSection{
+    margin: .10rem 5rem .10rem 5rem;
+    border: 10px solid;
+    border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;
+    background-color: white;
+    /* position: absolute;
+    top: 75%;
+    left: 25%; */
+    align-items: center;
+    width: 40%;
+    margin: auto; 
+    margin-top: 75%;
+    
+}
+
+.footer{
+    
+    text-align: center;
+}
+
+.main-section{
+   
+    
+    border: 10px solid;
+    border-image: url(img/bordeVioleta120trans.png) 20 20 repeat;
+    
+    background-image: url(img/5gWZvnk.gif);
+    height: 800px;
+    width: 800px;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    
+    
+    
+    
+}
+
+#hMenu{
+    /*margin: .10rem 5rem .10rem 5rem;*/
+    border: 10px solid;
+    border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;
+    
+}
+
+ul{
+    list-style-type: none;
+}
+#btn{
+    /*position: relative;*/
+    border: none;
+    color: white;
+    padding: 0;
+    margin: auto;
+    
+}
