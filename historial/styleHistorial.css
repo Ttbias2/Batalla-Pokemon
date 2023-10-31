@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+}
+
+.seccion{
+    margin: 0;
+    border: 15px solid;
+    border-image: url(bordeVioleta120trans.png) 30 30 repeat;
+}
+
+.batalla{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
+}
+
+.usuario{
+   
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+
+.infoUsuarioHistorial{
+
+    display: flex;
+    justify-content: space-around;
+}
+.infoUsuario{
+    padding: 0;
+    margin: 0;
+
+}
+
+.contenedores{
+ 
+    display: flex;
+    justify-content: space-around;
+}
+
+.pokeIndividual{
+    margin: .5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 6.6rem;
+    height: 6.6rem;
+    border: 10px solid;
+    border-image: url(bordeVioleta120trans.png) 50 50 repeat;
+}
+
+.contenedorDeEleccion{
+    
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 .5rem;
+    border: 10px solid;
+    border-image: url(bordeVioleta120trans.png) 50 50 repeat; 
+}
+
+.imagenElegirPoke{
+    object-fit: cover;
+}
+
+
+.elegidos{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
+}
+
+.eleccionJugador{
+    display: grid;
+    grid-template-rows: 2.5rem 9rem;
+}
+
+
+.versus{
+    display: flex;
+    justify-content: center;
+}
+.versusTexto{
+    
+    color: brown;
+    font-size: 2rem;
+}
+
+.ganador{
+    background-color:yellowgreen;
+}
+.perdedor{
+    background-color: crimson;
+}
