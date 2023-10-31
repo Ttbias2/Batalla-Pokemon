@@ -4,6 +4,8 @@ let bRetroceder = document.getElementById("bRetroceder");
 let iBuscador = document.getElementById("iBuscador");
 let bBuscar = document.getElementById("bBuscar");
 let bTipo = document.querySelectorAll(".bTipo")
+let dConfirmarPOke = document.getElementById("dConfirmarPoke");
+let sPokesJugadores = document.querySelectorAll(".imgEleccion");
 
 document.addEventListener("DOMContentLoaded",cargarpokes); //funcion que se activa al cargar la pagina y trae a los primero 20 pokes
 bAvanzar.addEventListener("click", masPokes);
@@ -13,6 +15,8 @@ bBuscar.addEventListener("click",buscarPorNombID);
 
 let limite = 20;//de cual a cual pokemon va amostrar
 let inicio = 1;
+
+let pasosDeEleccion = 1;
 
 function cargarpokes() {
 
@@ -76,10 +80,89 @@ function dibujarApi(dato){
     imgPoke.src = dato.sprites.front_default;
     nombrePoke.textContent = dato.name;// se carga el item de la lista             
 
-    itemLista.appendChild(imgPoke);
+    imgPoke.className= 'imagenElegirPoke';
+    nombrePoke.className= 'nombreElegirPoke';
+    
     itemLista.appendChild(nombrePoke); 
+    itemLista.appendChild(imgPoke);
 
+    itemLista.value = dato.id;
+    itemLista.className= 'pokeIndividual';
+
+    itemLista.addEventListener("click",mostrarPoke);
+    
     olMostrarpokes.appendChild(itemLista);//se añade el item a la lista
+}
+
+async function mostrarPoke()
+{
+    
+    while(dConfirmarPOke.firstChild)
+    {
+        dConfirmarPOke.removeChild(dConfirmarPOke.firstChild);
+    }
+
+    let poke =  await obtenerPokemonNombID(this.value);
+    let stats = poke.stats;
+
+    const imgPoke = document.createElement("img");
+    const nombrePoke = document.createElement("p");
+    const bConfirmarPoke = document.createElement("button"); 
+    const bCancelarPoke = document.createElement("button"); 
+    
+
+    imgPoke.src = poke.sprites.front_default;
+    nombrePoke.textContent = poke.name;
+
+    dConfirmarPOke.appendChild(imgPoke);
+    dConfirmarPOke.appendChild(nombrePoke);
+
+    stats.forEach(stat => {
+        const pStat = document.createElement("p");
+        pStat.innerText = stat.stat.name + ": " + stat.base_stat;
+        dConfirmarPOke.appendChild(pStat);
+    })
+
+    bCancelarPoke.innerText = "cancelar";
+    bConfirmarPoke.innerText = "confirmar";
+    bCancelarPoke.addEventListener("click",function() {dConfirmarPOke.close();});
+    bConfirmarPoke.addEventListener("click",function(){
+        switch(pasosDeEleccion)
+        {
+            case 1:
+                sPokesJugadores[0].src = poke.sprites.front_default;
+                break;
+                
+            case 2:
+                sPokesJugadores[5].src = poke.sprites.front_default;
+                break;
+                
+            case 3:
+                sPokesJugadores[4].src = poke.sprites.front_default;
+                break;
+                
+            case 4:
+                sPokesJugadores[1].src = poke.sprites.front_default;
+                break;
+                
+            case 5:
+                sPokesJugadores[2].src = poke.sprites.front_default;
+                break;
+                
+            case 6:
+                sPokesJugadores[3].src = poke.sprites.front_default;
+                pasosDeEleccion = 0;
+                break;
+        }
+        
+        pasosDeEleccion++;
+        dConfirmarPOke.close();
+    });
+
+    dConfirmarPOke.appendChild(bConfirmarPoke);
+    dConfirmarPOke.appendChild(bCancelarPoke);
+
+    dConfirmarPOke.showModal();
 }
 
 function ordenarPorId(pokemonArray) {

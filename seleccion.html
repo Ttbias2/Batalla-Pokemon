@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Batallas Pokemon</title>
 </head>
 <body>
 
     <!--Barra superior donde va a estar la barra de busqueda y los tipos-->
-    <header id="hBucar" style="background-color: aqua;">
-
-        <input type="text" id="iBuscador">
-        <button id="bBuscar">Buscar pokemon</button>
-
-        <section id="stiposbusc">
+    <header class="seccion busqueda"  id="hBucar">
+        <div class="buscarPokes">
+            <input type="text" id="iBuscador">
+            <button id="bBuscar">Buscar pokemon</button>    
+        </div>
+        <section class="filtrarTipos" id="stiposbusc">
              <!--Por ahora no se me ocurrer como podemos hacer que cada uno interactue como boton sin tener que repetir codigo de esta manera
                  creo que con angular se puede-->
             <button class="bTipo" value="normal">
@@ -88,61 +89,89 @@
 
         </section>
 
-        <p id="pHeader">Elegir Pokemon</p>
+        
 
     </header>
 
     <!--Se muestran los pokemons-->
-    <section id="sPokedex" style="background-color:blue">
+    <section class="seccion" id="sPokedex">
+        <div class="cambioPagina">
+            <button id="bRetroceder" disabled = true>anterior</button>
+            <p class="seleccionarPokemonP">Seleccionar Pokemon</p>
+            <button id="bAvanzar">siguiente</button>    
+        </div>
 
-        <ol id="olMostrarpokes" style="list-style-type: none;"><!--este style va en el css-->
+        <div class="seccionListadoPokes">
+            <ol class="listadoPokes" id="olMostrarpokes" style="list-style-type: none;"><!--este style va en el css-->
+            </ol>
+        </div>
+    
+         <!--Se muestran los jugadores y los pokemons que estos elijan-->
+        
+        <section class="elegidos" id="sJugadores" >
+
+            <section class="eleccionJugador" id="sJugador1">
+
+            <p class="nombreJugadorEleccion" id="pNombrej1">Jugador1</p>
+
+            <section class="contenedores" id="sEquipoj1">
+                <div class="contenedorDeEleccion">
+                    <img src="" alt="" class="imgEleccion">    
+                </div>
+                
+                <div class="contenedorDeEleccion">
+                    <img src="" alt=""  class="imgEleccion">    
+                </div>
+                
+                <div class="contenedorDeEleccion">
+                    <img src="" alt=""  class="imgEleccion">    
+                </div>
+                
+            </section>
+
+        </section>
+
+        <button class="bConfirmar" id="bConfirmar">Confirmar</button>
+
+        <section class="eleccionJugador" id="sJugador2">
+
+            <p class="nombreJugadorEleccion" id="pNombrej2">Jugador2</p>
+
+            <section class="contenedores" id="sEquipoj2">
+                
+                <div class="contenedorDeEleccion">
+                    <img src="" alt="" class="imgEleccion">    
+                </div>
+                
+                <div class="contenedorDeEleccion">
+                    <img src="" alt="" class="imgEleccion">    
+                </div>
+                
+                <div class="contenedorDeEleccion">
+                    <img src="" alt="" class="imgEleccion">    
+                </div>
+                
+            </section>
             
-        </ol>
-
-        <button id="bRetroceder" disabled = true>anterior</button>
-        <button id="bAvanzar">siguiente</button>
-
-    </section>
-
-    <!--Se muestran los jugadores y los pokemons que estos elijan-->
-    <section id="sJugadores" style="background-color: aqua">
-
-        <section id="sJugador1">
-
-            <p id="pNombrej1">Jugador1</p>
-            <section id="sEquipoj1">
-
-                <img src="" alt="poke1">
-                <img src="" alt="poke2">
-                <img src="" alt="poke3">
-
-            </section>
-
-        </section>
-
-        <button id="bConfirmar">Confirmar</button>
-
-        <section id="sJugador2">
-
-            <p id="pNombrej2">Jugador2</p>
-
-            <section id="sEquipoj2">
-                <img src="" alt="poke1">
-                <img src="" alt="poke2">
-                <img src="" alt="poke3">
-            </section>
-
+            
         </section>
 
     </section>
+
+        
+    </section>
+
+   
 
     <!--Parte de informacion-->
-    <footer id="fInfo" style="background-color: blue">
+    <footer  id="fInfo" >
 
-        <p id="pInfo">asdadsadasdasdsad</p>
+        <p  class="footer" id="pInfo">Todos los derechos reservados</p>
 
     </footer>
 
+
+    <dialog id="dConfirmarPoke"></dialog>
 
     <script src="seleccionPoke.js"></script>
 
