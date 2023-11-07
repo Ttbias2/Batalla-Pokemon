@@ -16,7 +16,7 @@ import { Routes,RouterModule } from '@angular/router';
 import { PokedexComponent } from './pokedex/pokedex.component';
 
 const appRoutes:Routes=[
-  {path:'', component:PokedexComponent},
+  {path:'', component:EleccionComponent},
   {path:'pelea',component:PeleaComponent}
 ]
 
