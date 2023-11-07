@@ -13,9 +13,10 @@ import { EleccionComponent } from './eleccion/eleccion.component';
 import { EquiposComponent } from './equipos/equipos.component';
 import { PeleaComponent } from './pelea/pelea.component';
 import { Routes,RouterModule } from '@angular/router';
+import { PokedexComponent } from './pokedex/pokedex.component';
 
 const appRoutes:Routes=[
-  {path:'', component:EleccionComponent},
+  {path:'', component:PokedexComponent},
   {path:'pelea',component:PeleaComponent}
 ]
 
@@ -26,7 +27,8 @@ const appRoutes:Routes=[
     DialogComponent,
     EleccionComponent,
     EquiposComponent,
-    PeleaComponent
+    PeleaComponent,
+    PokedexComponent
   ],
   imports: [
     BrowserModule,
