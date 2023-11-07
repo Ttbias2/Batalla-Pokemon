@@ -12,6 +12,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { EleccionComponent } from './eleccion/eleccion.component';
 import { EquiposComponent } from './equipos/equipos.component';
 import { PeleaComponent } from './pelea/pelea.component';
+import { PokedexComponent } from './pokedex/pokedex.component'
 import { Routes,RouterModule } from '@angular/router';
 
 const appRoutes:Routes=[
@@ -26,7 +27,8 @@ const appRoutes:Routes=[
     DialogComponent,
     EleccionComponent,
     EquiposComponent,
-    PeleaComponent
+    PeleaComponent,
+    PokedexComponent
   ],
   imports: [
     BrowserModule,
