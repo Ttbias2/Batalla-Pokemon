@@ -41,6 +41,7 @@
             <p>{{ selectedPokemon.name }}</p>
             
             <p>weight: {{selectedPokemon.weight}} </p>
+            <p>Type:</p>
             <ol *ngFor="let type of selectedPokemon.types">
                 <p> {{type.type.name}} </p>
             </ol>

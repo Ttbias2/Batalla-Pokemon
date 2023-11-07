@@ -47,6 +47,10 @@
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
     
   }
+  #datosPokemon img{
+    width: 20rem;
+    height: 20rem;
+  }
   
   #pokedex {
     display: flex; /* Usamos flexbox para colocar los elementos en una fila */
