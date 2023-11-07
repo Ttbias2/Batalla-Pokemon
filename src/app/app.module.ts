@@ -14,6 +14,7 @@ import { EquiposComponent } from './equipos/equipos.component';
 import { PeleaComponent } from './pelea/pelea.component';
 import { PokedexComponent } from './pokedex/pokedex.component'
 import { Routes,RouterModule } from '@angular/router';
+import { PokedexComponent } from './pokedex/pokedex.component';
 
 const appRoutes:Routes=[
   {path:'', component:EleccionComponent},

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Move } from './moves.model';
+import { Move } from './../Clases/moves.model';
 @Component({
   selector: 'app-moves',
   templateUrl: './moves.component.html',

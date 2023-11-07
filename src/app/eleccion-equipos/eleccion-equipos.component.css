@@ -6,7 +6,7 @@ body{
 .seccion{
     margin: 0;
     border: 15px solid;
-    /*border-image: url(img/bordeVioleta120trans.png) 30 30 repeat;*/
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
 }
 
 
@@ -67,7 +67,8 @@ body{
     width: 6.6rem;
     height: 6.6rem;
     border: 10px solid;
-    /*border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;*/
+        border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+
 }
 
 .nombreElegirPoke{
@@ -119,7 +120,8 @@ body{
     height: 6.6rem;
     margin: 0 .5rem;
     border: 10px solid;
-    /*border-image: url(img/bordeVioleta120trans.png) 50 50 repeat;*/
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+
     
     
 }
