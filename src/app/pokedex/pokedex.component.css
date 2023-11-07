@@ -48,8 +48,9 @@
     
   }
   #datosPokemon img{
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
+    
   }
   
   #pokedex {
@@ -59,4 +60,12 @@
 
   }
   
-#fila:hover {background-color: coral;}
+.filasPokedex:hover {background-color: coral;}
+
+.Pokes {
+  border-collapse: collapse;
+}
+
+.Pokes td {
+  border: none;
+}

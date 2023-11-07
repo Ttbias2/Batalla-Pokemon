@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody id="bodyTablaPokes">
-                <tr *ngFor="let poke of pokemons" (click)="verPoke(poke.id)">
+                <tr *ngFor="let poke of pokemons" (click)="verPoke(poke.id)" class="filasPokedex">
                     <td><p>{{ poke.id }}</p></td>
                     <td><p>{{ poke.name }}</p></td>
                     <td><img [src]="poke.sprites.front_default" alt="no se encontro la imagen"></td>
@@ -38,10 +38,10 @@
     <div id="datosPokemon">
         <ol *ngIf="selectedPokemon">
             <img [src]="selectedPokemon.sprites.front_default" alt="no se encontro la imagen">
-            <p>{{ selectedPokemon.name }}</p>
+            <h2>{{ selectedPokemon.name }}</h2>
             
-            <p>weight: {{selectedPokemon.weight}} </p>
-            <p>Type:</p>
+            <h3>weight: {{selectedPokemon.weight}} </h3>
+            <h3>Type:</h3>
             <ol *ngFor="let type of selectedPokemon.types">
                 <p> {{type.type.name}} </p>
             </ol>
