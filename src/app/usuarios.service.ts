@@ -59,7 +59,13 @@ export class UsuariosService {
         break;
     }
 
-    this.pasos++;
+    if(this.pasos==7)
+    {
+      alert("todos los pokemons seleccionados");
+    }
+    else{
+      this.pasos++;
+    }
 
   }
 
