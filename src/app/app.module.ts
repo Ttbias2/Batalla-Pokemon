@@ -11,6 +11,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
 import { EleccionComponent } from './eleccion/eleccion.component';
 import { EquiposComponent } from './equipos/equipos.component';
+import { PeleaComponent } from './pelea/pelea.component';
+import { Routes,RouterModule } from '@angular/router';
+
+const appRoutes:Routes=[
+  {path:'', component:EleccionComponent},
+  {path:'pelea',component:PeleaComponent}
+]
 
 @NgModule({
   declarations: [
@@ -18,7 +25,8 @@ import { EquiposComponent } from './equipos/equipos.component';
     EleccionEquiposComponent,
     DialogComponent,
     EleccionComponent,
-    EquiposComponent
+    EquiposComponent,
+    PeleaComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,8 @@ import { EquiposComponent } from './equipos/equipos.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [PokeApiService],
   bootstrap: [AppComponent]
