@@ -28,7 +28,8 @@ export class UsuariosService {
       nuevoPokemon.stats[2].base_stat,
       nuevoPokemon.stats[3].base_stat,
       nuevoPokemon.stats[4].base_stat,
-      nuevoPokemon.stats[5].base_stat
+      nuevoPokemon.stats[5].base_stat,
+      nuevoPokemon.stats[0].base_stat
     );
 
     switch (this.pasos) {

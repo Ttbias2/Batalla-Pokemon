@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UsuariosService } from '../usuarios.service';
-import { jugador } from '../Clases/jugador.model';
+import { UsuariosService } from '../../usuarios.service';
+import { jugador } from '../../Clases/jugador.model';
 import { Router } from '@angular/router';
 
 @Component({
