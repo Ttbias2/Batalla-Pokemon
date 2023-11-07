@@ -1,53 +1,59 @@
+<button id="bJugar" type="button">
+    <img src="" alt="Jugar">
+    <span class="visually-hidden">Jugar</span>
+</button>
+<button id="bHistorial" type="button">
+    <img src="" alt="Historial">
+    <span class="visually-hidden">Historial</span>
+</button>
+<button id="bPokedex" type="button" value="normal">
+    <img src="" alt="Pokedex">
+    <span class="visually-hidden">Pokedex</span>
+</button>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Batallas Pokemon</title> -->
-    
-    <!-- <script src="./seleccionPoke.js"></script> -->
-    <!-- <link rel="stylesheet" href="style-pokedex.css"> -->
-</head>
-<body>
-    <body>
-        <header id="hMenu"><!-- color elegido como la parte de busqueda -->
-            <button id="bJugar" value="normal">
-                <img src="" alt="Jugar">
-                <a href=""></a>
-            </button>
-            <button id="bHistorial" value="normal">
-                <img src="" alt="Historial">
-                <a href=""></a>
-            </button>
-            <button id="bPokedex" value="normal">
-                <img src="" alt="Pokedex">
-                <a href=""></a>
-            </button>
-        </header>
-    <section class="seccion" id="pokedex">
-        <div id="seccionListado">
-            <table class="Pokes" id="TablaMostrarPokes">
-                <caption>Pokedex</caption>
-                <thead>
-                    <tr>
-                        <th>Numero</th>
-                        <th>Nombre</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="bodyTablaPokes">
+<header>
+    <!-- Rest of your header code -->
+</header>
 
-                </tbody>
-            </table>
-        </div>
-        <div id="datosPokemon">
+<section class="seccion" id="pokedex">
+    <div id="seccionListado">
+        <table class="Pokes" id="TablaMostrarPokes">
+            <caption>Pokedex</caption>
+            <thead>
+                <tr>
+                    <th>Numero</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaPokes">
+                <tr *ngFor="let poke of pokemons" (click)="verPoke(poke.id)">
+                    <td><p>{{ poke.id }}</p></td>
+                    <td><p>{{ poke.name }}</p></td>
+                    <td><img [src]="poke.sprites.front_default" alt="no se encontro la imagen"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="datosPokemon">
+        <ol *ngIf="selectedPokemon">
+            <img [src]="selectedPokemon.sprites.front_default" alt="no se encontro la imagen">
+            <p>{{ selectedPokemon.name }}</p>
             
-        </div>
-    </section>
+            <p>weight: {{selectedPokemon.weight}} </p>
+            <ol *ngFor="let type of selectedPokemon.types">
+                <p> {{type.type.name}} </p>
+            </ol>
+            <li *ngFor="let stat of selectedPokemon.stats">
+                <p>{{stat.stat.name}}: {{stat.base_stat}}  </p>
+            </li>
+            
 
-    <footer  id="fInfo" ><!-- Informacion -->
+        </ol>
+        <!-- Display other properties of selectedPokemon as needed -->
+      </div>
+</section>
 
-        <p  class="footer" id="pInfo">Todos los derechos reservados</p>
-
-    </footer>
-    <script src="./pokedex.js"></script>
-</body>
+<footer id="fInfo">
+    <p class="footer" id="pInfo">Todos los derechos reservados</p>
+</footer>

@@ -44,7 +44,7 @@
     border: 10px solid;
     justify-content: center;
     align-items: center;
-    border-image: url(img/bordeVioleta120trans.png) 20 20 repeat;
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
     
   }
   
