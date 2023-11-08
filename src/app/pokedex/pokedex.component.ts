@@ -29,7 +29,7 @@ export class PokedexComponent implements OnInit {
   }
   
   handleImageError(event: any) {
-    event.target.src = 'assets/img/error.png'; // replace with your actual fallback image path
+    event.target.src = 'assets/img/error.png';
   }
 
   selectedPokemonImg: any;
