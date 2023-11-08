@@ -1,5 +1,7 @@
 import { Component, OnInit, NgModule  } from '@angular/core';
 import { PokeApiService } from '../poke-api.service';
+import { HabilidadesService } from '../habilidades.service';
+import { habilidad } from '../Clases/habilidad.model';
 
 @Component({
   selector: 'app-pokedex',
@@ -10,10 +12,11 @@ export class PokedexComponent implements OnInit {
   inicio: number = 1;
   pokedex: number = 151;
   pokemons: any[] = [];
-  constructor(private datPokemons: PokeApiService) {
+  constructor(private datPokemons: PokeApiService, private datHabilidades: HabilidadesService) {
   }
   ngOnInit(): void {
     this.llenarPokes();
+    this.mostrarHabilidades();
   }
   llenarPokes() {
     this.datPokemons.getPokemonList(this.inicio, this.pokedex).subscribe(data => { this.mostrarpokes(data) });
@@ -36,5 +39,18 @@ export class PokedexComponent implements OnInit {
   mostrarPokeImg(id: number) {
     this.selectedPokemonImg.traerImagenPokemon(id).subscribe;
   }
+
+  tipo: string="normal";
+  habilidades: habilidad[] = [];
+  mostrarHabilidades() {
+    this.datHabilidades.traerHabilidadesPorTipo(this.tipo).subscribe(data => { this.mostrarHabilidad(data) });
+
+  }
+  mostrarHabilidad(habilidad: any) {
+    this.habilidades = habilidad;
+  }
+
+
+
 
 }
