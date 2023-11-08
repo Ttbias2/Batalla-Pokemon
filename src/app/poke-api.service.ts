@@ -23,10 +23,7 @@ export class PokeApiService {
     return forkJoin(requests);
   }
 
-  public traerImagenPokemon(dato: string): Observable<any> {
-    const urlApi = `https:/raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dato}.png`;
-    return this.http.get<any>(urlApi);
-  }
+  
 
   public traerUnPokemon(datoBusc: any): Observable<any> {
 
@@ -44,4 +41,6 @@ export class PokeApiService {
     return resultado;
   }
 
+
+  
 }
