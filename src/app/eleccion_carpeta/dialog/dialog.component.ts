@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
-import { PokeApiService } from '../poke-api.service';
-import { UsuariosService } from '../usuarios.service';
+import { PokeApiService } from '../../poke-api.service';
+import { UsuariosService } from '../../usuarios.service';
 
 @Component({
   selector: 'app-dialog',

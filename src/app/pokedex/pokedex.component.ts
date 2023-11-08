@@ -1,12 +1,5 @@
 import { Component, OnInit, NgModule  } from '@angular/core';
 import { PokeApiService } from '../poke-api.service';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { CommonModule } from '@angular/common';
-
-
-
-
 
 @Component({
   selector: 'app-pokedex',

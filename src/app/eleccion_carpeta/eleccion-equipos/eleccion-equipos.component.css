@@ -11,8 +11,6 @@ body{
 
 
 
-
-
 .busqueda{
     display: flex;
     flex-wrap: wrap;
@@ -136,4 +134,12 @@ body{
 
 .footer{
     text-align: center;
+}
+
+#pokes:hover{
+    background-color: coral;
+}
+
+#pokes:active{
+    background-color: rgb(177, 88, 55);
 }
