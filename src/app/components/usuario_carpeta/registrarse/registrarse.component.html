@@ -1,0 +1,92 @@
+<section class="seccion">
+    <fieldset>
+        <legend>Registrarse</legend>
+        <form id="formulario" (ngSubmit)="guardarUsuario()" [formGroup]="formulario">
+
+            <div class="campo">
+                <label for="apellido">Apellido</label>
+                <input type="text" 
+                    id="apellido"  
+                    formControlName="apellido">
+                
+                <div class="error">
+                    <span *ngIf="formulario.controls['apellido'].getError('required') && formulario.touched">Campo requerido</span>
+                </div>
+
+                <div class="error">
+                    <span *ngIf="formulario.controls['apellido'].getError('minlength') && formulario.touched">Minimo 3 caracteres</span>
+                </div>
+                
+                <div class="error">
+                    <span *ngIf="formulario.controls['apellido'].getError('pattern') && formulario.touched">No se premiten numeros ni caracteres especiales</span>
+                </div>
+
+            </div>
+
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" 
+                    id="nombre" 
+                    formControlName="nombre">
+                
+                <div class="error">
+                    <span *ngIf="formulario.controls['nombre'].getError('required') && formulario.touched">Campo requerido</span>
+                </div>    
+               
+                <div class="error">
+                    <span *ngIf="formulario.controls['nombre'].getError('minlength') && formulario.touched">Minimo 3 caracteres</span>
+                </div>
+
+                <div class="error">
+                    <span *ngIf="formulario.controls['nombre'].getError('pattern') && formulario.touched">No se premiten numeros ni caracteres especiales</span>
+                </div>
+
+            </div>
+
+            <div class="campo">
+                <label for="password">Password</label>
+                <input type="password" 
+                    id="password"
+                    formControlName="password">
+
+                <div class="error">
+                    <span *ngIf="formulario.controls['password'].getError('required') && formulario.touched">Campo requerido</span>
+                </div>
+
+              <!--  <div class="error">
+                    <span *ngIf="formulario.controls['password'].getError('pattern') && formulario.touched">La contraseña debe tener al entre 4 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                        Puede tener otros símbolos.</span>
+                </div>-->
+            </div>
+
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" 
+                    id="email"                
+                    formControlName="email">
+        
+                <div class="error">
+                    <span *ngIf="formulario.controls['email'].getError('required') && formulario.touched">Campo requerido</span>
+                </div>
+                    
+                <div class="error">
+                    <span class="error" *ngIf="formulario.controls['email'].getError('email') && formulario.touched">Introduzca un Email valido</span>
+                </div>    
+            </div>
+
+            <div class="campo">
+                <input type="hidden" 
+                    id="historial"
+                    formControlName="historial">
+            </div>
+
+            <div class="campo">
+                <input type="submit" value="Registrarse" id="crear">
+            </div>
+
+        </form>
+    </fieldset>
+    <div>
+        <button (click)="rutaInicioSesion()">Iniciar Sesion</button>
+    </div>
+</section>

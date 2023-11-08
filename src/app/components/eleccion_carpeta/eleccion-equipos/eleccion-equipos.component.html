@@ -1,0 +1,99 @@
+<header class="seccion busqueda" id="hBucar">
+    <div class="buscarPokes">
+        <input type="text" id="iBuscador" (keyup.enter)="buscarUnPoke()" (keyup)="estaVacio($event)">
+        <button id="bBuscar" (click)="buscarUnPoke()">Buscar pokemon</button>
+        <button id="bBuscar" (click)="llenarPokes()">cancelar busqueda</button>
+    </div>
+    <section class="filtrarTipos" id="stiposbusc">
+
+        <button class="bTipo" (click)="filtrarPorTipo(0)">
+            <img src="" alt="normal">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(1)">
+            <img src="" alt="fighting">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(2)">
+            <img src="" alt="flying">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(3)">
+            <img src="" alt="poison">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(4)">
+            <img src="" alt="ground">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(5)">
+            <img src="" alt="rock">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(6)">
+            <img src="" alt="bug">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(7)">
+            <img src="" alt="ghost">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(8)">
+            <img src="" alt="steel">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(9)">
+            <img src="" alt="fire">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(10)">
+            <img src="" alt="water">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(11)">
+            <img src="" alt="grass">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(12)">
+            <img src="" alt="electric">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(13)">
+            <img src="" alt="psychic">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(14)">
+            <img src="" alt="ice">
+        </button>
+
+        <button class="bTipo" (click)="filtrarPorTipo(15)">
+            <img src="" alt="dragon">
+        </button>
+
+
+        <button class="bTipo" (click)="filtrarPorTipo(16)">
+            <img src="" alt="fairy">
+        </button>
+
+
+    </section>
+
+
+
+</header>
+<!--Se muestran los pokemons-->
+<section class="seccion" id="sPokedex">
+    <div class="cambioPagina">
+        <button id="bRetroceder" (click)="menosPokes()" [disabled]="anteriorDesabilitado">anterior</button>
+        <p class="seleccionarPokemonP">Seleccionar Pokemon</p>
+        <button id="bAvanzar" (click)="masPokes()" [disabled]="siguienteDesabilitado">siguiente</button>
+    </div>
+
+    <div class="seccionListadoPokes">
+        <ol class="listadoPokes" id="olMostrarpokes" style="list-style-type: none;">
+            <li *ngFor="let poke of pokemons" (click)="verPoke(poke.id)" id="pokes">
+                <img [src]="poke.sprites.front_default" alt="no se encontro la imagen">
+                <p>{{ poke.name }}</p>
+            </li>
+        </ol>
+    </div>

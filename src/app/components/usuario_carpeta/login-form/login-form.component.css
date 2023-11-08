@@ -1,0 +1,19 @@
+form{
+    background-color: aquamarine;
+}
+.seccion{
+    width: 50%;
+    margin: 0 auto;
+    background-color:bisque;
+}
+
+.seccion fieldset{
+    border: .8px solid #e1e1e1;
+}
+
+.error{
+    background-color: rgb(236, 146, 146);
+    color: rgb(117, 11, 11);
+    width: 100%;
+    text-align: center;
+}

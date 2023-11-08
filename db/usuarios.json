@@ -1,0 +1,29 @@
+{
+  "usuarios": [
+   
+    {
+      "apellido": "deeed",
+      "nombre": "asasd",
+      "password": "dasdasd",
+      "email": "asd@gmail.com",
+      "historial": "",
+      "id": 18
+    },
+    {
+      "apellido": "deeed",
+      "nombre": "asasd",
+      "password": "qasdasd",
+      "email": "asq@gmail.com",
+      "historial": "",
+      "id": 17
+    },
+    {
+      "apellido": "deeed",
+      "nombre": "asasd",
+      "password": "pasdasd",
+      "email": "asp@gmail.com",
+      "historial": "",
+      "id": 16
+    }
+  ]
+}

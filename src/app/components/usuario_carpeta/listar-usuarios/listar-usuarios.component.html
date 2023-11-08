@@ -1,0 +1,23 @@
+<main class="contenedor">
+    <h1>Listado clientes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Historial</th>
+            </tr>
+        </thead>
+        <tbody id="clientes">
+            <tr *ngFor="let item of listadoUsuarios">
+                <td>{{item.apellido}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.historial}}</td>
+                <td><a class="btnEliminar" (click)="eliminarUsuarioHttp(item.id)">Eliminar</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</main>
