@@ -16,15 +16,19 @@ export class PokedexComponent implements OnInit {
   }
   ngOnInit(): void {
     this.llenarPokes();
-    this.mostrarHabilidades();
+    //this.buscarHabilidades();
+    
   }
   llenarPokes() {
     this.datPokemons.getPokemonList(this.inicio, this.pokedex).subscribe(data => { this.mostrarpokes(data) });
   }
   mostrarpokes(pokes: any) {
     this.pokemons = pokes;
-
+    
   }
+
+  
+
   selectedPokemon: any;
 
   verPoke(id: number) {
@@ -39,18 +43,25 @@ export class PokedexComponent implements OnInit {
   mostrarPokeImg(id: number) {
     this.selectedPokemonImg.traerImagenPokemon(id).subscribe;
   }
+//codigo para probar servicio habilidades
+ /*  tipo: string='dragon';
+  habilidades: any[] = [];
+  habilidad: any;
+  
+  buscarHabilidades() {
+    this.datHabilidades.traerHabilidadesPorTipo(this.tipo).subscribe(data => { this.mostrarHabilidades(data) });
+    };
+    mostrarHabilidades(habilidad: any) {
+      this.habilidades = habilidad;
+      console.log('ae');
+      
+    }
+    */
+  } 
+  
 
-  tipo: string="normal";
-  habilidades: habilidad[] = [];
-  mostrarHabilidades() {
-    this.datHabilidades.traerHabilidadesPorTipo(this.tipo).subscribe(data => { this.mostrarHabilidad(data) });
-
-  }
-  mostrarHabilidad(habilidad: any) {
-    this.habilidades = habilidad;
-  }
+  
 
 
 
 
-}

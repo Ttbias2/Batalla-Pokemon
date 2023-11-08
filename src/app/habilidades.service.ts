@@ -12,23 +12,23 @@ export class HabilidadesService {
   constructor(private http: HttpClient) { }
 
   //listado tipos
-  normal: [130, 63, 43, 48];
-  fighting: [26, 136];
-  flying: [17, 19];
-  poison: [40,77];
-  ground: [28, 89];
-  rock: [88, 157];
-  bug: [41, 81];
-  ghost: [122, 109];
-  steel: []=  [];
-  fire: [53, 126];
-  water: [55, 56];
-  grass: [22,71 ];
-  electric: [84, 86];
-  psychic: [60, 95];
-  ice: [58, 8];
-  dragon: [82];
-  fairy: []= [];
+  normal: number[]=[130, 63, 43, 48];
+  fighting: number[]= [26, 136];
+  flying: number[]=[17, 19];
+  poison: number[]=[40,77];
+  ground:number[]= [28, 89];
+  rock:number[]= [88, 157];
+  bug: number[]=[41, 81];
+  ghost:number[]= [122, 109];
+  steel:number[]=  [];
+  fire:number[]= [53, 126];
+  water: number[]=[55, 56];
+  grass:number[]= [22, 71];
+  electric:number[]= [84, 86];
+  psychic:number[]= [60, 95];
+  ice:number[]= [58, 8];
+  dragon: number[]=[82];
+  fairy:number[]=  [];
 
 
   public traerHabilidad(id: number): Observable<any>{
@@ -61,106 +61,80 @@ export class HabilidadesService {
         break;
       case 'poison':
         this.poison.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
+          requests.push(this.traerHabilidad(id));
           });
-        });
+        
         break;
       case 'ground':
         this.ground.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
+          
         });
         break;
       case 'rock':
         this.rock.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'bug':
         this.bug.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'ghost':
         this.ghost.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'steel':
         this.steel.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'fire':
         this.fire.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'water':
         this.water.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'grass':
         this.grass.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'electric':
         this.electric.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'psychic':
         this.psychic.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'ice':
         this.ice.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'dragon':
         this.dragon.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
       case 'fairy':
         this.fairy.forEach(id => {
-          this.traerHabilidad(id).subscribe(habilidad => {
-            requests.push(habilidad);
-          });
+          requests.push(this.traerHabilidad(id));
         });
         break;
     }
       
 
-    //return this.http.get<any>(urlApi);
+    
     return forkJoin(requests);
   }
 
