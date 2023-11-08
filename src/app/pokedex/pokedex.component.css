@@ -69,3 +69,7 @@
 .Pokes td {
   border: none;
 }
+#bodyTablaPokes img{
+    width: 5rem;
+    height: 5rem; 
+}

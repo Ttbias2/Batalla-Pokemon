@@ -28,4 +28,7 @@ export class PokedexComponent implements OnInit {
     this.selectedPokemon = this.pokemons.find(poke => poke.id === id);
   }
   
+  handleImageError(event: any) {
+    event.target.src = 'assets/img/error.png'; // replace with your actual fallback image path
+  }
 }
