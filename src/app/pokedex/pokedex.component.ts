@@ -1,5 +1,7 @@
 import { Component, OnInit, NgModule  } from '@angular/core';
 import { PokeApiService } from '../poke-api.service';
+import { HabilidadesService } from '../habilidades.service';
+import { habilidad } from '../Clases/habilidad.model';
 
 @Component({
   selector: 'app-pokedex',
@@ -10,18 +12,23 @@ export class PokedexComponent implements OnInit {
   inicio: number = 1;
   pokedex: number = 151;
   pokemons: any[] = [];
-  constructor(private datPokemons: PokeApiService) {
+  constructor(private datPokemons: PokeApiService, private datHabilidades: HabilidadesService) {
   }
   ngOnInit(): void {
     this.llenarPokes();
+    //this.buscarHabilidades();
+    
   }
   llenarPokes() {
     this.datPokemons.getPokemonList(this.inicio, this.pokedex).subscribe(data => { this.mostrarpokes(data) });
   }
   mostrarpokes(pokes: any) {
     this.pokemons = pokes;
-
+    
   }
+
+  
+
   selectedPokemon: any;
 
   verPoke(id: number) {
@@ -36,5 +43,25 @@ export class PokedexComponent implements OnInit {
   mostrarPokeImg(id: number) {
     this.selectedPokemonImg.traerImagenPokemon(id).subscribe;
   }
+//codigo para probar servicio habilidades
+ /*  tipo: string='dragon';
+  habilidades: any[] = [];
+  habilidad: any;
+  
+  buscarHabilidades() {
+    this.datHabilidades.traerHabilidadesPorTipo(this.tipo).subscribe(data => { this.mostrarHabilidades(data) });
+    };
+    mostrarHabilidades(habilidad: any) {
+      this.habilidades = habilidad;
+      console.log('ae');
+      
+    }
+    */
+  } 
+  
 
-}
+  
+
+
+
+
