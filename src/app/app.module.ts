@@ -18,7 +18,7 @@ import { CampoDeBatallaComponent } from './pelea_carpeta/campo-de-batalla/campo-
 import { EleccionesPeleaComponent } from './pelea_carpeta/elecciones-pelea/elecciones-pelea.component';
 
 const appRoutes:Routes=[
-  {path:'', component:PokedexComponent},
+  {path:'', component:EleccionComponent},
   {path:'pelea',component:PeleaComponent}
 ]
 

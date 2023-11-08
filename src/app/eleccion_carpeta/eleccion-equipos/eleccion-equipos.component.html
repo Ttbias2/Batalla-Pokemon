@@ -91,7 +91,7 @@
 
     <div class="seccionListadoPokes">
         <ol class="listadoPokes" id="olMostrarpokes" style="list-style-type: none;">
-            <li *ngFor="let poke of pokemons" (click)="verPoke(poke.id)">
+            <li *ngFor="let poke of pokemons" (click)="verPoke(poke.id)" id="pokes">
                 <img [src]="poke.sprites.front_default" alt="no se encontro la imagen">
                 <p>{{ poke.name }}</p>
             </li>
