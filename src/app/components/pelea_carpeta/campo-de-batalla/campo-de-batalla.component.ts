@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { jugador } from 'src/app/Clases/jugador.model';
-import { UsuariosService } from 'src/app/services/usuarios.service';
+import { UsuariosService } from '../../../services/usuarios.service';
 
 @Component({
   selector: 'app-campo-de-batalla',

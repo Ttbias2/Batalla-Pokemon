@@ -13,6 +13,7 @@ export class EleccionesPeleaComponent implements OnInit{
   j2:jugador;
   pokemonPeleandoj1: number;
   pokemonPeleandoj2: number;
+  turno:number;
 
   constructor(private datUsuario:UsuariosService){
     this.j1=datUsuario.jugador1;
@@ -21,13 +22,27 @@ export class EleccionesPeleaComponent implements OnInit{
   ngOnInit(): void {
     this.datUsuario.pokemonPeleandoj1$.subscribe(data => this.pokemonPeleandoj1 = data);
     this.datUsuario.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
+    this.datUsuario.turnos.subscribe(data => this.turno=data);
   }
 
-  bajarvida(){
-    this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -=10;
+  bajarVidaj1(){
+    this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -=10;
+    this.turno=1;
   };
 
-  cambiarPokemon(){
-    this.datUsuario.cambiarPokej1(1);
+  bajarVidaj2(){
+    this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -=10;
+    this.turno = 0;
+  };
+
+  cambiarPokemonj1(poke:number){
+    this.datUsuario.cambiarPokej1(poke);
+    this.turno=1;
+
+  }
+
+  cambiarPokemonj2(poke:number){
+    this.datUsuario.cambiarPokej2(poke);
+    this.turno = 0;
   }
 }

@@ -1,4 +1,5 @@
 export class habilidad{
+    id: number=0;
     name: string='';
     accuracy: number=0;
     power: number=0;
@@ -10,6 +11,7 @@ export class habilidad{
     stat_changes: string='';
 
     constructor(
+        id: number,
         name: string,
         accuracy: number,
         power: number,
@@ -20,6 +22,7 @@ export class habilidad{
         damage_class: string,
         stat_changes: string
     ){
+        this.id = id;
         this.name = name;
         this.accuracy = accuracy;
         this.power = power;

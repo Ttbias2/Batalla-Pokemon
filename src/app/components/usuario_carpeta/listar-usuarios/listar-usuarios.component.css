@@ -1,0 +1,8 @@
+main{
+    background-color:cornflowerblue;
+}
+
+.btnEliminar{
+    color: red;
+    cursor: pointer;
+}

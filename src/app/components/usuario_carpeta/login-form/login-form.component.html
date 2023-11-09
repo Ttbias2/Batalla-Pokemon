@@ -1,0 +1,40 @@
+<fieldset>
+    <legend>Inicar Sesion</legend>
+    <form id="formulario" (ngSubmit)="iniciarSesion()" [formGroup]="formulario">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" 
+                id="email" 
+                formControlName="email">
+
+            <div class="error">
+                <span *ngIf="formulario.controls['email'].getError('required') && formulario.touched">Campo requerido</span>
+            </div>
+
+            <div class="error">
+                <span class="error" *ngIf="formulario.controls['email'].getError('email') && formulario.touched">Introduzca un Email valido</span>
+            </div> 
+
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" 
+                id="password" 
+                formControlName="password">
+
+            <div class="error">
+                <span *ngIf="formulario.controls['password'].getError('required') && formulario.touched">Campo requerido</span>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Iniciar Sesion">
+        </div>
+        
+    </form>
+    <div>
+        <button (click)="rutaRegistrarse()">Resgistrarse</button>
+    </div>
+</fieldset>
+
