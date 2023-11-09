@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { jugador } from './Clases/jugador.model';
 import { pokemon } from './Clases/pokemon.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,10 @@ export class UsuariosService {
   jugador1: jugador = new jugador();
   jugador2: jugador = new jugador();
   pasos: number = 1;
+  private pokemonPeleandoj1 = new BehaviorSubject<number>(0);
+  pokemonPeleandoj1$ = this.pokemonPeleandoj1.asObservable();
+  private pokemonPeleandoj2 = new BehaviorSubject<number>(0);
+  pokemonPeleandoj2$ = this.pokemonPeleandoj2.asObservable();
 
   constructor() {
     this.jugador1.setNombre("Tobias");
@@ -77,6 +82,13 @@ export class UsuariosService {
 
   }
 
+  cambiarPokej1(poke: number) {
+    this.pokemonPeleandoj1.next(poke);
+  }
+
+  cambiarPokej2(poke:number){
+    this.pokemonPeleandoj2.next(poke);
+}
 
 
 
