@@ -13,6 +13,10 @@ export class HomeInicialComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    //this.router.navigate(["pokedex"]);
+  }
+
+  clickButton(){
     this.router.navigate(["login"]);
   }
 
