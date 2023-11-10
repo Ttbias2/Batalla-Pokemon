@@ -1,11 +1,31 @@
 <section *ngIf="turno==0">
     <button (click)="bajarVidaj1()">atacar</button>
     <button>objeto</button>
-    <button (click)="cambiarPokemonj1(1)">elegirPoke</button>
+    <button (click)="cambiarPokemonj1()">elegirPoke</button>
 </section>
 
 <section *ngIf="turno==1">
     <button (click)="bajarVidaj2()">atacar</button>
     <button>objeto</button>
-    <button (click)="cambiarPokemonj2(1)">elegirPoke</button>
+    <button (click)="cambiarPokemonj2()">elegirPoke</button>
 </section>
+
+<ol *ngIf="turno==2">
+    <li *ngFor="let poke of j1.pokemons,let i = index">
+        <section *ngIf="i != pokemonPeleandoj1 && poke.vidaActual>0">
+            <button (click)="cambioj1(i)">
+                <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
+            </button>    
+        </section>
+    </li>
+</ol>
+
+<ol *ngIf="turno==3">
+    <li *ngFor="let poke of j2.pokemons,let i = index">
+        <section *ngIf="i != pokemonPeleandoj2 && poke.vidaActual>0">
+            <button (click)="cambioj2(i)">
+                <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
+            </button>
+        </section>
+    </li>
+</ol>

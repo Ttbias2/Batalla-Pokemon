@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { jugador } from 'src/app/Clases/jugador.model';
+import { pokemon } from 'src/app/Clases/pokemon.model';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   templateUrl: './elecciones-pelea.component.html',
   styleUrls: ['./elecciones-pelea.component.css']
 })
+
 export class EleccionesPeleaComponent implements OnInit{
 
   j1:jugador;
@@ -19,6 +21,7 @@ export class EleccionesPeleaComponent implements OnInit{
     this.j1=datUsuario.jugador1;
     this.j2=datUsuario.jugador2;
   }
+
   ngOnInit(): void {
     this.datUsuario.pokemonPeleandoj1$.subscribe(data => this.pokemonPeleandoj1 = data);
     this.datUsuario.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
@@ -35,13 +38,20 @@ export class EleccionesPeleaComponent implements OnInit{
     this.turno = 0;
   };
 
-  cambiarPokemonj1(poke:number){
-    this.datUsuario.cambiarPokej1(poke);
-    this.turno=1;
-
+  cambiarPokemonj1(){
+    this.turno = 2
   }
 
-  cambiarPokemonj2(poke:number){
+  cambioj1(poke:number){
+    this.datUsuario.cambiarPokej1(poke);
+    this.turno = 1;
+  }
+
+  cambiarPokemonj2(){
+    this.turno = 3;
+  }
+
+  cambioj2(poke:number){
     this.datUsuario.cambiarPokej2(poke);
     this.turno = 0;
   }
