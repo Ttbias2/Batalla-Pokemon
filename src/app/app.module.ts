@@ -32,7 +32,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 const appRoutes:Routes=[
-  {path:"", component:PokedexComponent},
+  {path:"", component:HomeInicialComponent},
   {path:'home-inicial',component:HomeInicialComponent},
   {path:"login",component:LoginFormComponent},
   {path:"registrarse", component:RegistrarseComponent},
