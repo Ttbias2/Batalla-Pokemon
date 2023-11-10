@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { habilidad } from './../Clases/habilidad.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -138,4 +139,26 @@ export class HabilidadesService {
     return forkJoin(requests);
   }
 
+  habilidadesTipo: habilidad[] = [];
+  habilidades: any[] = [];
+
+  public llenarPorHabilidad(tipo: string){
+    this.traerHabilidadesPorTipo(tipo).subscribe(data => { this.mostrarHabilidades(data) });
+  }
+  mostrarHabilidades(habilidadesData: any[]) {
+    this.habilidadesTipo = habilidadesData.map(habilidadData => {
+      return new habilidad(
+        habilidadData.id,
+        habilidadData.name,
+        habilidadData.accuracy,
+        habilidadData.power,
+        habilidadData.priority,
+        habilidadData.meta.ailment_chance,
+        habilidadData.type.name,
+        habilidadData.meta.ailment.name,
+        habilidadData.damage_class.name,
+        habilidadData.stat_changes
+      );
+    });
+  }
 }

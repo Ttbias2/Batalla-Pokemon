@@ -16,9 +16,23 @@ export class PokedexComponent implements OnInit {
   }
   ngOnInit(): void {
     this.llenarPokes();
-    //this.buscarHabilidades();
+    //this.testHabilidades();
+    
+    /* this.datHabilidades.llenarPorHabilidad('normal');
+
+  // Log the habilidadesTipo array to the console after a delay to allow for the async operation to complete
+  setTimeout(() => {
+    console.log(this.datHabilidades.habilidadesTipo);
+  }, 3000); */ ///test service habilidades
+    
     
   }
+
+testHabilidades(){
+  console.log('test habilidades');
+  
+}
+
   llenarPokes() {
     this.datPokemons.getPokemonList(this.inicio, this.pokedex).subscribe(data => { this.mostrarpokes(data) });
   }
@@ -44,19 +58,12 @@ export class PokedexComponent implements OnInit {
     this.selectedPokemonImg.traerImagenPokemon(id).subscribe;
   }
 //codigo para probar servicio habilidades
- /*  tipo: string='dragon';
-  habilidades: any[] = [];
-  habilidad: any;
+   tipo: string='dragon';
+  habilidades: habilidad[] = [];
+  habilidad: habilidad;
   
-  buscarHabilidades() {
-    this.datHabilidades.traerHabilidadesPorTipo(this.tipo).subscribe(data => { this.mostrarHabilidades(data) });
-    };
-    mostrarHabilidades(habilidad: any) {
-      this.habilidades = habilidad;
-      console.log('ae');
-      
-    }
-    */
+  
+    
   } 
   
 
