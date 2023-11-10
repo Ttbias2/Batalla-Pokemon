@@ -39,7 +39,7 @@ const appRoutes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-
+    
     EleccionEquiposComponent,
     DialogComponent,
     EleccionComponent,
