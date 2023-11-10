@@ -32,19 +32,20 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 const appRoutes:Routes=[
-  {path:"",component:HomeInicialComponent},
+  {path:"", component:PokedexComponent},
+  {path:'home-inicial',component:HomeInicialComponent},
   {path:"login",component:LoginFormComponent},
   {path:"registrarse", component:RegistrarseComponent},
   {path:"page-menu", component:PageMenuComponent},
   {path:'Pokedex',component:PokedexComponent},
-
+  
   {path:'pelea',component:PeleaComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    
     EleccionEquiposComponent,
     DialogComponent,
     EleccionComponent,

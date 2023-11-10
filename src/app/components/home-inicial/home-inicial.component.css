@@ -28,7 +28,7 @@ ul{
     border: 10px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
     background-image: url(src\assets\img\pikachuGif.gif);
-    height: 800px;
+    height: 600px;
     width: 800px;
     background-position: center;
     background-size: contain;
@@ -39,13 +39,14 @@ ul{
 
 .main-section #btn {
     position: absolute;
-    bottom: 20px; /* adjust as needed */
+    bottom: 0px; /* adjust as needed */
     left: 50%;
     transform: translateX(-50%);
-    background-image: url(src\assets\img\enter.png); /* replace with your image path */
+    background-image: url(src\assets\img\pokeplay-removebg-preview.png); /* replace with your image path */
     background-size: contain; /* adjust as needed */
     background-position: center; /* adjust as needed */
-    height: 100px;
-    width: 300px;
+    background-color: transparent;
+    height: 6rem;
+    width: 20rem;
     border: none;
   }
