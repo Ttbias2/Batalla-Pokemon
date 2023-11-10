@@ -161,4 +161,12 @@ export class HabilidadesService {
       );
     });
   }
+
+  //PARA TESTEAR PROBAR CON ESTO
+  /* this.datHabilidades.llenarPorHabilidad('normal');
+
+  // Log the habilidadesTipo array to the console after a delay to allow for the async operation to complete
+  setTimeout(() => {
+    console.log(this.datHabilidades.habilidadesTipo);
+  }, 3000); */ 
 }
