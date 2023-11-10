@@ -36,6 +36,7 @@ const appRoutes:Routes=[
   {path:"login",component:LoginFormComponent},
   {path:"registrarse", component:RegistrarseComponent},
   {path:"page-menu", component:PageMenuComponent},
+  {path:'Pokedex',component:PokedexComponent},
 
   {path:'pelea',component:PeleaComponent}
 ];
