@@ -17,7 +17,7 @@ export class HomeInicialComponent implements OnInit{
   }
 
   clickButton(){
-    this.router.navigate(["login"]);
+    this.router.navigate(['login']);
   }
 
 }

@@ -29,12 +29,28 @@ import { HomeInicialComponent } from './components/home-inicial/home-inicial.com
 import { IngresarJugadoresComponent } from './components/usuario_carpeta/ingresar-jugadores/ingresar-jugadores.component';
 import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
+import { HistorialComponent } from './historial/historial.component';
 
 const appRoutes:Routes=[
+  {path:"",component:HomeInicialComponent},
+  {path:'login',component:LoginFormComponent},
+  {path:'registrarse',component:RegistrarseComponent},
+  {path:'nav-bar',component:NavBarComponent},
+
+  {path:'page-menu',component:PageMenuComponent,
+    children:[
+      {path:'pokedex',component:PokedexComponent},
+      {path:'ingresar-jugadores',component:IngresarJugadoresComponent},
+      {path:'historial',component:HistorialComponent},
+    ]
+  }
+  
+];
+
+/*const appRoutes:Routes=[
   {path:"",component:EleccionComponent},
   {path:'pelea',component:PeleaComponent}
-];
+];*/
 
 @NgModule({
   declarations: [
@@ -56,7 +72,8 @@ const appRoutes:Routes=[
     HomeInicialComponent,
     IngresarJugadoresComponent,
     PageMenuComponent,
-    NavBarComponent
+    NavBarComponent,
+    HistorialComponent
   
   ],
   imports: [

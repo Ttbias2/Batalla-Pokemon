@@ -1,19 +1,22 @@
 <section>
     <nav>
         <div>
-            <button>Jugar</button>
+            <button routerLinkActive="active" [routerLink]="['ingresar-jugadores']">Jugar</button>
         </div>
     
         <div>
-            <button>Historial de partidas</button>
+            <button routerLinkActive="active" [routerLink]="['historial']">Historial de partidas</button>
         </div>
         
         <div>
-            <button>Pokedex</button>
+            <button routerLinkActive="active" [routerLink]="['pokedex']">Pokedex</button>
         </div>
     </nav>
     <div>
-        <p>Nombre Sesion</p>
+        <p>usuario</p>
     </div>
 </section>
+<div>
+    <router-outlet></router-outlet>
+</div>
 
