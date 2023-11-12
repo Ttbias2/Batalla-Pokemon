@@ -97,11 +97,11 @@ export class EleccionesPeleaComponent implements OnInit {
     if (this.turno) {
       if(!this.vidaUsadaj1)
       {
-        if ((this.j1.pokemons[this.pokemonPeleandoj1].vidaActual += 20) > this.j1.pokemons[this.pokemonPeleandoj1].vida) {
+        if ((this.j1.pokemons[this.pokemonPeleandoj1].vidaActual + 40) > this.j1.pokemons[this.pokemonPeleandoj1].vida) {
           this.j1.pokemons[this.pokemonPeleandoj1].vidaActual = this.j1.pokemons[this.pokemonPeleandoj1].vida;
         }
         else {
-          this.j1.pokemons[this.pokemonPeleandoj1].vida;
+          this.j1.pokemons[this.pokemonPeleandoj1].vidaActual += 40;
         }
         this.turno = false;
         this.vidaUsadaj1 = true;
@@ -113,11 +113,11 @@ export class EleccionesPeleaComponent implements OnInit {
     else {
       if(!this.vidaUsadaj2)
       {
-        if ((this.j2.pokemons[this.pokemonPeleandoj2].vidaActual += 20) > this.j2.pokemons[this.pokemonPeleandoj2].vida) {
+        if ((this.j2.pokemons[this.pokemonPeleandoj2].vidaActual + 40) > this.j2.pokemons[this.pokemonPeleandoj2].vida) {
           this.j2.pokemons[this.pokemonPeleandoj2].vidaActual = this.j2.pokemons[this.pokemonPeleandoj2].vida;
         }
         else {
-          this.j2.pokemons[this.pokemonPeleandoj2].vida;
+          this.j2.pokemons[this.pokemonPeleandoj2].vidaActual += 40;
         }  
         this.vidaUsadaj2 = true;
         this.turno = true;
@@ -132,14 +132,84 @@ export class EleccionesPeleaComponent implements OnInit {
   }
 
   usoPocionVelocidad(){
+    if(this.turno)
+    {
+       if(!this.velocidadUsadaj1)
+       {
+          this.j1.pokemons[this.pokemonPeleandoj1].velocidad += 20;
+          this.velocidadUsadaj1 = true;
+          this.turno = false;
+       }
+       else{
+        alert("ya utiliso esa pocion, elija otra opcion");
+       }
+       
+    }
+    else{
+      if(!this.velocidadUsadaj2)
+      {
+         this.j2.pokemons[this.pokemonPeleandoj2].velocidad += 20;
+         this.velocidadUsadaj2 = true;
+         this.turno = true;
+      }
+      else{
+       alert("ya utiliso esa pocion, elija otra opcion");
+      }
+    }
+
+    this.usoObjeto = false;
 
   }
 
   usoQuitarEfecto(){
+      if(this.turno){
+        if(!this.efectosUsadaj1)
+        {
+          this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto = [];
+          this.efectosUsadaj1 = true;
+          this.turno = false;
+        }
+        else("ya utiliso esta pocion, elija otra opcion");
+      }
+      else{
+        if(!this.efectosUsadaj2)
+        {
+          this.j1.pokemons[this.pokemonPeleandoj2].bajo_efecto = [];
+          this.efectosUsadaj2 = true;
+          this.turno = false;
+        }
+        else("ya utiliso esta pocion, elija otra opcion");
+      }
 
+      this.usoObjeto = false;
   }
 
   usoPocionAtaque(){
+    if(this.turno)
+    {
+       if(!this.ataqueUsadaj1)
+       {
+          this.j1.pokemons[this.pokemonPeleandoj1].ataque += 10;
+          this.ataqueUsadaj1 = true;
+          this.turno = false;
+       }
+       else{
+        alert("ya utiliso esa pocion, elija otra opcion");
+       }
+       
+    }
+    else{
+      if(!this.ataqueUsadaj2)
+      {
+         this.j2.pokemons[this.pokemonPeleandoj2].ataque += 10;
+         this.ataqueUsadaj2 = true;
+         this.turno = true;
+      }
+      else{
+       alert("ya utiliso esa pocion, elija otra opcion");
+      }
+    }
 
+    this.usoObjeto = false;
   }
 }
