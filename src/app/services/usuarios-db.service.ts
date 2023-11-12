@@ -22,6 +22,17 @@ export class UsuariosDbService {
 
 
 
+  getUsuarioHttpId(id:number):Observable<usuario>{
+    return this.http.get<usuario>(`${this.url}/${id}`);
+  }
+  putUsuarioHttp(usuario:usuario):Observable<usuario>{//Guardar nuevo historial
+    return this.http.put<usuario>(
+      `${this.url}/${usuario.id}`,
+      usuario,
+      {headers:{"Content-type": "application/json"}}
+    )
+  }
+
   getUsuariosHttp():Observable<usuario[]>{
     return this.http.get<usuario[]>(this.url)
       .pipe(//Captura los datos y los puede modificar de varias maneras utilizando map o filter
@@ -33,33 +44,6 @@ export class UsuariosDbService {
       )
   }
 
-    /*buscarMail(email:string){
-    var i =0;
-    this.getUsuariosHttp().subscribe({
-      
-      next:(user)=>{
-
-        this.listado = user;
-
-        while(i < this.listado.length){
-          if(this.listado[i].email == email){
-            return this.listado[i];
-            
-          }
-          i++;
-        }
-        
-      },
-      error:(err)=>{
-        console.log(err);
-      }
-    }
-    
-     
-    );
-  }*/
-  
-  
 
   async getUsuarios(): Promise <usuario[] | undefined> {//segun el try/catch puede devolver undefined o el arreglo de usuarios
     try {
@@ -76,6 +60,7 @@ export class UsuariosDbService {
     }
     return undefined;//devuelve undefined si hay un error
   }
+
 
   async postUsuario(usuario:usuario){
     try {

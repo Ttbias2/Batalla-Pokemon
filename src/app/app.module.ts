@@ -11,9 +11,9 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/eleccion_carpeta/dialog/dialog.component';
-import { EleccionComponent } from './components/eleccion_carpeta/eleccion/eleccion.component';
+import { EleccionComponent } from './pages/eleccion/eleccion.component';
 import { EquiposComponent } from './components/eleccion_carpeta/equipos/equipos.component';
-import { PeleaComponent } from './components/pelea_carpeta/pelea/pelea.component';
+import { PeleaComponent } from './pages/pelea/pelea.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component'
 import { CampoDeBatallaComponent } from './components/pelea_carpeta/campo-de-batalla/campo-de-batalla.component';
 import { EleccionesPeleaComponent } from './components/pelea_carpeta/elecciones-pelea/elecciones-pelea.component';
@@ -27,9 +27,11 @@ import { EditarUsuarioComponent } from './components/usuario_carpeta/editar-usua
 import { RegistrarseComponent } from './components/usuario_carpeta/registrarse/registrarse.component';
 import { HomeInicialComponent } from './components/home-inicial/home-inicial.component';
 import { IngresarJugadoresComponent } from './components/usuario_carpeta/ingresar-jugadores/ingresar-jugadores.component';
+
 import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { HistorialComponent } from './historial/historial.component';
+import { HistorialComponent } from './components/historial/historial.component';
+
 
 const appRoutes:Routes=[
   {path:"",component:HomeInicialComponent},
@@ -43,13 +45,16 @@ const appRoutes:Routes=[
       {path:'ingresar-jugadores',component:IngresarJugadoresComponent},
       {path:'historial',component:HistorialComponent},
     ]
-  }
-  
+  },
+
+  {path:"eleccion",component:EleccionComponent},
+  {path:'pelea',component:PeleaComponent},
+
+  {path:"editar-usuario",component:EditarUsuarioComponent}  
 ];
 
 /*const appRoutes:Routes=[
-  {path:"",component:EleccionComponent},
-  {path:'pelea',component:PeleaComponent}
+  
 ];*/
 
 @NgModule({

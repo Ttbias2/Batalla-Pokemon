@@ -1,29 +1,39 @@
 {
   "usuarios": [
-   
     {
       "apellido": "deeed",
       "nombre": "asasd",
-      "password": "dasdasd",
-      "email": "asd@gmail.com",
-      "historial": "",
+      "password": "123",
+      "email": "a@gmail.com",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "idBatalla": 0,
+          "pokemons": [
+            3,
+            5,
+            7,
+            8,
+            2,
+            4
+          ]
+        },
+        {
+          "jugador1": "damian",
+          "jugador2": "juancito",
+          "idBatalla": 2,
+          "pokemons": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ],
       "id": 18
-    },
-    {
-      "apellido": "deeed",
-      "nombre": "asasd",
-      "password": "qasdasd",
-      "email": "asq@gmail.com",
-      "historial": "",
-      "id": 17
-    },
-    {
-      "apellido": "deeed",
-      "nombre": "asasd",
-      "password": "pasdasd",
-      "email": "asp@gmail.com",
-      "historial": "",
-      "id": 16
     }
   ]
 }
