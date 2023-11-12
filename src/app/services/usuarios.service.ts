@@ -43,12 +43,24 @@ export class UsuariosService {
     );
 
     nuevoPokemon.types.forEach((tipo: any) => {
-      this.datHabilidades.llenarPorHabilidad(tipo.type.name).subscribe(() => this.datHabilidades.habilidadesTipo.forEach(ataque => {
-        if(poke.habilidades.length<4){
+      if(tipo.type.name != "normal")
+      {
+        this.datHabilidades.llenarPorHabilidad(tipo.type.name).subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+        (ataque => {
+         poke.habilidades.push(ataque);
+        }))
+      }
+    })
+
+    if(poke.habilidades.length<4){
+      this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+      (ataque => {
+        if(poke.habilidades.length<4)
+        {
           poke.habilidades.push(ataque);
         }
       }))
-    })
+    }
 
     console.log(poke.habilidades);
 
