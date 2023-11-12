@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 
 import { usuario } from 'src/app/interfaces/interface-usuario';
+import { partida } from 'src/app/interfaces/interface-partida';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,15 @@ export class UsuariosDbService {
 
   url: string="http://localhost:4200/usuarios";
   listado: usuario[]|undefined=[];
+
+  private id= -1;
+
+  setearId(id:number){
+    this.id= id;
+  }
+  obtenerId(){
+    return this.id;
+  }
 
   constructor(
     private router: Router,
@@ -22,10 +33,45 @@ export class UsuariosDbService {
 
 
 
-  getUsuarioHttpId(id:number):Observable<usuario>{
+  
+
+  guardarPartida(partida:partida){//recibe una nueva partida con los datos -1-
+    
+    if(this.id > -1){
+      this.getUsuarioHttpId(this.id)//obtiene el usuarioActivo
+        .subscribe({
+         next:(us)=>{
+      
+          if(us){
+            us.historial.push(partida);//agrega la partida al usuarioActivo
+            //console.log(us);
+            this.editarUsuario(us);//edita y guarda en el server el usuarioActivo
+          }
+         },
+         error:(er)=>{
+          console.log(er);
+         }
+      })
+    }
+  }
+
+  getUsuarioHttpId(id:number):Observable<usuario>{//obtiene usuario por id -2-
     return this.http.get<usuario>(`${this.url}/${id}`);
   }
-  putUsuarioHttp(usuario:usuario):Observable<usuario>{//Guardar nuevo historial
+
+  editarUsuario(us:usuario){ //guarda el usuario con la nueva partida cargada -3-
+    this.putUsuarioHttp(us)
+      .subscribe(
+        {
+          next:() => {
+
+        },
+        error: (er)=>{
+          console.log(er);
+        }
+      });
+  }
+  putUsuarioHttp(usuario:usuario):Observable<usuario>{//Guardar nuevo historial -4-
     return this.http.put<usuario>(
       `${this.url}/${usuario.id}`,
       usuario,
@@ -44,7 +90,32 @@ export class UsuariosDbService {
       )
   }
 
+  async getHistorial():Promise<partida[]>{//Obtiene el historial del usuario en sesion
+    var vacio:partida[]=[];
+    var histo:partida[]=[];
+    var us=await this.getUsuarioId(this.id);
+    if(us != undefined){
+      histo= us.historial;
+    }else{
+      histo= vacio;
+    }
+    return histo;
+  }
 
+  async getUsuarioId(id :number):Promise <usuario|undefined>{ //obtiene el usuario pedido por id
+    try {
+      const resultado= await fetch(
+        `${this.url}/${id}`,{
+          method:"GET"
+        }
+      );
+      const datos= resultado.json();
+      return datos;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
   async getUsuarios(): Promise <usuario[] | undefined> {//segun el try/catch puede devolver undefined o el arreglo de usuarios
     try {
       const resultado= await fetch(

@@ -1,21 +1,79 @@
+<!--  <section class="historial">
+    
+
+    <section class="batalla">
+        <section class="usuario">
+
+            <div class="infoUsuarioHistorial perdedor">
+                <p class="infoUsuario">Usuario</p>
+                <p class="infoUsuario">Victoria / Derrota</p>
+            </div>
+
+            <section class="contenedores">
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+            </section>
+        </section>
+
+        <div class="versus">
+            <p class="versusTexto">VS</p>
+        </div>
+        
+        <section class="usuario">
+            <div class="infoUsuarioHistorial ganador">
+                <p class="infoUsuario">Victoria / Derrota</p>
+                <p class="infoUsuario">Oponente</p>
+            </div>
+
+            <section class="contenedores">
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+                <div class="pokeIndividual">
+                    <img src="" alt="">
+                </div>
+            </section>
+
+            
+        </section>
+    </section>
+
+</section>-->
+   
+<!-- --> 
+
+<p>historial Works?</p>
 <section class="historial">
-    <section class="batalla">
+    <section class="batalla" *ngFor="let partida of histo">
         <section class="usuario">
 
             <div class="infoUsuarioHistorial ganador">
-                <p class="infoUsuario">Usuario</p>
+                <p class="infoUsuario">{{partida.jugador1}}</p>
                 <p class="infoUsuario">Victoria / Derrota</p>
             </div>
 
             <section class="contenedores">
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[0].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[0].name }}</p>
                 </div>
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[1].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[1].name }}</p>
                 </div>
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[2].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[2].name }}</p>
                 </div>
             </section>
         </section>
@@ -27,70 +85,26 @@
         <section class="usuario">
             <div class="infoUsuarioHistorial perdedor">
                 <p class="infoUsuario">Victoria / Derrota</p>
-                <p class="infoUsuario">Oponente</p>
+                <p class="infoUsuario">{{partida.jugador2}}</p>
             </div>
 
             <section class="contenedores">
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[3].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[3].name }}</p>
                 </div>
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[4].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[4].name }}</p>
                 </div>
                 <div class="pokeIndividual">
-                    <img src="" alt="">
+                    <img [src]="partida.pokemons[5].sprites.front_default" alt="no se encontro la imagen">
+                    <p>{{ partida.pokemons[5].name }}</p>
                 </div>
             </section>
 
-            
+           
         </section>
-    </section>
-
-    <section class="batalla">
-        <section class="usuario">
-
-            <div class="infoUsuarioHistorial perdedor">
-                <p class="infoUsuario">Usuario</p>
-                <p class="infoUsuario">Victoria / Derrota</p>
-            </div>
-
-            <section class="contenedores">
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-            </section>
-        </section>
-
-        <div class="versus">
-            <p class="versusTexto">VS</p>
-        </div>
-        
-        <section class="usuario">
-            <div class="infoUsuarioHistorial ganador">
-                <p class="infoUsuario">Victoria / Derrota</p>
-                <p class="infoUsuario">Oponente</p>
-            </div>
-
-            <section class="contenedores">
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-                <div class="pokeIndividual">
-                    <img src="" alt="">
-                </div>
-            </section>
-
-            
-        </section>
-    </section>
+    </section>           
 
 </section>
