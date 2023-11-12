@@ -34,6 +34,36 @@
         }
       ],
       "id": 18
+    },
+    {
+      "apellido": "Valentini",
+      "nombre": "Tobias",
+      "password": "tt",
+      "email": "tobiasvalentini73@gmail.com",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "idBatalla": 0,
+          "pokemons": []
+        }
+      ],
+      "id": 19
+    },
+    {
+      "apellido": "Valentini",
+      "nombre": "Tobias",
+      "password": "aa",
+      "email": "tobiasvalentini74@gmail.com",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "idBatalla": 0,
+          "pokemons": []
+        }
+      ],
+      "id": 20
     }
   ]
 }
