@@ -25,14 +25,22 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //variables para objetos
   usoObjeto: boolean = false;
+
   vidaUsadaj1:boolean = false;
   vidaUsadaj2:boolean = false;
+  vidaUsadaBtn:boolean;
+
   velocidadUsadaj1:boolean = false;
   velocidadUsadaj2:boolean = false;
+  velcidadUsadaBtn:boolean;
+
   efectosUsadaj1:boolean = false;
   efectosUsadaj2:boolean = false;
+  efectosUsadaBtn:boolean;
+
   ataqueUsadaj1:boolean = false;
   ataqueUsadaj2:boolean = false;
+  ataqueUsadaBtn:boolean;
 
   constructor(private datUsuario: UsuariosService) {
     this.j1 = datUsuario.jugador1;
@@ -91,6 +99,20 @@ export class EleccionesPeleaComponent implements OnInit {
   usarObjeto() {
     this.cambioPokemon = false;
     this.usoObjeto = true;
+    if(this.turno)
+    {
+      this.vidaUsadaBtn = this.vidaUsadaj1;
+      this.velcidadUsadaBtn = this.velocidadUsadaj1;
+      this.ataqueUsadaBtn = this.ataqueUsadaj1;
+      this.efectosUsadaBtn  = this.efectosUsadaj1;
+    }
+    else
+    {
+      this.vidaUsadaBtn = this.vidaUsadaj2;
+      this.velcidadUsadaBtn = this.velocidadUsadaj2;
+      this.ataqueUsadaBtn = this.ataqueUsadaj2;
+      this.efectosUsadaBtn  =this.efectosUsadaj2;
+    }
   }
 
   usoPocionVida() {
@@ -106,9 +128,6 @@ export class EleccionesPeleaComponent implements OnInit {
         this.turno = false;
         this.vidaUsadaj1 = true;
       }
-      else{
-        alert("ya uso esa pocion, elija otra accion");
-      }
     }
     else {
       if(!this.vidaUsadaj2)
@@ -121,9 +140,6 @@ export class EleccionesPeleaComponent implements OnInit {
         }  
         this.vidaUsadaj2 = true;
         this.turno = true;
-      }
-      else{
-        alert("ya uso esa pocion, elija otra accion");
       }
       
     }
@@ -140,9 +156,6 @@ export class EleccionesPeleaComponent implements OnInit {
           this.velocidadUsadaj1 = true;
           this.turno = false;
        }
-       else{
-        alert("ya utiliso esa pocion, elija otra opcion");
-       }
        
     }
     else{
@@ -151,9 +164,6 @@ export class EleccionesPeleaComponent implements OnInit {
          this.j2.pokemons[this.pokemonPeleandoj2].velocidad += 20;
          this.velocidadUsadaj2 = true;
          this.turno = true;
-      }
-      else{
-       alert("ya utiliso esa pocion, elija otra opcion");
       }
     }
 
@@ -169,16 +179,14 @@ export class EleccionesPeleaComponent implements OnInit {
           this.efectosUsadaj1 = true;
           this.turno = false;
         }
-        else("ya utiliso esta pocion, elija otra opcion");
       }
       else{
         if(!this.efectosUsadaj2)
         {
           this.j1.pokemons[this.pokemonPeleandoj2].bajo_efecto = [];
           this.efectosUsadaj2 = true;
-          this.turno = false;
+          this.turno = true;
         }
-        else("ya utiliso esta pocion, elija otra opcion");
       }
 
       this.usoObjeto = false;
@@ -193,9 +201,6 @@ export class EleccionesPeleaComponent implements OnInit {
           this.ataqueUsadaj1 = true;
           this.turno = false;
        }
-       else{
-        alert("ya utiliso esa pocion, elija otra opcion");
-       }
        
     }
     else{
@@ -205,11 +210,11 @@ export class EleccionesPeleaComponent implements OnInit {
          this.ataqueUsadaj2 = true;
          this.turno = true;
       }
-      else{
-       alert("ya utiliso esa pocion, elija otra opcion");
-      }
     }
 
     this.usoObjeto = false;
   }
+
+  
+  
 }

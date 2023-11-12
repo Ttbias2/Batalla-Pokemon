@@ -16,9 +16,9 @@
 
 <section *ngIf="usoObjeto">
 
-    <button (click)="usoPocionVida()">pocion de vida</button>
-    <button (click)="usoPocionVelocidad()">pocion de velocidad</button>
-    <button (click)="usoQuitarEfecto()">quitar efectos</button>
-    <button (click)="usoPocionAtaque()">pocion de ataque</button>
+    <button [disabled]="vidaUsadaBtn" (click)="usoPocionVida()">pocion de vida</button>
+    <button [disabled]="velcidadUsadaBtn" (click)="usoPocionVelocidad()">pocion de velocidad</button>
+    <button [disabled]="efectosUsadaBtn" (click)="usoQuitarEfecto()">quitar efectos</button>
+    <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque()">pocion de ataque</button>
 
 </section>

@@ -1,4 +1,3 @@
-
 import { pokemon } from "./pokemon.model";
 
 export class jugador{
