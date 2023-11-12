@@ -7,8 +7,8 @@
       "email": "a@gmail.com",
       "historial": [
         {
-          "jugador1": "",
-          "jugador2": "",
+          "jugador1": "julian",
+          "jugador2": "agustin",
           "idBatalla": 0,
           "pokemons": [
             3,

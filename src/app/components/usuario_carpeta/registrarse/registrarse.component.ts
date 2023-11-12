@@ -14,7 +14,7 @@ export class RegistrarseComponent {
 
   constructor(private formBuilder: FormBuilder,
     
-    private usuarioService: UsuariosDbService,
+    private usuarioDBService: UsuariosDbService,
     private router: Router,) {
 
   }
@@ -60,7 +60,7 @@ export class RegistrarseComponent {
       alert("Ya existe una cuenta con ese Email");
       this.formulario.reset();
     }else{
-      this.usuarioService.postUsuarioHttp(usuario)
+      this.usuarioDBService.postUsuarioHttp(usuario)
       .subscribe(
         {
           next:(user) =>{
@@ -83,7 +83,7 @@ export class RegistrarseComponent {
     var flag= false;
     var i=0;
     try {
-      this.listadoUsuarios= await this.usuarioService.getUsuarios();
+      this.listadoUsuarios= await this.usuarioDBService.getUsuarios();
       if(this.listadoUsuarios!=undefined){
         while(i<this.listadoUsuarios.length){
           if(this.listadoUsuarios[i].email == email){//Si el email existe  
