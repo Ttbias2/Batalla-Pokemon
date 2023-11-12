@@ -1,5 +1,24 @@
 <section>
-    <button (click)="bajarvida()">atacar</button>
-    <button>objeto</button>
-    <button>elegirPoke</button>
+    <button (click)="bajarVida()">atacar</button>
+    <button (click)="usarObjeto()">objeto</button>
+    <button (click)="cambiarPokemon()">elegirPoke</button>
+</section>
+
+<ol *ngIf="cambioPokemon">
+    <li *ngFor="let poke of pokesParaCambio,let i = index">
+        <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0">
+            <button (click)="cambioj1(i)">
+                <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
+            </button>    
+        </section>
+    </li>
+</ol>
+
+<section *ngIf="usoObjeto">
+
+    <button [disabled]="vidaUsadaBtn" (click)="usoPocionVida()">pocion de vida</button>
+    <button [disabled]="velcidadUsadaBtn" (click)="usoPocionVelocidad()">pocion de velocidad</button>
+    <button [disabled]="efectosUsadaBtn" (click)="usoQuitarEfecto()">quitar efectos</button>
+    <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque()">pocion de ataque</button>
+
 </section>

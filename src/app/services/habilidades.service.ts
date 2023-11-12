@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { habilidad } from './../Clases/habilidad.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HabilidadesService {
+  forEach(arg0: (habilidad: any) => void) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -142,10 +144,17 @@ export class HabilidadesService {
   habilidadesTipo: habilidad[] = [];
   habilidades: any[] = [];
 
-  public llenarPorHabilidad(tipo: string){
-    this.traerHabilidadesPorTipo(tipo).subscribe(data => { this.mostrarHabilidades(data) });
+  public llenarPorHabilidad(tipo: string): Observable<void> {
+    return new Observable<void>(observer => {
+      this.traerHabilidadesPorTipo(tipo).subscribe(data => {
+        this.mostrarHabilidades(data);
+        observer.next();
+        observer.complete();
+      });
+    });
   }
-  mostrarHabilidades(habilidadesData: any[]) {
+  
+  mostrarHabilidades(habilidadesData: any[]){
     this.habilidadesTipo = habilidadesData.map(habilidadData => {
       return new habilidad(
         habilidadData.id,

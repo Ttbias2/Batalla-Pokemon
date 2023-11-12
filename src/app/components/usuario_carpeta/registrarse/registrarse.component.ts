@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
 import { usuario } from 'src/app/interfaces/interface-usuario';
+import { partida } from 'src/app/interfaces/interface-partida';
 
 @Component({
   selector: 'app-registrarse',
@@ -14,7 +15,7 @@ export class RegistrarseComponent {
   constructor(private formBuilder: FormBuilder,
     
     private usuarioService: UsuariosDbService,
-    private router: Router) {
+    private router: Router,) {
 
   }
 
@@ -37,6 +38,13 @@ export class RegistrarseComponent {
     this.router.navigate(["login"]);
   }
 
+  partida:partida={
+    jugador1:"",
+    jugador2:"",
+    idBatalla:0,
+    pokemons:[]
+  }
+
   async guardarUsuario() {
     if (this.formulario.invalid) return;
     const usuario: usuario = {
@@ -44,7 +52,7 @@ export class RegistrarseComponent {
       nombre: this.formulario.controls["nombre"].value,
       password: this.formulario.controls["password"].value,
       email: this.formulario.controls["email"].value,
-      historial: '',
+      historial: [this.partida],
       id: this.formulario.controls["id"].value
     }
 
@@ -64,11 +72,10 @@ export class RegistrarseComponent {
           }
         }
       )
-    }
-
-
-    
+    }    
   }
+
+  
 
   listadoUsuarios :usuario[] | undefined= [];
 

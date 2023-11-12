@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
+
 import { jugador } from './../Clases/jugador.model';
 import { pokemon } from './../Clases/pokemon.model';
+import { BehaviorSubject } from 'rxjs';
+import { HabilidadesService } from './habilidades.service';
+import { habilidad } from '../Clases/habilidad.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,13 @@ export class UsuariosService {
   jugador2: jugador = new jugador();
   pasos: number = 1;
 
-  constructor() {
+  private pokemonPeleandoj1 = new BehaviorSubject<number>(0);
+  pokemonPeleandoj1$ = this.pokemonPeleandoj1.asObservable();
+
+  private pokemonPeleandoj2 = new BehaviorSubject<number>(0);
+  pokemonPeleandoj2$ = this.pokemonPeleandoj2.asObservable();
+
+  constructor(private datHabilidades: HabilidadesService) {
     this.jugador1.setNombre("Tobias");
     this.jugador2.setNombre("Arturo");
   }
@@ -31,6 +41,16 @@ export class UsuariosService {
       nuevoPokemon.stats[5].base_stat,
       nuevoPokemon.stats[0].base_stat
     );
+
+    nuevoPokemon.types.forEach((tipo: any) => {
+      this.datHabilidades.llenarPorHabilidad(tipo.type.name).subscribe(() => this.datHabilidades.habilidadesTipo.forEach(ataque => {
+        if(poke.habilidades.length<4){
+          poke.habilidades.push(ataque);
+        }
+      }))
+    })
+
+    console.log(poke.habilidades);
 
     switch (this.pasos) {
       case 1:
@@ -60,11 +80,10 @@ export class UsuariosService {
         break;
     }
 
-    if(this.pasos==7)
-    {
+    if (this.pasos == 7) {
       alert("todos los pokemons seleccionados");
     }
-    else{
+    else {
       this.pasos++;
     }
 
@@ -77,7 +96,13 @@ export class UsuariosService {
 
   }
 
+  cambiarPokej1(poke: number) {
+    this.pokemonPeleandoj1.next(poke);
+  }
 
-
+  cambiarPokej2(poke: number) {
+    this.pokemonPeleandoj2.next(poke);
+  }
 
 }
+

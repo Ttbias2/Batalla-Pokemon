@@ -6,7 +6,7 @@ export class pokemon {
   urlImgBack: string = "";
   id: number = 0;
   vida: number = 0;
-  vidaActual: number = 0; // Nueva propiedad
+  vidaActual: number = 0; 
   ataque: number = 0;
   ataque_especial: number = 0;
   defensa: number = 0;

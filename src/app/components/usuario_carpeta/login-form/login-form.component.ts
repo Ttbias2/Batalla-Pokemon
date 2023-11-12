@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
 import { usuario } from 'src/app/interfaces/interface-usuario'; 
+import { partida } from 'src/app/interfaces/interface-partida';
 
 export interface user{
   email:string,
@@ -26,17 +27,94 @@ export class LoginFormComponent {
 
   }
 
-
-  
-
   listadoUsuarios :usuario[] | undefined= [];
 
-  
+  guardarPartida(partida:partida){//esto iria en otro componente
+    
+    if(!isNaN(this.sesionActiva.id)){
+      this.usuarioService.getUsuarioHttpId(this.sesionActiva.id)
+        .subscribe({
+         next:(us)=>{
+      
+          if(us){
+            us.historial.push(partida);
+            console.log(us);
+            this.editarUsuario(us);
 
+          }
+
+         },
+         error:(er)=>{
+          console.log(er);
+         }
+      })
+    }
+  }
+
+  editarUsuario(us:usuario){ //guarda el usuario con la nueva partida cargada
+    this.usuarioService.putUsuarioHttp(us)
+      .subscribe(
+        {
+          next:() => {
+
+        },
+        error: (er)=>{
+          console.log(er);
+        }
+      });
+  }
+
+   sesionActiva:usuario={
+    apellido:"",
+    nombre:"",
+    password: "",
+    email: "",
+    historial: [{
+      jugador1:"",
+      jugador2:"",
+      idBatalla:0,
+      pokemons:[]
+    }],
+    id:0
+  }
+
+  usuarioVacio:usuario={
+    apellido:"",
+    nombre:"",
+    password: "",
+    email: "",
+    historial: [{
+      jugador1:"",
+      jugador2:"",
+      idBatalla:0,
+      pokemons:[]
+    }],
+    id:0
+  }
+
+  getSesion(){
+    return this.sesionActiva;
+  }
+  cargarSesion(user:usuario){
+    this.sesionActiva.nombre=user.nombre,
+    this.sesionActiva.apellido=user.apellido,
+    this.sesionActiva.email=user.email,
+    this.sesionActiva.password=user.password,
+    this.sesionActiva.historial=user.historial,
+    this.sesionActiva.id=user.id
+  }
+  
   formulario: FormGroup =this.formBuilder.group({
     email:["",[Validators.email, Validators.required]],
     password:["",[Validators.required]]
   })
+
+  partida:partida={
+    jugador1:"damian",
+    jugador2:"juancito",
+    idBatalla:2,
+    pokemons:[1,2,3,4,5,6]
+  }
 
   async iniciarSesion(){
     
@@ -45,9 +123,16 @@ export class LoginFormComponent {
       email:this.formulario.controls["email"].value,
       password:this.formulario.controls["password"].value
     }
-    if(true == await this.verificarUsuario(usuario)){
+    
+    this.cargarSesion( await this.verificarUsuario(usuario));//Devuelve un usuario registrado o vacio si no lo encuentra
+    
+    //console.log(this.sesionActiva);
+    
+    if(this.sesionActiva.email!= ""){
       alert("Logeo exitoso");
       this.router.navigate(["/page-menu"]);
+
+      //this.guardarPartida(this.partida);
     }else{
       alert("Email o Password incorrecto");
       this.formulario.reset();
@@ -65,14 +150,14 @@ export class LoginFormComponent {
         while(i<this.listadoUsuarios.length){
           
           if(this.listadoUsuarios[i].email == usuario.email){//Si el email existe  
-            flag= true;
+            
 
             if(this.listadoUsuarios[i].password == usuario.password){//y si la contraseña es correcta
-              return flag;
+              return this.listadoUsuarios[i];
             }
             else{
-              flag = false;
-              return flag;
+              
+              return this.usuarioVacio;
             }
           }
           
@@ -84,9 +169,8 @@ export class LoginFormComponent {
       console.log(error);
     }
 
-    return flag;
+    return this.usuarioVacio;
   }
-
 
   rutaRegistrarse(){
     this.router.navigate(["/registrarse"]);

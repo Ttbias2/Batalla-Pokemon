@@ -2,24 +2,24 @@
 <section>
 
     <section>
-       <p>{{j1.pokemons[0].nombre}}</p>
+       <p>{{j1.pokemons[pokemonPeleandoj1].nombre}}</p>
        <div>barra de vida</div>
-       <p>{{j1.pokemons[0].vidaActual}} / {{j1.pokemons[0].vida}}</p>
+       <p>{{j1.pokemons[pokemonPeleandoj1].vidaActual}} / {{j1.pokemons[pokemonPeleandoj1].vida}}</p>
        <ol>efectos</ol>
     </section>
 
-    <img src="" alt="imgPokeActual">
+    <img [src]="j1.pokemons[pokemonPeleandoj1].urlImgBack" alt="imgPokeActual">
 
 </section>
 
 <!--parte inferior-->
 <section>
     <section>
-        <p>{{j2.pokemons[0].nombre}}</p>
+        <p>{{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
         <div>barra de vida</div>
-        <p>{{j2.pokemons[0].vidaActual}} / {{j2.pokemons[0].vida}}</p>
+        <p>{{j2.pokemons[pokemonPeleandoj2].vidaActual}} / {{j2.pokemons[pokemonPeleandoj2].vida}}</p>
         <ol>efectos</ol>
      </section>
  
-     <img src="" alt="imgPokeActual">
+     <img [src]="j2.pokemons[pokemonPeleandoj2].urlImgFront" alt="imgPokeActual">
 </section>

@@ -4,16 +4,16 @@
     <form action="">
         <div>
             <label for="jugador1">Jugador 1: </label>
-            <input type="text" name="jugador1" id="jugador1">
+            <input type="text" name="jugador1" id="jugador1" [(ngModel)]="j1">
         </div>
         <div>
             <label for="jugador2">Jugador 2: </label>
-            <input type="text" name="jugador2" id="jugador2">
+            <input type="text" name="jugador2" id="jugador2" [(ngModel)]="j2">
         </div>
 
         <div>
-            <input type="submit" value="Comenzar">
+            <input type="submit" value="Comenzar" (click)="jugar()">
         </div>
 
-    </form>
+    </form >
 </fieldset>
