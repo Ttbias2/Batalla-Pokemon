@@ -23,6 +23,7 @@ export class EleccionesPeleaComponent implements OnInit {
   pokePeleandoCambio:number;
   pokesParaCambio: pokemon[] = [];
   cambioPokemon: boolean = false;
+  cambioForzado=false;
 
   //variables para objetos
   usoObjeto: boolean = false;
@@ -89,6 +90,7 @@ export class EleccionesPeleaComponent implements OnInit {
       this.habilidadUsadaj2 = i;
       this.turno = true;
       this.atacar = false;
+      this.finDeTurno();
     }
   }
 
@@ -116,8 +118,14 @@ export class EleccionesPeleaComponent implements OnInit {
     else{
       this.datUsuario.cambiarPokej2(poke);
       this.turno = true;
+      this.finDeTurno();
     }
     this.cambioPokemon = false;
+    if(this.cambioForzado)
+    {
+      this.turno=true;
+      this.cambioForzado = false;
+    }
     
   }
 
@@ -167,6 +175,7 @@ export class EleccionesPeleaComponent implements OnInit {
         }  
         this.vidaUsadaj2 = true;
         this.turno = true;
+        this.finDeTurno();
       }
       
     }
@@ -191,6 +200,7 @@ export class EleccionesPeleaComponent implements OnInit {
          this.j2.pokemons[this.pokemonPeleandoj2].velocidad += 20;
          this.velocidadUsadaj2 = true;
          this.turno = true;
+         this.finDeTurno();
       }
     }
 
@@ -213,6 +223,7 @@ export class EleccionesPeleaComponent implements OnInit {
           this.j1.pokemons[this.pokemonPeleandoj2].bajo_efecto = [];
           this.efectosUsadaj2 = true;
           this.turno = true;
+          this.finDeTurno();
         }
       }
 
@@ -236,6 +247,7 @@ export class EleccionesPeleaComponent implements OnInit {
          this.j2.pokemons[this.pokemonPeleandoj2].ataque += 10;
          this.ataqueUsadaj2 = true;
          this.turno = true;
+         this.finDeTurno();
       }
     }
 
@@ -244,24 +256,57 @@ export class EleccionesPeleaComponent implements OnInit {
 
   finDeTurno(){
     
-    if(this.j1.pokemons[this.pokemonPeleandoj1].velocidad>this.j2.pokemons[this.pokemonPeleandoj2].velocidad)
+    const pokej1:pokemon = this.j1.pokemons[this.pokemonPeleandoj1];
+    const pokej2:pokemon = this.j2.pokemons[this.pokemonPeleandoj2];
+
+    if(pokej1.velocidad>pokej2.velocidad)
     {
       if(this.jugador1Ataco)
       {
-        this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -=
-        ((this.j1.pokemons[this.pokemonPeleandoj1].ataque*
-         this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].power)
-         /this.j2.pokemons[this.pokemonPeleandoj2].defensa);
+        this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1,pokej2,this.habilidadUsadaj1);
       }
+      
+      if(this.j2.pokemons[this.pokemonPeleandoj2].vidaActual>0)
+      {
+        if(this.jugador2Ataco)
+        {
+          this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2,pokej1,this.habilidadUsadaj2);
+        }
+      }else{
+        this.cambioForzado = true;
+        this.turno=false;
+        this.cambiarPokemon()
+      }
+      
     }
     else
     {
       if(this.jugador2Ataco)
       {
-        
+        this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2,pokej1,this.habilidadUsadaj2);
       }
+      
+      if(this.j1.pokemons[this.pokemonPeleandoj1].vidaActual>0)
+      {
+        if(this.jugador1Ataco)
+        {
+          this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1,pokej2,this.habilidadUsadaj1);
+        }
+      }
+      else{
+        this.cambioForzado=true;
+        this.cambiarPokemon();
+      }
+      
     }
+
+    this.jugador1Ataco = false;
+    this.jugador2Ataco = false;
+    
   }
   
-  
+  calcularDaño(poke1:pokemon,poke2:pokemon,habilidadusada:number):number
+  {
+    return Math.round(((poke1.ataque+poke1.habilidades[habilidadusada].power)-poke2.defensa)/4);
+  }
 }

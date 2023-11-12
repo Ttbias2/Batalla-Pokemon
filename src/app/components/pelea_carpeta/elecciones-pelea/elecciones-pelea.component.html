@@ -1,7 +1,7 @@
 <section>
-    <button (click)="seleccionAtaque()">atacar</button>
-    <button (click)="usarObjeto()">objeto</button>
-    <button (click)="cambiarPokemon()">elegirPoke</button>
+    <button [disabled]="cambioForzado" (click)="seleccionAtaque()">atacar</button>
+    <button [disabled]="cambioForzado" (click)="usarObjeto()">objeto</button>
+    <button [disabled]="cambioForzado" (click)="cambiarPokemon()">elegirPoke</button>
 </section>
 
 <ol *ngIf="cambioPokemon">
