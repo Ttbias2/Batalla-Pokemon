@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
@@ -18,51 +18,19 @@ export interface user{
   styleUrls: ['./login-form.component.css']
 })
 
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private usuarioService:UsuariosDbService,
+    private usuarioDBService:UsuariosDbService,
     private formBuilder: FormBuilder){
 
   }
+  ngOnInit(): void {
+    //this.usuarioService.idSesion.subscribe();
+  }
 
   listadoUsuarios :usuario[] | undefined= [];
-
-  guardarPartida(partida:partida){//esto iria en otro componente
-    
-    if(!isNaN(this.sesionActiva.id)){
-      this.usuarioService.getUsuarioHttpId(this.sesionActiva.id)
-        .subscribe({
-         next:(us)=>{
-      
-          if(us){
-            us.historial.push(partida);
-            console.log(us);
-            this.editarUsuario(us);
-
-          }
-
-         },
-         error:(er)=>{
-          console.log(er);
-         }
-      })
-    }
-  }
-
-  editarUsuario(us:usuario){ //guarda el usuario con la nueva partida cargada
-    this.usuarioService.putUsuarioHttp(us)
-      .subscribe(
-        {
-          next:() => {
-
-        },
-        error: (er)=>{
-          console.log(er);
-        }
-      });
-  }
 
    sesionActiva:usuario={
     apellido:"",
@@ -126,13 +94,12 @@ export class LoginFormComponent {
     
     this.cargarSesion( await this.verificarUsuario(usuario));//Devuelve un usuario registrado o vacio si no lo encuentra
     
-    //console.log(this.sesionActiva);
-    
     if(this.sesionActiva.email!= ""){
       alert("Logeo exitoso");
+      
+      this.usuarioDBService.setearId(this.sesionActiva.id);//setea el id para poder consultarlo al momento de guardar una partida o consultar historial
       this.router.navigate(["/page-menu"]);
-
-      //this.guardarPartida(this.partida);
+    
     }else{
       alert("Email o Password incorrecto");
       this.formulario.reset();
@@ -143,7 +110,7 @@ export class LoginFormComponent {
     var flag= false;
     var i=0;
     try {
-      this.listadoUsuarios= await this.usuarioService.getUsuarios();
+      this.listadoUsuarios= await this.usuarioDBService.getUsuarios();
 
       if(this.listadoUsuarios!=undefined){
       
