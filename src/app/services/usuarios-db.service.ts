@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 
@@ -10,10 +10,23 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosDbService {
+export class UsuariosDbService implements OnInit{
 
   url: string="http://localhost:4200/usuarios";
   listado: usuario[]|undefined=[];
+
+  
+
+  constructor(
+    private router: Router,
+    private http: HttpClient
+  ) {
+    this.listado=[];
+  }
+
+  ngOnInit(): void {
+    
+  }
 
   private id= -1;
 
@@ -23,14 +36,6 @@ export class UsuariosDbService {
   obtenerId(){
     return this.id;
   }
-
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) {
-    this.listado=[];
-  }
-
 
 
   

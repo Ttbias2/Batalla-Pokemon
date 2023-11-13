@@ -41,7 +41,7 @@ export class RegistrarseComponent {
   partida:partida={
     jugador1:"",
     jugador2:"",
-    idBatalla:0,
+    vencedor:true,
     pokemons:[]
   }
 

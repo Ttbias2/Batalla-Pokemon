@@ -9,7 +9,7 @@
         {
           "jugador1": "julian",
           "jugador2": "agustin",
-          "idBatalla": 0,
+          "vencedor": true,
           "pokemons": [
             3,
             5,
@@ -22,7 +22,7 @@
         {
           "jugador1": "damian",
           "jugador2": "juancito",
-          "idBatalla": 2,
+          "vencedor": false,
           "pokemons": [
             1,
             2,
@@ -44,7 +44,7 @@
         {
           "jugador1": "",
           "jugador2": "",
-          "idBatalla": 0,
+          "vencedor": true,
           "pokemons": []
         }
       ],
@@ -59,7 +59,7 @@
         {
           "jugador1": "",
           "jugador2": "",
-          "idBatalla": 0,
+          "vencedor": true,
           "pokemons": []
         }
       ],
@@ -74,7 +74,7 @@
         {
           "jugador1": "",
           "jugador2": "",
-          "idBatalla": 0,
+          "vencedor": true,
           "pokemons": []
         }
       ],
@@ -89,7 +89,7 @@
         {
           "jugador1": "",
           "jugador2": "",
-          "idBatalla": 0,
+          "vencedor": true,
           "pokemons": []
         }
       ],

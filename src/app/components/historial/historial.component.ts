@@ -29,12 +29,12 @@ export class HistorialComponent implements OnInit {
       var parti:any={//partida con datos de pokemones
         jugador1: "",
         jugador2: "",
-        idBatalla: 0,
+        vencedor: true,
         pokemons:[]
       };
       parti.jugador1=partida.jugador1;
       parti.jugador2=partida.jugador2;
-      parti.idBatalla=partida.idBatalla;
+      parti.vencedor=partida.vencedor;
 
       partida.pokemons.forEach((poke)=>{
 
