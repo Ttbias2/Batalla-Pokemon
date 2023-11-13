@@ -34,8 +34,8 @@ import { HistorialComponent } from './components/historial/historial.component';
 
 
 const appRoutes:Routes=[
-  {path:"",component:EleccionComponent},
-  /*{path:'login',component:LoginFormComponent},
+  {path:"",component:HomeInicialComponent},
+  {path:'login',component:LoginFormComponent},
   {path:'registrarse',component:RegistrarseComponent},
   {path:'nav-bar',component:NavBarComponent},
 
@@ -47,7 +47,7 @@ const appRoutes:Routes=[
     ]
   },
 
-  {path:"eleccion",component:EleccionComponent},*/
+  {path:"eleccion",component:EleccionComponent},
   {path:'pelea',component:PeleaComponent},
 
   //{path:"editar-usuario",component:EditarUsuarioComponent}  
