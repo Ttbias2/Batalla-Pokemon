@@ -2,6 +2,7 @@ import { Component, OnInit, NgModule  } from '@angular/core';
 import { PokeApiService } from '../../services/poke-api.service';
 import { HabilidadesService } from '../../services/habilidades.service';
 import { habilidad } from '../../Clases/habilidad.model';
+import { TypesService } from 'src/app/services/types.service';
 
 @Component({
   selector: 'app-pokedex',
@@ -12,18 +13,21 @@ export class PokedexComponent implements OnInit {
   inicio: number = 1;
   pokedex: number = 151;
   pokemons: any[] = [];
-  constructor(private datPokemons: PokeApiService, private datHabilidades: HabilidadesService) {
+  constructor(private datPokemons: PokeApiService, private datHabilidades: HabilidadesService, private typesService: TypesService) {
   }
   ngOnInit(): void {
     this.llenarPokes();
     //this.testHabilidades();
     
-    /* this.datHabilidades.llenarPorHabilidad('normal');
+    // this.datHabilidades.llenarPorHabilidad('normal');
 
-  // Log the habilidadesTipo array to the console after a delay to allow for the async operation to complete
-  setTimeout(() => {
-    console.log(this.datHabilidades.habilidadesTipo);
-  }, 3000); */ ///test service habilidades
+  
+ /*  setTimeout(() => {
+    console.log(this.typesService.obtenerFromTwoStrings('grass', 'ground'));
+  }, 3000);  ///test services */
+  
+  console.log('hola');
+  
     
     
   }

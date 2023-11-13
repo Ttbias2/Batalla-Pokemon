@@ -53,7 +53,9 @@ export class TypesService {
   }
 
   getTypeFromString(typeString: string): PokemonType {
-    return PokemonType[typeString as keyof typeof PokemonType];
+    
+    const formattedString = typeString.charAt(0).toUpperCase() + typeString.slice(1).toLowerCase();
+    return PokemonType[formattedString as keyof typeof PokemonType];
   }
 
   obtenerFromTwoStrings(Poke1: string, Poke2: string):number {//Poke1 es el atacante, Poke2 es el defensor, Invocar esta
