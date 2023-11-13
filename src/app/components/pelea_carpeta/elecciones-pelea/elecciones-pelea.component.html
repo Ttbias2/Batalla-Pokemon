@@ -1,7 +1,7 @@
 <section>
-    <button (click)="bajarVida()">atacar</button>
-    <button (click)="usarObjeto()">objeto</button>
-    <button (click)="cambiarPokemon()">elegirPoke</button>
+    <button [disabled]="cambioForzado" (click)="seleccionAtaque()">atacar</button>
+    <button [disabled]="cambioForzado" (click)="usarObjeto()">objeto</button>
+    <button [disabled]="cambioForzado" (click)="cambiarPokemon()">elegirPoke</button>
 </section>
 
 <ol *ngIf="cambioPokemon">
@@ -22,3 +22,9 @@
     <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque()">pocion de ataque</button>
 
 </section>
+
+<ol *ngIf="atacar">
+    <li *ngFor="let habilidad of habilidadesMostrar,let i = index">
+        <button (click)="cargarAtaque(i)">{{habilidad.name}}</button>
+    </li>
+</ol>

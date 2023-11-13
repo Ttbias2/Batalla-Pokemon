@@ -48,8 +48,7 @@ export class HabilidadesService {
       this.normal.forEach(id => {
         requests.push(this.traerHabilidad(id));
       });
-      break;
-        
+      break;   
       case 'fighting':
         
           this.fighting.forEach(id => {
