@@ -62,6 +62,24 @@ export class UsuariosService {
       }))
     }
 
+    this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("fighting").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("flying").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("poison").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("ground").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("rock").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("bug").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("ghost").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("steel").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("fire").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("water").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("grass").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("electric").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("psychic").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("ice").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("dragon").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+    this.datHabilidades.llenarPorHabilidad("fairy").subscribe(() => console.log(this.datHabilidades.habilidadesTipo));
+
     console.log(poke.habilidades);
 
     switch (this.pasos) {
