@@ -40,7 +40,7 @@ export class LoginFormComponent implements OnInit{
     historial: [{
       jugador1:"",
       jugador2:"",
-      idBatalla:0,
+      vencedor:true,
       pokemons:[]
     }],
     id:0
@@ -54,7 +54,7 @@ export class LoginFormComponent implements OnInit{
     historial: [{
       jugador1:"",
       jugador2:"",
-      idBatalla:0,
+      vencedor:true,
       pokemons:[]
     }],
     id:0
@@ -80,7 +80,7 @@ export class LoginFormComponent implements OnInit{
   partida:partida={
     jugador1:"damian",
     jugador2:"juancito",
-    idBatalla:2,
+    vencedor:false,
     pokemons:[1,2,3,4,5,6]
   }
 

@@ -78,7 +78,7 @@
 }
 .dato{
     border-style: solid;
-    background-image: url(src\assets\img\pokeui.png);
+    background-image: url(../../../../assets/img/pokeUI.png);
     background-size:  150%;
     background-repeat: no-repeat;
     background-position: center;
