@@ -246,11 +246,19 @@ export class EleccionesPeleaComponent implements OnInit {
     if (pokej1.velocidad > pokej2.velocidad) {
       if (this.jugador1Ataco) {
         this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+
+        if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
+          this.asignarEfectosj1();
+        }
       }
 
       if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual > 0) {
         if (this.jugador2Ataco) {
           this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+        }
+
+        if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
+          this.asignarEfectosj2();
         }
       }
       else {
@@ -263,11 +271,20 @@ export class EleccionesPeleaComponent implements OnInit {
     else {
       if (this.jugador2Ataco) {
         this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+
+        if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
+          this.asignarEfectosj2();
+        }
       }
 
       if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual > 0) {
+
         if (this.jugador1Ataco) {
           this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+
+          if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
+            this.asignarEfectosj1();
+          }
         }
       }
       else {
@@ -287,6 +304,9 @@ export class EleccionesPeleaComponent implements OnInit {
       this.cambioForzado = true;
       this.cambiarPokemon();
     }
+
+    console.log(this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto);
+    console.log(this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto);
 
     this.jugador1Ataco = false;
     this.jugador2Ataco = false;
@@ -309,5 +329,21 @@ export class EleccionesPeleaComponent implements OnInit {
     }
 
     return dañio;
+  }
+
+  asignarEfectosj1()
+  {
+    if(this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment_chance >  Math.round(Math.random() * 100))
+    {
+      this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.push(this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment);
+    }
+  }
+
+  asignarEfectosj2()
+  {
+    if(this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment_chance >  Math.round(Math.random() * 100))
+    {
+      this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.push(this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment);
+    }
   }
 }
