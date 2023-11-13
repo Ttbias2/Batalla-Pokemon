@@ -36,22 +36,24 @@
 }
 
 #datoBack{
+    
     position: absolute;
     top: 90%;
     left: 70%; /* Adjust this value as needed */
     transform: translate(-50%, -50%);
-    height: 30vh;
-    width: 30vh;
+    height: 10vh;
+    width: 40vh;
     
 }
 
 #datoFront{
+   
     position: absolute;
     top: 30%;
-    left: 15%; /* Adjust this value as needed */
+    left: 20%; /* Adjust this value as needed */
     transform: translate(-50%, -50%);
-    height: 30vh;
-    width: 30vh;
+    height: 10vh;
+    width: 40vh;
     z-index: 1;
 }
 
@@ -73,4 +75,16 @@
     left: 50%;
     z-index: 1;
     /* Other styles */
+}
+.dato{
+    border-style: solid;
+    background-image: url(src\assets\img\pokeui.png);
+    background-size:  150%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    
+    border: 20px solid;
+    border-image: url(src\assets\img\bordeInfoBatalla168Trans.png) 40 30 3 repeat;
 }
