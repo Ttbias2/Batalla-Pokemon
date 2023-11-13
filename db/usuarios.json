@@ -64,6 +64,36 @@
         }
       ],
       "id": 20
+    },
+    {
+      "apellido": "Bernar",
+      "nombre": "Franco",
+      "password": "a",
+      "email": "a@a",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "idBatalla": 0,
+          "pokemons": []
+        }
+      ],
+      "id": 21
+    },
+    {
+      "apellido": "Argumedo",
+      "nombre": "Matias",
+      "password": "a",
+      "email": "matias@gmail.com",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "idBatalla": 0,
+          "pokemons": []
+        }
+      ],
+      "id": 22
     }
   ]
 }
