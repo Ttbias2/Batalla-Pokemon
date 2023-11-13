@@ -43,6 +43,9 @@ export class UsuariosService {
     );
 
     nuevoPokemon.types.forEach((tipo: any) => {
+
+      poke.tipo.push(tipo.type.name);
+
       if(tipo.type.name != "normal")
       {
         this.datHabilidades.llenarPorHabilidad(tipo.type.name).subscribe(() => this.datHabilidades.habilidadesTipo.forEach
@@ -62,7 +65,7 @@ export class UsuariosService {
       }))
     }
 
-    console.log(poke.habilidades);
+    console.log(poke);
 
     switch (this.pasos) {
       case 1:

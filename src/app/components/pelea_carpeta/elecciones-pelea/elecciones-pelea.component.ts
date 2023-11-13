@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { habilidad } from 'src/app/Clases/habilidad.model';
 import { jugador } from 'src/app/Clases/jugador.model';
 import { pokemon } from 'src/app/Clases/pokemon.model';
+import { TypesService } from 'src/app/services/types.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -51,8 +52,10 @@ export class EleccionesPeleaComponent implements OnInit {
   habilidadUsadaj2: number;
   jugador1Ataco: boolean = false;
   jugador2Ataco: boolean = false;
+  quitarEfecto:number = 3;
 
-  constructor(private datUsuario: UsuariosService) {
+
+  constructor(private datUsuario: UsuariosService, private tablatipos: TypesService) {
     this.j1 = datUsuario.jugador1;
     this.j2 = datUsuario.jugador2;
   }
@@ -294,6 +297,40 @@ export class EleccionesPeleaComponent implements OnInit {
 
     }
 
+    pokej1.bajo_efecto.forEach(efecto => {
+
+      switch (efecto) {
+        case "burn":
+          this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= pokej1.vida * 0.05;
+          break;
+
+        case "poison":
+          this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= 35;
+          break;
+
+        default:
+          break;
+      }
+
+    })
+
+    pokej2.bajo_efecto.forEach(efecto => {
+
+      switch (efecto) {
+        case "burn":
+          this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= pokej2.vida * 0.05;
+          break;
+
+        case "poison":
+          this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= 25;
+          break;
+
+        default:
+          break;
+      }
+
+    })
+
     if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual < 0) {
       this.cambioForzado = true;
       this.turno = false;
@@ -303,6 +340,15 @@ export class EleccionesPeleaComponent implements OnInit {
     if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual < 0) {
       this.cambioForzado = true;
       this.cambiarPokemon();
+    }
+
+    if(this.quitarEfecto==0){
+      this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto = [];
+      this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto = [];
+      this.quitarEfecto = 3;
+    }
+    else{
+      this.quitarEfecto--;
     }
 
     console.log(this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto);
@@ -315,13 +361,23 @@ export class EleccionesPeleaComponent implements OnInit {
 
   calcularDaño(poke1: pokemon, poke2: pokemon, habilidadusada: number): number {
     let dañio: number = 0;
+    let multiplicadorpoke1 = 1;
+
+
+    poke1.tipo.forEach(tip1 => {
+      poke2.tipo.forEach(tip2 => {
+        multiplicadorpoke1 *= this.tablatipos.obtenerFromTwoStrings(tip1, tip2);
+      })
+    })
+
+    console.log(multiplicadorpoke1);
 
     if (poke1.habilidades[habilidadusada].accuracy > Math.round(Math.random() * 100)) {
       if (poke1.habilidades[habilidadusada].damage_class == "special") {
-        dañio = Math.round(((poke1.ataque_especial + poke1.habilidades[habilidadusada].power) - poke2.defensa_especial) / 4);
+        dañio = Math.round(((poke1.ataque_especial * poke1.habilidades[habilidadusada].power) / poke2.defensa_especial) * multiplicadorpoke1);
       }
       else {
-        dañio = Math.round(((poke1.ataque + poke1.habilidades[habilidadusada].power) - poke2.defensa) / 4);
+        dañio = Math.round(((poke1.ataque * poke1.habilidades[habilidadusada].power) / poke2.defensa) * multiplicadorpoke1);
       }
     }
     else {
@@ -331,18 +387,14 @@ export class EleccionesPeleaComponent implements OnInit {
     return dañio;
   }
 
-  asignarEfectosj1()
-  {
-    if(this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment_chance >  Math.round(Math.random() * 100))
-    {
+  asignarEfectosj1() {
+    if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment_chance > Math.round(Math.random() * 100)) {
       this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.push(this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment);
     }
   }
 
-  asignarEfectosj2()
-  {
-    if(this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment_chance >  Math.round(Math.random() * 100))
-    {
+  asignarEfectosj2() {
+    if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment_chance > Math.round(Math.random() * 100)) {
       this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.push(this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment);
     }
   }

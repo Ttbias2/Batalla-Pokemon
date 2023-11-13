@@ -8,7 +8,11 @@
             <p id="nombreBack">{{j1.pokemons[pokemonPeleandoj1].nombre}}</p>
             <div>barra de vida</div>
             <p>{{j1.pokemons[pokemonPeleandoj1].vidaActual}} / {{j1.pokemons[pokemonPeleandoj1].vida}}</p>
-            <ol>efectos</ol>
+            <ol>
+                <li *ngFor="let efecto of j1.pokemons[pokemonPeleandoj1].bajo_efecto">
+                    <p>{{efecto}}</p>
+                </li>
+            </ol>
 <!--             <img src='./../../../../assets/img/pokeUI.png' alt="img " srcset="" id="ImgBack">
  -->        </section>
 
@@ -23,7 +27,11 @@
             <p id="nombreFront">{{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
             <div>barra de vida</div>
             <p>{{j2.pokemons[pokemonPeleandoj2].vidaActual}} / {{j2.pokemons[pokemonPeleandoj2].vida}}</p>
-            <ol>efectos</ol>
+            <ol>
+                <li *ngFor="let efecto of j1.pokemons[pokemonPeleandoj1].bajo_efecto">
+                    <p>{{efecto}}</p>
+                </li>
+            </ol>
 <!--             <img src='./../../../../assets/img/pokeUI.png' alt="img" srcset="" id="ImgFront">
  -->        </section>
 

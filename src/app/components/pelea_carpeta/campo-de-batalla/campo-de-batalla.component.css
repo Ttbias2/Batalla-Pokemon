@@ -87,4 +87,9 @@
     
     border: 20px solid;
     border-image: url(src\assets\img\bordeInfoBatalla168Trans.png) 40 30 3 repeat;
+    
+}
+
+ol{
+    list-style: none;
 }

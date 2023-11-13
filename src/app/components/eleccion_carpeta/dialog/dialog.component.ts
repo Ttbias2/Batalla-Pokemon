@@ -23,6 +23,7 @@ export class DialogComponent{
 
   mostrarPoke(poke:any)
   {
+    poke.stats[0].base_stat *= 4;
     this.pokemon=poke;
   }
 
