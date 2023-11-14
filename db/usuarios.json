@@ -59,6 +59,32 @@
             4,
             7
           ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "alfredo",
+          "vencedor": false,
+          "pokemons": [
+            3,
+            144,
+            145,
+            6,
+            9,
+            146
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "alfredo",
+          "vencedor": false,
+          "pokemons": [
+            68,
+            78,
+            65,
+            73,
+            80,
+            62
+          ]
         }
       ],
       "id": 19
@@ -270,6 +296,19 @@
             11,
             11,
             11
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
           ]
         }
       ],

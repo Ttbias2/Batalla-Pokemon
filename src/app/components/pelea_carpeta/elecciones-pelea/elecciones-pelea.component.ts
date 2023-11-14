@@ -148,7 +148,6 @@ export class EleccionesPeleaComponent implements OnInit {
     if (this.cambioForzado) {
       this.turno = true;
       this.cambioForzado = false;
-      this.toggleBarraExtra();
     }
 
   }
