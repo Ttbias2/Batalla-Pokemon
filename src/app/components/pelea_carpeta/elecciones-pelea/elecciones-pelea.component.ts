@@ -20,9 +20,7 @@ export class EleccionesPeleaComponent implements OnInit {
 
   toggleBarraExtra() //Para esconder barra del css
   {
-      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar  
-      console.log("toggleBarraExtra");
-      
+      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar       
   }
 
   //variables para jugadores
@@ -79,6 +77,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //atacar
   seleccionAtaque() {
+
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+
     this.cambioPokemon = false;
     this.usoObjeto = false;
     this.atacar = true;
@@ -110,6 +114,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //cambios de pokemon
   cambiarPokemon() {
+    
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+
     this.atacar = false;
     this.usoObjeto = false;
     this.cambioPokemon = true;
@@ -145,6 +155,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //uso de objetos
   usarObjeto() {
+    
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+    
     this.cambioPokemon = false;
     this.atacar = false;
     this.usoObjeto = true;
@@ -481,27 +497,27 @@ export class EleccionesPeleaComponent implements OnInit {
 
     })
 
-    if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual < 0) {
+    if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual <= 0) {
       this.comprobarGanador()
       this.cambioForzado = true;
       this.turno = false;
       this.cambiarPokemon()
     }
 
-    if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual < 0) {
+    if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual <= 0) {
       this.comprobarGanador();
       this.cambioForzado = true;
       this.cambiarPokemon();
     }
 
-   /* if (this.quitarEfecto == 0) {
+    if (this.quitarEfecto == 0) {
       this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto = [];
       this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto = [];
       this.quitarEfecto = 3;
     }
     else {
       this.quitarEfecto--;
-    }*/
+    }
 
     this.jugador1Ataco = false;
     this.jugador2Ataco = false;

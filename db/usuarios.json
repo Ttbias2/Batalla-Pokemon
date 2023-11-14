@@ -46,6 +46,19 @@
           "jugador2": "",
           "vencedor": true,
           "pokemons": []
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            1,
+            4,
+            7,
+            1,
+            4,
+            7
+          ]
         }
       ],
       "id": 19
@@ -244,6 +257,110 @@
             1,
             1,
             1
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            57,
+            4,
+            57,
+            68,
+            4
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "alfredo",
+          "vencedor": false,
+          "pokemons": [
+            9,
+            150,
+            146,
+            135,
+            144,
+            145
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "manolo",
+          "vencedor": false,
+          "pokemons": [
+            16,
+            19,
+            20,
+            17,
+            18,
+            21
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            19,
+            7,
+            19,
+            7,
+            19,
+            7
           ]
         }
       ],

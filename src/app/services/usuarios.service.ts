@@ -57,6 +57,7 @@ export class UsuariosService {
       (ataque => {
         if(poke.habilidades.length<4)
         {
+          console.log("asdadsasd");//el coco
           poke.habilidades.push(ataque);
         }
       }))
