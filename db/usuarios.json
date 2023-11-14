@@ -310,6 +310,45 @@
             7,
             7
           ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Agui",
+          "vencedor": true,
+          "pokemons": [
+            130,
+            149,
+            150,
+            82,
+            111,
+            143
+          ]
+        },
+        {
+          "jugador1": "sd",
+          "jugador2": "sd",
+          "vencedor": false,
+          "pokemons": [
+            2,
+            14,
+            47,
+            3,
+            4,
+            144
+          ]
+        },
+        {
+          "jugador1": "ffs",
+          "jugador2": "fds",
+          "vencedor": false,
+          "pokemons": [
+            4,
+            10,
+            11,
+            5,
+            6,
+            18
+          ]
         }
       ],
       "id": 21
