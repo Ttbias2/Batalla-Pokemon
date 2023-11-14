@@ -31,32 +31,6 @@
             5,
             6
           ]
-        },
-        {
-          "jugador1": "anto",
-          "jugador2": "dami",
-          "vencedor": true,
-          "pokemons": [
-            44,
-            46,
-            76,
-            48,
-            117,
-            26
-          ]
-        },
-        {
-          "jugador1": "anto",
-          "jugador2": "dami",
-          "vencedor": true,
-          "pokemons": [
-            44,
-            46,
-            76,
-            48,
-            117,
-            26
-          ]
         }
       ],
       "id": 18
@@ -211,21 +185,6 @@
         }
       ],
       "id": 22
-    },
-    {
-      "apellido": "Arcella",
-      "nombre": "Antonella",
-      "password": "panchuchis",
-      "email": "antonellaarcella1@gmail.com",
-      "historial": [
-        {
-          "jugador1": "",
-          "jugador2": "",
-          "vencedor": true,
-          "pokemons": []
-        }
-      ],
-      "id": 23
     }
   ]
 }

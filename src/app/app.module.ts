@@ -6,8 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EleccionEquiposComponent } from './components/eleccion_carpeta/eleccion-equipos//eleccion-equipos.component';
 import { PokeApiService } from './services/poke-api.service';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule} from '@angular/material/input';
+import {MatDialogModule } from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/eleccion_carpeta/dialog/dialog.component';
@@ -35,14 +35,11 @@ import { HistorialComponent } from './components/historial/historial.component';
 
 const appRoutes:Routes=[
   {path:"",component:HomeInicialComponent},
-
-  {path:'login',component:LoginFormComponent,canActivate:[]},
-
+  {path:'login',component:LoginFormComponent},
   {path:'registrarse',component:RegistrarseComponent},
-
   {path:'nav-bar',component:NavBarComponent},
 
-  {path:'page-menu',component:PageMenuComponent,canActivate:[],
+  {path:'page-menu',component:PageMenuComponent,
     children:[
       {path:'pokedex',component:PokedexComponent},
       {path:'ingresar-jugadores',component:IngresarJugadoresComponent},
@@ -53,7 +50,7 @@ const appRoutes:Routes=[
   {path:"eleccion",component:EleccionComponent},
   {path:'pelea',component:PeleaComponent},
 
-  {path:"**",redirectTo:""} 
+  //{path:"editar-usuario",component:EditarUsuarioComponent}  
 ];
 
 /*const appRoutes:Routes=[

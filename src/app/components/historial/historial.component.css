@@ -28,8 +28,7 @@
 .infoUsuario{
     padding: 0;
     margin: 0;
-    width: max-content;
-    
+
 }
 
 .contenedores{
@@ -46,7 +45,7 @@
     width: 6.6rem;
     height: 6.6rem;
     border: 10px solid;
-    border-image: url(src/assets/img/bordeVioleta120trans.png) 50 50 repeat;
+    /*border-image: url(bordeVioleta120trans.png) 50 50 repeat;*/
 }
 
 .contenedorDeEleccion{
@@ -55,7 +54,7 @@
     height: 6.6rem;
     margin: 0 .5rem;
     border: 10px solid;
-    border-image: url(src/assets/img/bordeVioleta120trans.png) 50 50 repeat; 
+    /*border-image: url(bordeVioleta120trans.png) 50 50 repeat; */
 }
 
 .imagenElegirPoke{
@@ -87,12 +86,8 @@
 }
 
 .ganador{
-    background: rgb(0,73,17);
-    background: linear-gradient(0deg, rgba(0,73,17,1) 0%, rgba(87,175,106,1) 68%);
-    border-radius: 10%;
+    background-color:yellowgreen;
 }
 .perdedor{
-    background: rgb(75,1,1);
-    background: linear-gradient(0deg, rgba(75,1,1,1) 0%, rgba(231,74,74,1) 68%);
-    border-radius: 30px;
+    background-color: crimson;
 }

@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-<<<<<<< HEAD
     justify-content: space-around; 
     padding: 0;
     margin: 0;
@@ -69,6 +68,4 @@ button:hover {
      border-image: url(./../../../../assets/img/FondoOrig.jpeg) 60 60  repeat;
      display: flex;
         justify-content: space-around;
-=======
->>>>>>> b9374ce (css)
 }

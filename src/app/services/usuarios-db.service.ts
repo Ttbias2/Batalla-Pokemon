@@ -12,9 +12,11 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class UsuariosDbService implements OnInit{
 
-  private url: string="http://localhost:4200/usuarios";
+  url: string="http://localhost:4200/usuarios";
   listado: usuario[]|undefined=[];
+
   
+
   constructor(
     private router: Router,
     private http: HttpClient
@@ -159,13 +161,6 @@ export class UsuariosDbService implements OnInit{
       {headers:{"Content-type":"application/json"}}
     );
   }
-
-  
-
-
-
-
-
 
   /*async deleteUsuario(id: number){
     try {
