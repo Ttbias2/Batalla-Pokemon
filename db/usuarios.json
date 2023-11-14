@@ -31,6 +31,32 @@
             5,
             6
           ]
+        },
+        {
+          "jugador1": "anto",
+          "jugador2": "dami",
+          "vencedor": true,
+          "pokemons": [
+            44,
+            46,
+            76,
+            48,
+            117,
+            26
+          ]
+        },
+        {
+          "jugador1": "anto",
+          "jugador2": "dami",
+          "vencedor": true,
+          "pokemons": [
+            44,
+            46,
+            76,
+            48,
+            117,
+            26
+          ]
         }
       ],
       "id": 18
