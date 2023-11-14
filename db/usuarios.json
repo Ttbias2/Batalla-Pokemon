@@ -141,6 +141,32 @@
             143,
             143
           ]
+        },
+        {
+          "jugador1": "A",
+          "jugador2": "b",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            94,
+            130,
+            150,
+            149,
+            144
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            2,
+            9,
+            12,
+            3,
+            6,
+            19
+          ]
         }
       ],
       "id": 21

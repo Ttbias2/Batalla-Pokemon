@@ -2,9 +2,11 @@
     <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
     <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
     <button [disabled]="cambioForzado"  (click)="cambiarPokemon(); toggleBarraExtra()">Elegir Pokemon</button>
+    
 </section>
 
-<section class="barraExtra" *ngIf="showBarraExtra">
+
+<section class="barraExtra" *ngIf=" showBarraExtra || cambioForzado"  >
 <ol *ngIf="cambioPokemon" >
     <li *ngFor="let poke of pokesParaCambio,let i = index">
         <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0" >
@@ -32,3 +34,4 @@
     </li>
 </ol>
 </section>
+

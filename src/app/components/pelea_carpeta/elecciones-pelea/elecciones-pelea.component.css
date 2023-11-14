@@ -58,7 +58,7 @@ button:hover {
 }
 
 .barraExtra{
-    /* display: none; */ /* habilitar cuando se solucione toggleBarraExtra */
+    display: none; 
     width: 95vw;
     background-image: url(./../../../../assets/img/Neutral/battleMessage.png);
     background-repeat: no-repeat;
