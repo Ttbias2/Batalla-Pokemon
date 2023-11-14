@@ -245,6 +245,19 @@
             1,
             1
           ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Agui",
+          "vencedor": true,
+          "pokemons": [
+            382,
+            383,
+            643,
+            11,
+            11,
+            11
+          ]
         }
       ],
       "id": 21
