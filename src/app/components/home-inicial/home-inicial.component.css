@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'PixelFont';
-    src:url('./../../../assets/Minecraft.ttf')
+    font-family: 'Pokemon';
+    src:url('./../../../assets/PokemonSolid.ttf')
   }
 
 .evr{
@@ -9,7 +9,19 @@
     width: 100%;
 }
 
+h1{
+    position: absolute;
+    font-family: 'Pokemon', sans-serif;
+    font-size: 10vw;
+    top: 10%;
+    color: yellow;
+    /* text-shadow: -1px 1px 20px blue, 
+                          1px 1px 20px blue, 
+                         1px -1px 20px blue, 
+                        -1px -1px 20px blue; */
+                        text-shadow: 20px 0 blue, 0 20px blue, 20px 0 blue, 20px -1px blue;
 
+}
 
 .footer{
     

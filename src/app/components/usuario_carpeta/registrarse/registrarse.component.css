@@ -1,7 +1,25 @@
 @font-face {
     font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf')
+    src:url('../../../../assets/Minecraft.ttf');
+    font-family: 'Pokemon';
+    src:url('./../../../../assets/PokemonSolid.ttf');
   }
+  
+  
+    
+  h1{
+    position: absolute;
+    font-family: 'Pokemon', sans-serif;
+    font-size: 10vw;
+    top: 10%;
+    color: yellow;
+    /* text-shadow: -1px 1px 20px blue, 
+                          1px 1px 20px blue, 
+                         1px -1px 20px blue, 
+                        -1px -1px 20px blue; */
+    
+                        text-shadow: 20px 0 blue, 0 20px blue, 20px 0 blue, 20px -1px blue;
+}
 
 fieldset{
     border-image: url(./../../../../assets/img/bordeVioleta120trans.png) 10 10 repeat;
@@ -28,7 +46,7 @@ fieldset{
     height: 100%;
     width: 100%;
 }
-.pika{
+.pika {
     display: flex;
     position: relative;
     justify-content: center;
@@ -36,18 +54,18 @@ fieldset{
     flex-direction: column;
     border: 10px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
-    background-image: url(src\assets\img\pikachuGif.gif);
-    height: 600px;
-    width: 800px;
+    background-image: url(./../../../../assets/img/pikachu.gif);
+    height: 95vh;
+    width: 90vw;
     background-position: center;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: auto;
 }
 .iniciar-sesion{
     position: absolute;
-    bottom: 14px; 
-    left: 56%;
+    bottom: 12px; 
+    left: 52.6%;
     transform: translateX(-50%);
     position: absolute;
     font-style: normal;
