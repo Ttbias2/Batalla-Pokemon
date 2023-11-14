@@ -167,6 +167,84 @@
             6,
             19
           ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            4,
+            4,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "alfredo",
+          "vencedor": true,
+          "pokemons": [
+            4,
+            4,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "alfredo",
+          "vencedor": true,
+          "pokemons": [
+            4,
+            4,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "alfredo",
+          "vencedor": true,
+          "pokemons": [
+            4,
+            4,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
         }
       ],
       "id": 21

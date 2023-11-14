@@ -21,10 +21,7 @@ export class UsuariosService {
   private pokemonPeleandoj2 = new BehaviorSubject<number>(0);
   pokemonPeleandoj2$ = this.pokemonPeleandoj2.asObservable();
 
-  constructor(private datHabilidades: HabilidadesService) {
-    this.jugador1.setNombre("Tobias");
-    this.jugador2.setNombre("Arturo");
-  }
+  constructor(private datHabilidades: HabilidadesService) {}
 
   asignarPokemon(nuevoPokemon: any) {
 
