@@ -15,11 +15,11 @@ import { partida } from 'src/app/interfaces/interface-partida';
 
 export class EleccionesPeleaComponent implements OnInit {
 
-  showBarraExtra = true; //poner en false cuando funque
+  showBarraExtra = false; //poner en false cuando funque
 
   toggleBarraExtra() //Para esconder barra del css
   {
-      //this.showBarraExtra = !this.showBarraExtra; //corregir luego
+      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar  
       console.log("toggleBarraExtra");
       
   }
