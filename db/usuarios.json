@@ -185,6 +185,21 @@
         }
       ],
       "id": 22
+    },
+    {
+      "apellido": "Arcella",
+      "nombre": "Antonella",
+      "password": "panchuchis",
+      "email": "antonellaarcella1@gmail.com",
+      "historial": [
+        {
+          "jugador1": "",
+          "jugador2": "",
+          "vencedor": true,
+          "pokemons": []
+        }
+      ],
+      "id": 23
     }
   ]
 }
