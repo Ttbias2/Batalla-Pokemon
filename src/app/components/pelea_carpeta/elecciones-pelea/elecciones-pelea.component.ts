@@ -6,6 +6,7 @@ import { TypesService } from 'src/app/services/types.service';
 import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { partida } from 'src/app/interfaces/interface-partida';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-elecciones-pelea',
@@ -19,9 +20,7 @@ export class EleccionesPeleaComponent implements OnInit {
 
   toggleBarraExtra() //Para esconder barra del css
   {
-      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar  
-      console.log("toggleBarraExtra");
-      
+      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar       
   }
 
   //variables para jugadores
@@ -66,7 +65,7 @@ export class EleccionesPeleaComponent implements OnInit {
   quitarEfecto: number = 3;
 
 
-  constructor(private datUsuario: UsuariosService, private tablatipos: TypesService, private database:UsuariosDbService) {
+  constructor(private datUsuario: UsuariosService, private tablatipos: TypesService, private database:UsuariosDbService, private router:Router) {
     this.j1 = datUsuario.jugador1;
     this.j2 = datUsuario.jugador2;
   }
@@ -78,6 +77,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //atacar
   seleccionAtaque() {
+
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+
     this.cambioPokemon = false;
     this.usoObjeto = false;
     this.atacar = true;
@@ -109,6 +114,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //cambios de pokemon
   cambiarPokemon() {
+    
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+
     this.atacar = false;
     this.usoObjeto = false;
     this.cambioPokemon = true;
@@ -133,6 +144,7 @@ export class EleccionesPeleaComponent implements OnInit {
       this.finDeTurno();
     }
     this.cambioPokemon = false;
+
     if (this.cambioForzado) {
       this.turno = true;
       this.cambioForzado = false;
@@ -142,6 +154,12 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //uso de objetos
   usarObjeto() {
+    
+    if(this.showBarraExtra)
+    {
+      this.toggleBarraExtra();
+    }
+    
     this.cambioPokemon = false;
     this.atacar = false;
     this.usoObjeto = true;
@@ -235,7 +253,7 @@ export class EleccionesPeleaComponent implements OnInit {
   usoPocionAtaque() {
     if (this.turno) {
       if (!this.ataqueUsadaj1) {
-        this.j1.pokemons[this.pokemonPeleandoj1].ataque += 10;
+        this.j1.pokemons[this.pokemonPeleandoj1].ataque += 20;
         this.ataqueUsadaj1 = true;
         this.turno = false;
       }
@@ -243,7 +261,7 @@ export class EleccionesPeleaComponent implements OnInit {
     }
     else {
       if (!this.ataqueUsadaj2) {
-        this.j2.pokemons[this.pokemonPeleandoj2].ataque += 10;
+        this.j2.pokemons[this.pokemonPeleandoj2].ataque += 20;
         this.ataqueUsadaj2 = true;
         this.turno = true;
         this.finDeTurno();
@@ -354,7 +372,7 @@ export class EleccionesPeleaComponent implements OnInit {
           }
 
           if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
-            this.asignarEfectosj1();
+            this.asignarEfectosj1(pokej1);
           }
         }
 
@@ -377,7 +395,7 @@ export class EleccionesPeleaComponent implements OnInit {
 
 
           if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
-            this.asignarEfectosj2();
+            this.asignarEfectosj2(pokej2);
           }
           }
         }
@@ -407,7 +425,7 @@ export class EleccionesPeleaComponent implements OnInit {
             }
 
           if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
-            this.asignarEfectosj2();
+            this.asignarEfectosj2(pokej2);
           }
           }
       }
@@ -430,7 +448,7 @@ export class EleccionesPeleaComponent implements OnInit {
             }
   
             if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
-              this.asignarEfectosj1();
+              this.asignarEfectosj1(pokej1);
             }
           }
         }
@@ -478,14 +496,14 @@ export class EleccionesPeleaComponent implements OnInit {
 
     })
 
-    if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual < 0) {
+    if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual <= 0) {
       this.comprobarGanador()
       this.cambioForzado = true;
       this.turno = false;
       this.cambiarPokemon()
     }
 
-    if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual < 0) {
+    if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual <= 0) {
       this.comprobarGanador();
       this.cambioForzado = true;
       this.cambiarPokemon();
@@ -531,22 +549,43 @@ export class EleccionesPeleaComponent implements OnInit {
     return dañio;
   }
 
-  asignarEfectosj1() {
-    if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment_chance > Math.round(Math.random() * 100)) {
-      this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.push(this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment);
+  asignarEfectosj1(poke:pokemon) {
+
+    let esta:boolean = false;
+
+    this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.forEach(efecto=>{
+      if(efecto == poke.habilidades[this.habilidadUsadaj1].ailment)
+      {
+        esta=true;
+      }
+    })
+
+    if (poke.habilidades[this.habilidadUsadaj1].ailment_chance > Math.round(Math.random() * 100) && !esta) {
+      this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.push(poke.habilidades[this.habilidadUsadaj1].ailment);
     }
   }
 
-  asignarEfectosj2() {
-    if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment_chance > Math.round(Math.random() * 100)) {
-      this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.push(this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment);
+  asignarEfectosj2(poke:pokemon) {
+    
+    let esta:boolean = false;
+
+    this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.forEach(efecto=>{
+      if(efecto == poke.habilidades[this.habilidadUsadaj2].ailment)
+      {
+        esta=true;
+      }
+    })
+
+    if (poke.habilidades[this.habilidadUsadaj2].ailment_chance > Math.round(Math.random() * 100) && !esta) {
+      this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.push(poke.habilidades[this.habilidadUsadaj2].ailment);
     }
   }
 
   comprobarGanador()
   {
     let muertosj1:number=0;
-    let muertosj2:number=0;;
+    let muertosj2:number=0;
+    let fin:boolean = false;
     const nuevaPartida:partida = {jugador1:this.j1.nombre,jugador2:this.j2.nombre,vencedor:false,pokemons:[this.j1.pokemons[0].id,this.j1.pokemons[1].id,this.j1.pokemons[2].id,this.j2.pokemons[0].id,this.j2.pokemons[1].id,this.j2.pokemons[2].id]}
 
     this.j1.pokemons.forEach(poke => {
@@ -566,15 +605,29 @@ export class EleccionesPeleaComponent implements OnInit {
     if(muertosj1==3)
     {
       alert("vitoria del j2");
-      this.database.guardarPartida(nuevaPartida)
+      fin = true;
     }
 
     if(muertosj2==3)
     {
       alert("vitoria del j1");
       nuevaPartida.vencedor = true;
-      this.database.guardarPartida(nuevaPartida)
+      fin = true;
     }
+
+    if(fin)
+    {
+      this.vaciarPokes();
+      this.database.guardarPartida(nuevaPartida);
+      this.router.navigate(['/page-menu']);
+    }
+  }
+
+  vaciarPokes()
+  {
+    this.datUsuario.pasos = 1;
+    this.datUsuario.jugador1.pokemons = [];
+    this.datUsuario.jugador2.pokemons = [];
   }
 
 

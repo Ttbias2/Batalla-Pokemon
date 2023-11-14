@@ -21,10 +21,7 @@ export class UsuariosService {
   private pokemonPeleandoj2 = new BehaviorSubject<number>(0);
   pokemonPeleandoj2$ = this.pokemonPeleandoj2.asObservable();
 
-  constructor(private datHabilidades: HabilidadesService) {
-    this.jugador1.setNombre("Tobias");
-    this.jugador2.setNombre("Arturo");
-  }
+  constructor(private datHabilidades: HabilidadesService) {}
 
   asignarPokemon(nuevoPokemon: any) {
 
@@ -56,13 +53,18 @@ export class UsuariosService {
     })
 
     if(poke.habilidades.length<4){
+      setTimeout(() => {
       this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
       (ataque => {
         if(poke.habilidades.length<4)
         {
-          poke.habilidades.push(ataque);
+          
+            console.log("asdadsasd");//el coco
+            poke.habilidades.push(ataque);
+          
         }
       }))
+    }, 1000); // 1000 milliseconds = 1 second
     }
 
     switch (this.pasos) {
