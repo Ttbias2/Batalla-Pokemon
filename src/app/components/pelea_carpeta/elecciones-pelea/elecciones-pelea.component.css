@@ -1,3 +1,71 @@
-ol{
+@font-face {
+    font-family: 'PixelFont';
+    src:url('../../../../assets/Minecraft.ttf')
+  }
+  
+  ol{
+    display: flex;
+    flex-direction: row;
     list-style: none;
+    justify-content: space-around; 
+    padding: 0;
+    margin: 0;
+}
+
+.barraEleccion{
+    width: 95vw;
+    background-image: url(./../../../../assets/img/Neutral/battleMessage.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 10vh;
+    border: 5px solid;
+     border-image: url(./../../../../assets/img/FondoOrig.jpeg) 60 60  repeat;
+     display: flex;
+        justify-content: space-around;
+}
+
+button{
+    background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
+    
+     background-size: 100% 100%; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 10vh;
+    
+    background-color: transparent;
+    font-family: 'PixelFont';
+    
+    
+    font-size: 20px;
+    color: inherit;
+    
+}
+
+button:hover {
+    animation: flash 2s infinite; 
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.5;
+    }
+}
+
+.barraExtra{
+    /* display: none; */ /* habilitar cuando se solucione toggleBarraExtra */
+    width: 95vw;
+    background-image: url(./../../../../assets/img/Neutral/battleMessage.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 10vh;
+    border: 5px solid;
+     border-image: url(./../../../../assets/img/FondoOrig.jpeg) 60 60  repeat;
+     display: flex;
+        justify-content: space-around;
 }

@@ -1,30 +1,34 @@
-<section>
-    <button [disabled]="cambioForzado" (click)="seleccionAtaque()">atacar</button>
-    <button [disabled]="cambioForzado" (click)="usarObjeto()">objeto</button>
-    <button [disabled]="cambioForzado" (click)="cambiarPokemon()">elegirPoke</button>
+<section class="barraEleccion">
+    <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
+    <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
+    <button [disabled]="cambioForzado"  (click)="cambiarPokemon(); toggleBarraExtra()">Elegir Pokemon</button>
 </section>
 
-<ol *ngIf="cambioPokemon">
+<section class="barraExtra" *ngIf="showBarraExtra">
+<ol *ngIf="cambioPokemon" >
     <li *ngFor="let poke of pokesParaCambio,let i = index">
-        <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0">
-            <button (click)="cambioj1(i)">
+        <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0" >
+            <button (click)="cambioj1(i); toggleBarraExtra()">
                 <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
             </button>    
         </section>
     </li>
 </ol>
 
-<section *ngIf="usoObjeto">
 
-    <button [disabled]="vidaUsadaBtn" (click)="usoPocionVida()">pocion de vida</button>
-    <button [disabled]="velcidadUsadaBtn" (click)="usoPocionVelocidad()">pocion de velocidad</button>
-    <button [disabled]="efectosUsadaBtn" (click)="usoQuitarEfecto()">quitar efectos</button>
-    <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque()">pocion de ataque</button>
+<section *ngIf="usoObjeto" >
+
+    <button [disabled]="vidaUsadaBtn" (click)="usoPocionVida(); toggleBarraExtra()" >pocion de vida</button>
+    <button [disabled]="velcidadUsadaBtn" (click)="usoPocionVelocidad(); toggleBarraExtra()" >pocion de velocidad</button>
+    <button [disabled]="efectosUsadaBtn" (click)="usoQuitarEfecto(); toggleBarraExtra()" >quitar efectos</button>
+    <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque(); toggleBarraExtra()" >pocion de ataque</button>
 
 </section>
 
+
 <ol *ngIf="atacar">
     <li *ngFor="let habilidad of habilidadesMostrar,let i = index">
-        <button (click)="cargarAtaque(i)">{{habilidad.name}}</button>
+        <button (click)="cargarAtaque(i); toggleBarraExtra()" >{{habilidad.name}}</button>
     </li>
 </ol>
+</section>

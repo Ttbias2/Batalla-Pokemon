@@ -128,6 +128,19 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Padu",
+          "vencedor": false,
+          "pokemons": [
+            150,
+            143,
+            143,
+            143,
+            143,
+            143
+          ]
         }
       ],
       "id": 21
