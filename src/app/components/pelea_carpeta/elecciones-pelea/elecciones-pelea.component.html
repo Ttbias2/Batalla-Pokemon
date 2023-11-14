@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="barraEleccion">
     <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
     <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
@@ -32,3 +33,43 @@
     </li>
 </ol>
 </section>
+=======
+<section class="seccion-opciones">
+    <section class="opciones">
+        <button [disabled]="cambioForzado" (click)="seleccionAtaque()">atacar</button>
+        <button [disabled]="cambioForzado" (click)="usarObjeto()">objeto</button>
+        <button [disabled]="cambioForzado" (click)="cambiarPokemon()">elegirPoke</button>
+    </section>
+
+    <section class="seccion-cambiar">
+        <ol *ngIf="cambioPokemon">
+            <li *ngFor="let poke of pokesParaCambio,let i = index">
+                <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0">
+                    <button (click)="cambioj1(i)">
+                        <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
+                    </button>    
+                </section>
+            </li>
+        </ol>
+    </section>
+    
+    
+    <section class="seccion-objetos" *ngIf="usoObjeto">
+    
+        <button [disabled]="vidaUsadaBtn" (click)="usoPocionVida()">pocion de vida</button>
+        <button [disabled]="velcidadUsadaBtn" (click)="usoPocionVelocidad()">pocion de velocidad</button>
+        <button [disabled]="efectosUsadaBtn" (click)="usoQuitarEfecto()">quitar efectos</button>
+        <button [disabled]="ataqueUsadaBtn" (click)="usoPocionAtaque()">pocion de ataque</button>
+    
+    </section>
+    <section class="seccion-ataques">
+        <ol *ngIf="atacar">
+            <li *ngFor="let habilidad of habilidadesMostrar,let i = index">
+                <button (click)="cargarAtaque(i)">{{habilidad.name}}</button>
+            </li>
+        </ol>
+    </section>
+    
+    
+</section>
+>>>>>>> b9374ce (css)
