@@ -8,10 +8,10 @@
     background-image: url(src\assets\img\Campo_de_batalla_DPPt_2.webp);
     background-size: 100% 100%;
     height: 75vh;
-    width: 95vw;
+    width: 100vw;
      overflow: hidden;  
-     border: 10px solid;
-     border-image: url(./../../../../assets/img/FondoOrig.jpeg) 60 60  repeat;
+     /* border: 10px solid;
+     border-image: url(./../../../../assets/img/FondoOrig.jpeg) 60 60  repeat; */
     /* background-repeat: no-repeat; */
 
 }
@@ -97,4 +97,8 @@
     height: 2vh;
     font-size: 20px;
     
+}
+
+.audio {
+    display: none;
 }

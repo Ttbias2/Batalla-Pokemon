@@ -260,107 +260,16 @@
           ]
         },
         {
-          "jugador1": "a",
-          "jugador2": "a",
-          "vencedor": false,
-          "pokemons": [
-            1,
-            57,
-            4,
-            57,
-            68,
-            4
-          ]
-        },
-        {
-          "jugador1": "a",
-          "jugador2": "a",
-          "vencedor": false,
-          "pokemons": [
-            7,
-            7,
-            7,
-            7,
-            7,
-            7
-          ]
-        },
-        {
-          "jugador1": "a",
-          "jugador2": "a",
-          "vencedor": false,
-          "pokemons": [
-            7,
-            7,
-            7,
-            7,
-            7,
-            7
-          ]
-        },
-        {
-          "jugador1": "a",
-          "jugador2": "a",
+          "jugador1": "Franco",
+          "jugador2": "Agui",
           "vencedor": true,
           "pokemons": [
-            7,
-            7,
-            7,
-            7,
-            7,
-            7
-          ]
-        },
-        {
-          "jugador1": "tobias",
-          "jugador2": "a",
-          "vencedor": false,
-          "pokemons": [
-            7,
-            7,
-            7,
-            7,
-            7,
-            7
-          ]
-        },
-        {
-          "jugador1": "tobias",
-          "jugador2": "alfredo",
-          "vencedor": false,
-          "pokemons": [
-            9,
-            150,
-            146,
-            135,
-            144,
-            145
-          ]
-        },
-        {
-          "jugador1": "tobias",
-          "jugador2": "manolo",
-          "vencedor": false,
-          "pokemons": [
-            16,
-            19,
-            20,
-            17,
-            18,
-            21
-          ]
-        },
-        {
-          "jugador1": "a",
-          "jugador2": "a",
-          "vencedor": false,
-          "pokemons": [
-            19,
-            7,
-            19,
-            7,
-            19,
-            7
+            382,
+            383,
+            643,
+            11,
+            11,
+            11
           ]
         }
       ],
