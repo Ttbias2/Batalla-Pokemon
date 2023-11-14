@@ -13,7 +13,7 @@ export class pokemon {
   defensa_especial: number = 0;
   velocidad: number = 0;
   habilidades: habilidad[] = [];
-  bajo_efecto: string[] = ["burn"];
+  bajo_efecto: string[] = [];
   tipo:string[] = [];
 
   constructor(

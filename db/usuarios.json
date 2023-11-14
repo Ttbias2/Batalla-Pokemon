@@ -76,6 +76,58 @@
           "jugador2": "",
           "vencedor": true,
           "pokemons": []
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            4,
+            7,
+            4,
+            1,
+            7
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            1,
+            1,
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
         }
       ],
       "id": 21

@@ -65,8 +65,6 @@ export class UsuariosService {
       }))
     }
 
-    console.log(poke);
-
     switch (this.pasos) {
       case 1:
         this.jugador1.pokemons.push(poke);
