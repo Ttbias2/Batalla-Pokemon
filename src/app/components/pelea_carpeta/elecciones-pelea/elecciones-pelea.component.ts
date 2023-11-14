@@ -15,6 +15,15 @@ import { partida } from 'src/app/interfaces/interface-partida';
 
 export class EleccionesPeleaComponent implements OnInit {
 
+  showBarraExtra = true; //poner en false cuando funque
+
+  toggleBarraExtra() //Para esconder barra del css
+  {
+      //this.showBarraExtra = !this.showBarraExtra; //corregir luego
+      console.log("toggleBarraExtra");
+      
+  }
+
   //variables para jugadores
   j1: jugador;
   j2: jugador;
@@ -93,6 +102,7 @@ export class EleccionesPeleaComponent implements OnInit {
       this.habilidadUsadaj2 = i;
       this.turno = true;
       this.atacar = false;
+      
       this.finDeTurno();
     }
   }

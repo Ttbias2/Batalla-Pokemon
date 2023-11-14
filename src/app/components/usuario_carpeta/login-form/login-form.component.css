@@ -1,5 +1,8 @@
 
-
+@font-face {
+    font-family: 'PixelFont';
+    src:url('../../../../assets/Minecraft.ttf')
+  }
 
 fieldset{
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
@@ -9,6 +12,11 @@ fieldset{
     transform: translateX(-50%);
     position: absolute;
     font-style: normal;
+    font-family: 'PixelFont';
+    /* text-decoration: underline;
+    text-decoration-style: wavy; */
+    text-shadow: 1px 1px 1px   white;
+    color: black;
     
 }
 

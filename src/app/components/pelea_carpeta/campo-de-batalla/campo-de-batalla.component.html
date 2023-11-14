@@ -1,13 +1,14 @@
 <!--parte superior-->
-<section id="fondo">
+<section class="fondo">
 
 
     <section>
 
         <section class="dato" id="datoBack">
-            <p id="nombreBack">  {{j1.pokemons[pokemonPeleandoj1].nombre}}</p>
-            <div id="lifeBar">barra de vida</div>
-            <p>{{j1.pokemons[pokemonPeleandoj1].vidaActual}} / {{j1.pokemons[pokemonPeleandoj1].vida}}</p>
+            <p id="nombreBack"> {{j1.pokemons[pokemonPeleandoj1].nombre}}</p>
+            <div  id="lifeBarTrasero"><img src="./../../../../assets/img/imagenVida.png" alt="" srcset="" class="vida"></div>
+            <p class="vidaNum">{{j1.pokemons[pokemonPeleandoj1].vidaActual}} / {{j1.pokemons[pokemonPeleandoj1].vida}}</p>
+            
             <ol>
                 <li *ngFor="let efecto of j1.pokemons[pokemonPeleandoj1].bajo_efecto">
                     <p>{{efecto}}</p>
@@ -16,17 +17,19 @@
 <!--             <img src='./../../../../assets/img/pokeUI.png' alt="img " srcset="" id="ImgBack">
  -->        </section>
 
-        <img [src]="j1.pokemons[pokemonPeleandoj1].urlImgBack" alt="imgPokeActual" id="imagenTrasera">
-<!--         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/145.png" alt="imgPokeActual" id="imagenTrasera">
- -->
+        <img [src]="j1.pokemons[pokemonPeleandoj1].urlImgBack" alt="imgPokeActual" id="imagenTrasera" class="imgPok">
+         <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png" alt="imgPokeActual" id="imagenTrasera" class="imgPok"> -->
+ 
     </section>
 
     <!--parte inferior-->
     <section>
         <section class="dato" id="datoFront">
-            <p id="nombreFront"> {{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
-            <div>barra de vida</div>
-            <p>{{j2.pokemons[pokemonPeleandoj2].vidaActual}} / {{j2.pokemons[pokemonPeleandoj2].vida}}</p>
+            <p id="nombreFront">  {{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
+            <div id="lifeBarDelantero"><img src="./../../../../assets/img/imagenVida.png" alt="" srcset="" class="vida"></div>
+            <p class="vidaNum">{{j2.pokemons[pokemonPeleandoj2].vidaActual}} / {{j2.pokemons[pokemonPeleandoj2].vida}}</p>
+            
+            
             <ol>
                 <li *ngFor="let efecto of j2.pokemons[pokemonPeleandoj2].bajo_efecto">
                     <p>{{efecto}}</p>
@@ -35,7 +38,6 @@
 <!--             <img src='./../../../../assets/img/pokeUI.png' alt="img" srcset="" id="ImgFront">
  -->        </section>
 
-        <img [src]="j2.pokemons[pokemonPeleandoj2].urlImgFront" alt="imgPokeActual" id="imagenDelantera">
-        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png" alt="imgPokeActual" id="imagenDelantera"> -->
-    </section>
+        <img [src]="j2.pokemons[pokemonPeleandoj2].urlImgFront" alt="imgPokeActual" id="imagenDelantera" class="imgPok">
+<!--          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png" alt="imgPokeActual" id="imagenDelantera" class="imgPok">-->    </section>
 </section>
