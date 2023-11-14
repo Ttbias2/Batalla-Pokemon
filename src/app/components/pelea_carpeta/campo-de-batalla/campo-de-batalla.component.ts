@@ -14,6 +14,17 @@ export class CampoDeBatallaComponent implements OnInit{
   pokemonPeleandoj1:number;
   pokemonPeleandoj2:number;
 
+  images = [
+    'url(./../../../../../assets/img/fondoCombate3.png)',
+    'url(./../../../../../assets/img/fondoCombate1.png)',
+    'url(./../../../../../assets/img/fondoCombate2.png)',
+    'url(./../../../../../assets/img/fondoCombate4.png)'
+    
+    
+    
+  ];
+  randomImage = this.images[Math.floor(Math.random() * this.images.length)];
+
   constructor(private datJugadores:UsuariosService){
     this.j1 = datJugadores.jugador1;
     this.j2 = datJugadores.jugador2;
