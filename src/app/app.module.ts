@@ -34,7 +34,7 @@ import { HistorialComponent } from './components/historial/historial.component';
 
 
 const appRoutes:Routes=[
-  {path:"",component:PeleaComponent},
+  {path:"",component:HomeInicialComponent},
   {path:'login',component:LoginFormComponent},
   {path:'registrarse',component:RegistrarseComponent},
   {path:'nav-bar',component:NavBarComponent},
