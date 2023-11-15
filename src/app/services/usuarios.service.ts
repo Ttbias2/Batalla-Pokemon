@@ -55,14 +55,18 @@ export class UsuariosService {
     })
 
     if(poke.habilidades.length<4){
+      setTimeout(() => {
       this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
       (ataque => {
         if(poke.habilidades.length<4)
         {
-          console.log("asdadsasd");//el coco
-          poke.habilidades.push(ataque);
+          
+            console.log("asdadsasd");//el coco
+            poke.habilidades.push(ataque);
+          
         }
       }))
+    }, 1000); // 1000 milliseconds = 1 second
     }
 
     switch (this.pasos) {

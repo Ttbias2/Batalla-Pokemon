@@ -74,3 +74,8 @@ button:hover {
         justify-content: space-around;
         align-items: center;
 }
+.fondo{
+    background-color: rgb(160, 160, 160);
+    height: 25vh;
+    width: 100vw;
+}

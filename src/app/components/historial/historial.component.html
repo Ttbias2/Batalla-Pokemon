@@ -10,10 +10,10 @@
                 </div>
                 <div > 
                     <div *ngIf="partida.vencedor==true">
-                        <p class="infoUsuario ganador">Victoria</p>
+                        <p class="infoUsuario victoria">Victoria</p>
                     </div> 
                     <div *ngIf="partida.vencedor==false">
-                        <p class="infoUsuario perdedor">Derrota</p>
+                        <p class="infoUsuario derrota">Derrota</p>
                     </div>
                 </div>
 
@@ -23,15 +23,15 @@
             <section class="contenedores">
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[0]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[0]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[0]?.name }}</p>
                 </div>
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[1]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[1]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[1]?.name }}</p>
                 </div>
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[2]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[2]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[2]?.name }}</p>
                 </div>
             </section>
         </section>
@@ -44,10 +44,10 @@
             <div class="infoUsuarioHistorial">
                 <div> 
                     <div *ngIf="partida.vencedor==false">
-                        <p class="infoUsuario ganador">Victoria</p>
+                        <p class="infoUsuario victoria">Victoria</p>
                     </div> 
                     <div *ngIf="partida.vencedor==true">
-                        <p class="infoUsuario perdedor">Derrota</p>
+                        <p class="infoUsuario derrota">Derrota</p>
                     </div>
                 </div>
                 <p class="infoUsuario">{{partida.jugador2}}</p>
@@ -56,20 +56,24 @@
             <section class="contenedores">
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[3]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[3]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[3]?.name }}</p>
                 </div>
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[4]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[4]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[4]?.name }}</p>
                 </div>
                 <div class="pokeIndividual">
                     <img [src]="partida.pokemons[5]?.sprites.front_default" alt="no se encontro la imagen">
-                    <p>{{ partida.pokemons[5]?.name }}</p>
+                    <p class="nombrePoke">{{ partida.pokemons[5]?.name }}</p>
                 </div>
             </section>
 
            
         </section>
-    </section>           
+
+        
+
+    </section> 
+              
 
 </section>

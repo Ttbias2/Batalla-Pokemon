@@ -611,16 +611,68 @@
           ]
         },
         {
-          "jugador1": "tobias",
-          "jugador2": "alfredo",
+          "jugador1": "Franco",
+          "jugador2": "Agui",
+          "vencedor": true,
+          "pokemons": [
+            130,
+            149,
+            150,
+            82,
+            111,
+            143
+          ]
+        },
+        {
+          "jugador1": "sd",
+          "jugador2": "sd",
           "vencedor": false,
           "pokemons": [
+            2,
+            14,
+            47,
             3,
-            64,
-            52,
             4,
-            82,
-            40
+            144
+          ]
+        },
+        {
+          "jugador1": "ffs",
+          "jugador2": "fds",
+          "vencedor": false,
+          "pokemons": [
+            4,
+            10,
+            11,
+            5,
+            6,
+            18
+          ]
+        },
+        {
+          "jugador1": "sd",
+          "jugador2": "ds",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            4,
+            5,
+            2,
+            3,
+            6
+          ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Agata",
+          "vencedor": false,
+          "pokemons": [
+            150,
+            150,
+            151,
+            150,
+            150,
+            150
           ]
         }
       ],

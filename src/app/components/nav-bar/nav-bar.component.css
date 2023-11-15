@@ -6,11 +6,11 @@
     
     display: flex; 
     justify-content: space-around; 
-    width: 98vw;
+    width: 100vw;
     height: 5vh;
     background-color: rgb(172, 3, 172);
-    border: 5px solid ;
-    border-image: url(./../../../assets/img/bordeMarron120Trans.png) 40 40  repeat;
+    /* border: 5px solid ;
+    border-image: url(./../../../assets/img/bordeMarron120Trans.png) 40 40  repeat; */
     align-items: center;
 }
 .nav button{

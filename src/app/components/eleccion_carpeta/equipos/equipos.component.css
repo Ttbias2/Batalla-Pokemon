@@ -9,7 +9,14 @@ body{
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
 }
 
-
+@font-face {
+    font-family: 'PixelFont';
+    src:url('../../../../assets/Minecraft.ttf');
+  }
+p{
+    font-family: 'PixelFont';
+    text-transform: capitalize;
+}
 
 
 
