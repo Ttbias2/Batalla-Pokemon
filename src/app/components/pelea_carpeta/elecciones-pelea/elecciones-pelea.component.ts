@@ -88,11 +88,9 @@ export class EleccionesPeleaComponent implements OnInit {
     this.atacar = true;
     if (this.turno) {
       this.habilidadesMostrar = this.j1.pokemons[this.pokemonPeleandoj1].habilidades;
-      this.jugador1Ataco = true;
     }
     else {
       this.habilidadesMostrar = this.j2.pokemons[this.pokemonPeleandoj2].habilidades;
-      this.jugador2Ataco = true;
     }
 
   }
@@ -102,11 +100,13 @@ export class EleccionesPeleaComponent implements OnInit {
       this.habilidadUsadaj1 = i;
       this.turno = false
       this.atacar = false;
+      this.jugador1Ataco = true;
     }
     else {
       this.habilidadUsadaj2 = i;
       this.turno = true;
       this.atacar = false;
+      this.jugador2Ataco = true;
       
       this.finDeTurno();
     }
@@ -134,6 +134,7 @@ export class EleccionesPeleaComponent implements OnInit {
   }
 
   cambioj1(poke: number) {
+    let finalDeTurno=true;
     if (this.turno) {
       this.datUsuario.cambiarPokej1(poke);
       this.turno = false;
@@ -141,13 +142,18 @@ export class EleccionesPeleaComponent implements OnInit {
     else {
       this.datUsuario.cambiarPokej2(poke);
       this.turno = true;
-      this.finDeTurno();
     }
     this.cambioPokemon = false;
 
     if (this.cambioForzado) {
+      finalDeTurno = false;
       this.turno = true;
       this.cambioForzado = false;
+    }
+
+    if(finalDeTurno)
+    {
+      this.finDeTurno();
     }
 
   }

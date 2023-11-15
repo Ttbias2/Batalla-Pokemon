@@ -25,6 +25,8 @@ export class UsuariosService {
 
   asignarPokemon(nuevoPokemon: any) {
 
+    this.datHabilidades.habilidadesTipo = [];
+
     let poke: pokemon = new pokemon(
       nuevoPokemon.name,
       nuevoPokemon.sprites.front_default,
