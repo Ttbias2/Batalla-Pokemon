@@ -1,7 +1,7 @@
 
 <fieldset>
     <legend>Ingresar nombre de los Jugadores</legend>
-    <form action="">
+    <form (ngSubmit)="jugar()" #form="ngForm">
         <div>
             <label for="jugador1">Jugador 1: </label>
             <input type="text" name="jugador1" id="jugador1" [(ngModel)]="j1" required>
@@ -12,8 +12,8 @@
         </div>
 
         <div>
-            <input type="submit" value="Comenzar" (click)="jugar()">
+            <input type="submit" value="Comenzar" [disabled]="!form.valid">
         </div>
 
-    </form >
+    </form>
 </fieldset>
