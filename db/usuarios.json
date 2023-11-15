@@ -739,6 +739,19 @@
             6,
             6
           ]
+        },
+        {
+          "jugador1": "asd",
+          "jugador2": "das",
+          "vencedor": true,
+          "pokemons": [
+            13,
+            124,
+            91,
+            70,
+            102,
+            122
+          ]
         }
       ],
       "id": 21

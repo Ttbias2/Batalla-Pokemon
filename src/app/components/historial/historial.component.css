@@ -7,8 +7,9 @@
     margin: 0;
     background-color: #FFF8DC;
     border-radius: 50px;
-    border: 30px solid;
-    border-image: url(../../../assets/img/bordeIngresarNombre240Trans.png) 56 56 repeat;
+    border: 20px solid ;
+    border-image: url(src/assets/img/bordeMarron120Trans.png) 40 40  repeat; 
+    
 }
 
 .batalla{
