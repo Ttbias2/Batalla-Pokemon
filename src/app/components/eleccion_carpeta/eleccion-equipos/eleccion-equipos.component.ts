@@ -128,13 +128,19 @@ export class EleccionEquiposComponent implements OnInit {
   buscarUnPoke() {
     if (this.pokeBusc != "") {
       this.datPokemons.traerUnPokemon(this.pokeBusc).subscribe(data => this.mostrarUnPoke(data))
-
     }
   }
 
   mostrarUnPoke(poke: any) {
-    this.pokemons = [];
-    this.pokemons.push(poke)
+    if(poke.id<152)
+    {
+      this.pokemons = [];
+      this.pokemons.push(poke)  
+    }
+    else
+    {
+      alert("Solo pokemons de primera gen");
+    }
   }
 
 
