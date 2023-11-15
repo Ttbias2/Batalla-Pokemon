@@ -30,7 +30,7 @@ export class EleccionesPeleaComponent implements OnInit {
   pokemonPeleandoj2: number;
   turno: boolean = true;
 
-  //variables para cambio pokemon
+  //variables para cambio
   pokePeleandoCambio: number;
   pokesParaCambio: pokemon[] = [];
   cambioPokemon: boolean = false;
@@ -67,7 +67,7 @@ export class EleccionesPeleaComponent implements OnInit {
 
   constructor(private datUsuario: UsuariosService, private tablatipos: TypesService, private database:UsuariosDbService, private router:Router) {
     this.j1 = datUsuario.jugador1;
-    this.j2 = datUsuario.jugador2; 
+    this.j2 = datUsuario.jugador2;
   }
 
   ngOnInit(): void {
@@ -86,7 +86,6 @@ export class EleccionesPeleaComponent implements OnInit {
     this.cambioPokemon = false;
     this.usoObjeto = false;
     this.atacar = true;
-
     if (this.turno) {
       this.habilidadesMostrar = this.j1.pokemons[this.pokemonPeleandoj1].habilidades;
     }
@@ -278,7 +277,6 @@ export class EleccionesPeleaComponent implements OnInit {
     this.usoObjeto = false;
   }
 
-  //Paso final
   finDeTurno() {
 
     this.usoObjeto = false;
@@ -485,12 +483,6 @@ export class EleccionesPeleaComponent implements OnInit {
           break;
       }
 
-      if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual <= 0) {
-        this.comprobarGanador();
-        this.cambioForzado = true;
-        this.cambiarPokemon();
-      }
-
     })
 
     pokej2.bajo_efecto.forEach(efecto => {
@@ -508,14 +500,20 @@ export class EleccionesPeleaComponent implements OnInit {
           break;
       }
 
-      if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual <= 0) {
-        this.comprobarGanador()
-        this.cambioForzado = true;
-        this.turno = false;
-        this.cambiarPokemon()
-      }
-
     })
+
+    if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual <= 0) {
+      this.comprobarGanador()
+      this.cambioForzado = true;
+      this.turno = false;
+      this.cambiarPokemon()
+    }
+
+    if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual <= 0) {
+      this.comprobarGanador();
+      this.cambioForzado = true;
+      this.cambiarPokemon();
+    }
 
     if (this.quitarEfecto == 0) {
       this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto = [];
@@ -637,5 +635,6 @@ export class EleccionesPeleaComponent implements OnInit {
     this.datUsuario.jugador1.pokemons = [];
     this.datUsuario.jugador2.pokemons = [];
   }
+
 
 }
