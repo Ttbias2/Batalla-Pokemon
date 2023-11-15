@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-   // this.router.navigate(["ingresar-jugadores"]);      
+       
   }
   
     
