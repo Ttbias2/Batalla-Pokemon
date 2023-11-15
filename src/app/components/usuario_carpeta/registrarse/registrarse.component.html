@@ -130,14 +130,23 @@
             <input type="hidden" id="historial" formControlName="historial" />
           </div>
 
-          <div class="campo">
-            <input type="submit" value="Registrarse" id="crear" />
+          <div class="botones">
+            
+  
+            <div class="campo btn-registrarse">
+              <input type="submit" value="Registrarse" id="crear" />
+            </div>
+
+            <div class="campo btn-login">
+              <button class="" (click)="rutaInicioSesion()">Iniciar Sesion</button>
+            </div>
           </div>
+
+          
         </form>
+        
       </fieldset>
-      <div>
-        <button class="iniciar-sesion" (click)="rutaInicioSesion()">Iniciar Sesion</button>
-      </div>
+      
     </section>
   </div>
 </section>
