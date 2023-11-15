@@ -14,11 +14,11 @@ h1{
     font-family: 'Pokemon', sans-serif;
     font-size: 8vw;
     top: 10%;
-    color: yellow;
+    color: rgb(255, 203, 5);
    
     font-family: 'Pokemon', sans-serif;
     text-transform: uppercase;
-    text-shadow: 0px 0px 10px #2b05ff, 0px 0px 10px #2b05ff, 0px 0px 10px #2b05ff, 0px 0px 10px #2b05ff, 0px 0px 20px #2b05ff, 0px 0px 20px #2b05ff, 0px 0px 30px #2b05ff;
+    text-shadow: 0px 0px 10px rgb(52, 102, 175), 0px 0px 10px rgb(52, 102, 175), 0px 0px 10px rgb(52, 102, 175), 0px 0px 10px rgb(52, 102, 175), 0px 0px 20px rgb(52, 102, 175), 0px 0px 20px rgb(52, 102, 175), 0px 0px 30px rgb(52, 102, 175);
 
 }
 
