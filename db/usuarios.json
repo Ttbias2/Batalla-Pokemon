@@ -713,6 +713,32 @@
             150,
             150
           ]
+        },
+        {
+          "jugador1": "h",
+          "jugador2": "k",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            19,
+            6,
+            19,
+            6,
+            19
+          ]
+        },
+        {
+          "jugador1": "Franco ",
+          "jugador2": "Agui",
+          "vencedor": true,
+          "pokemons": [
+            9,
+            9,
+            9,
+            6,
+            6,
+            6
+          ]
         }
       ],
       "id": 21

@@ -34,4 +34,22 @@ export class CampoDeBatallaComponent implements OnInit{
     this.datJugadores.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
   }
 
+
+  audioCries = [
+    '../../../../assets/BattleCries/cry1.mp3',
+    '../../../../assets/BattleCries/cry2.mp3',
+    '../../../../assets/BattleCries/cry3.mp3',
+    '../../../../assets/BattleCries/cry4.mp3',
+    '../../../../assets/BattleCries/cry5.mp3'
+  ]
+
+  playSoundPoke()//clickea un pokemon en el combate
+  {
+    let audio = new Audio();
+    let randomAudio = this.audioCries[Math.floor(Math.random() * this.audioCries.length)];
+    audio.src = randomAudio;
+    audio.load();
+    audio.play();
+  }
+
 }

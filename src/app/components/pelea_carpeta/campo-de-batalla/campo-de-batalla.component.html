@@ -1,4 +1,4 @@
-<!--parte superior-->
+<!--parte inferior-->
 
 
 <section class="fondo" [style.background-image]="randomImage">
@@ -16,15 +16,14 @@
                     <p>{{efecto}}</p>
                 </li>
             </ol>
-<!--             <img src='./../../../../assets/img/pokeUI.png' alt="img " srcset="" id="ImgBack">
- -->        </section>
+      </section>
 
-        <img [src]="j1.pokemons[pokemonPeleandoj1].urlImgBack" alt="imgPokeActual" id="imagenTrasera" class="imgPok">
-         <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png" alt="imgPokeActual" id="imagenTrasera" class="imgPok"> -->
+        <img [src]="j1.pokemons[pokemonPeleandoj1].urlImgBack" alt="imgPokeActual" id="imagenTrasera" class="imgPok" (click)="playSoundPoke()">
+         
  
     </section>
 
-    <!--parte inferior-->
+    <!--parte superior-->
     <section>
         <section class="dato" id="datoFront">
             <p id="nombreFront">  {{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
@@ -37,9 +36,8 @@
                     <p>{{efecto}}</p>
                 </li>
             </ol>
-<!--             <img src='./../../../../assets/img/pokeUI.png' alt="img" srcset="" id="ImgFront">
- -->        </section>
+        </section>
 
-        <img [src]="j2.pokemons[pokemonPeleandoj2].urlImgFront" alt="imgPokeActual" id="imagenDelantera" class="imgPok">
-<!--          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png" alt="imgPokeActual" id="imagenDelantera" class="imgPok">-->    </section>
+        <img [src]="j2.pokemons[pokemonPeleandoj2].urlImgFront" alt="imgPokeActual" id="imagenDelantera" class="imgPok" (click)="playSoundPoke()">
+    </section>
 </section>
