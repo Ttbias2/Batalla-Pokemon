@@ -349,6 +349,19 @@
             6,
             18
           ]
+        },
+        {
+          "jugador1": "sd",
+          "jugador2": "ds",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            4,
+            5,
+            2,
+            3,
+            6
+          ]
         }
       ],
       "id": 21
