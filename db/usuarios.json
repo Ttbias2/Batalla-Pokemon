@@ -362,6 +362,19 @@
             3,
             6
           ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Agata",
+          "vencedor": false,
+          "pokemons": [
+            150,
+            150,
+            151,
+            150,
+            150,
+            150
+          ]
         }
       ],
       "id": 21
