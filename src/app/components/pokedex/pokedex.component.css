@@ -15,7 +15,7 @@ h2, h3 {
     overflow-y: scroll;
     height: 88vh;
     /* width: 100%; */
-     background-color: rgb(202, 201, 201);
+    background-color: #e0dabd;
     text-align: center;
     
     font-family: 'PixelFont';
@@ -26,7 +26,7 @@ h2, h3 {
 thead th  {
   position: sticky;
   top: 0;
-  background-color: rgb(202, 201, 201);
+  background-color: #e0dabd;
   z-index: 10;
 }
 
@@ -93,6 +93,6 @@ thead th  {
     height: 5rem; 
 }
 .fondo{
-  background-color: rgb(202, 201, 201);
+  background-color: #e0dabd;
   height: 100%;
 }
