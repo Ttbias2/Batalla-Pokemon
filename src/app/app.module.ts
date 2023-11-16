@@ -88,7 +88,7 @@ const appRoutes:Routes=[
     NavBarComponent,
     HistorialComponent,
 
-    TooltipComponent
+    TooltipComponent,
 
     VictoriaComponent
 
