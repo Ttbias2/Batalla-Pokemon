@@ -31,6 +31,7 @@ import { IngresarJugadoresComponent } from './components/usuario_carpeta/ingresa
 import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HistorialComponent } from './components/historial/historial.component';
+import { TooltipComponent } from './././components/tooltip/tooltip.component';
 
 
 const appRoutes:Routes=[
@@ -80,7 +81,8 @@ const appRoutes:Routes=[
     IngresarJugadoresComponent,
     PageMenuComponent,
     NavBarComponent,
-    HistorialComponent
+    HistorialComponent,
+    TooltipComponent
   
   ],
   imports: [
