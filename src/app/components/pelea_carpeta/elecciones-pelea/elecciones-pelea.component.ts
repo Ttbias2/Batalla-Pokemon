@@ -610,31 +610,20 @@ export class EleccionesPeleaComponent implements OnInit {
 
     if(muertosj1==3)
     {
-      alert("vitoria del j2");
       fin = true;
     }
 
     if(muertosj2==3)
     {
-      alert("vitoria del j1");
       nuevaPartida.vencedor = true;
       fin = true;
     }
 
     if(fin)
     {
-      this.vaciarPokes();
       this.database.guardarPartida(nuevaPartida);
-      this.router.navigate(['/page-menu']);
+      this.router.navigate(['/victoria']);
     }
   }
-
-  vaciarPokes()
-  {
-    this.datUsuario.pasos = 1;
-    this.datUsuario.jugador1.pokemons = [];
-    this.datUsuario.jugador2.pokemons = [];
-  }
-
 
 }

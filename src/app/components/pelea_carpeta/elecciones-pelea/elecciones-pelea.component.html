@@ -1,4 +1,6 @@
 <section class="fondo">
+<p *ngIf="turno" class="turn">turno del jugador 1</p>
+<p *ngIf="!turno" class="turn">turno del jugador 2</p>
 <section class="barraEleccion">
     <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
     <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
@@ -31,8 +33,14 @@
 
 <ol *ngIf="atacar">
     <li *ngFor="let habilidad of habilidadesMostrar,let i = index">
-        <button (click)="cargarAtaque(i); toggleBarraExtra()" >{{habilidad.name}}</button>
+        <button class="habilidades" (click)="cargarAtaque(i); toggleBarraExtra()" >
+            <app-tooltip>
+                Power: {{habilidad.power}} Accuracy: {{habilidad.accuracy}} Type: {{habilidad.type}}
+            </app-tooltip>
+            {{habilidad.name}}
+        </button>
     </li>
 </ol>
 </section>
 </section>
+<!-- title='Power: {{habilidad.power}} Accuracy: {{habilidad.accuracy}} Type: {{habilidad.type}}' -->
