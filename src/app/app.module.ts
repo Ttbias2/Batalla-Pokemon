@@ -32,13 +32,12 @@ import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HistorialComponent } from './components/historial/historial.component';
 
-
 const appRoutes:Routes=[
   {path:'',component:HomeInicialComponent},
-  /* {path:'', redirectTo:'/home', pathMatch:'full'},
+  /*{path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'home',component:HomeInicialComponent}, */
   {path:'login',component:LoginFormComponent},
-  {path:'registrarse',component:RegistrarseComponent},
+  {path:'registrarse',component:RegistrarseComponent },
   {path:'nav-bar',component:NavBarComponent},
 
   {path:'page-menu',component:PageMenuComponent,

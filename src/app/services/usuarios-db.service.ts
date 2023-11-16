@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of, tap, throwError } from 'rxjs';
 
 import { usuario } from 'src/app/interfaces/interface-usuario';
 import { partida } from 'src/app/interfaces/interface-partida';
@@ -37,8 +37,22 @@ export class UsuariosDbService implements OnInit{
     return this.id;
   }
 
+  usuario:usuario | unknown;
 
-  
+  checkAutentication():Observable<boolean>{
+    const id = localStorage.getItem('id');
+    if(!id){
+      return of(false)
+    }
+    return this.http.get<usuario>(`${this.url}/${id}`)
+      .pipe(
+        tap(u=> this.usuario = u),
+        map(u=>!!u),
+        catchError(err=> of(false))
+      )
+  }
+
+
 
   guardarPartida(partida:partida){//recibe una nueva partida con los datos -1-
     
@@ -60,6 +74,7 @@ export class UsuariosDbService implements OnInit{
     }
   }
 
+
   getUsuarioHttpId(id:number):Observable<usuario>{//obtiene usuario por id -2-
     return this.http.get<usuario>(`${this.url}/${id}`);
   }
@@ -76,6 +91,7 @@ export class UsuariosDbService implements OnInit{
         }
       });
   }
+
   putUsuarioHttp(usuario:usuario):Observable<usuario>{//Guardar nuevo historial -4-
     return this.http.put<usuario>(
       `${this.url}/${usuario.id}`,
@@ -177,6 +193,8 @@ export class UsuariosDbService implements OnInit{
   deleteUsuarioHttp(id:number | undefined){
     return this.http.delete(`${this.url}/${id}`);
   }
+
+
 
 }
  

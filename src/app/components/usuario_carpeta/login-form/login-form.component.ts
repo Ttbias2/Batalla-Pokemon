@@ -96,7 +96,7 @@ export class LoginFormComponent implements OnInit{
     
     if(this.sesionActiva.email!= ""){
       alert("Logeo exitoso");
-      
+      localStorage.setItem('id',this.sesionActiva.id.toString());//setea el id en el localStorage
       this.usuarioDBService.setearId(this.sesionActiva.id);//setea el id para poder consultarlo al momento de guardar una partida o consultar historial
       this.router.navigate(["/page-menu"]);
     

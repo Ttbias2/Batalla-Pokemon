@@ -752,6 +752,19 @@
             102,
             122
           ]
+        },
+        {
+          "jugador1": "Antoo",
+          "jugador2": "Dami",
+          "vencedor": true,
+          "pokemons": [
+            141,
+            130,
+            9,
+            72,
+            80,
+            76
+          ]
         }
       ],
       "id": 21
