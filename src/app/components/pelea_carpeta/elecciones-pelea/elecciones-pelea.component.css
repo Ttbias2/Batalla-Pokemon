@@ -79,3 +79,8 @@ button:hover {
     height: 25vh;
     width: 100vw;
 }
+
+.turn{
+    text-align: center;
+    font-family: 'PixelFont';
+}

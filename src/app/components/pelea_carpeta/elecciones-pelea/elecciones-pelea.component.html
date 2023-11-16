@@ -1,4 +1,6 @@
 <section class="fondo">
+<p *ngIf="turno" class="turn">turno del jugador 1</p>
+<p *ngIf="!turno" class="turn">turno del jugador 2</p>
 <section class="barraEleccion">
     <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
     <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
