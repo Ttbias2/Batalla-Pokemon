@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { jugador } from 'src/app/Clases/jugador.model';
 import { pokemon } from 'src/app/Clases/pokemon.model';
+import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -16,8 +17,12 @@ export class VictoriaComponent implements OnInit{
   victoriaPara:number = 0;
   listaPokesGanadores:pokemon[] = [];
 
-  constructor(private datUsuarios:UsuariosService, private router:Router)
+  constructor(private datUsuarios:UsuariosService, private router:Router,private usuarioDBService:UsuariosDbService)
   {
+    if(-1 == this.usuarioDBService.obtenerId()){
+      this.router.navigate([""]);
+    }
+
     this.j1 = datUsuarios.jugador1;
     this.j2 = datUsuarios.jugador2;
   }
