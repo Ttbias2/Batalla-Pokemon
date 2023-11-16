@@ -31,7 +31,11 @@ import { IngresarJugadoresComponent } from './components/usuario_carpeta/ingresa
 import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HistorialComponent } from './components/historial/historial.component';
+
+import { TooltipComponent } from './././components/tooltip/tooltip.component';
+
 import { VictoriaComponent } from './components/pelea_carpeta/victoria/victoria.component';
+
 
 
 const appRoutes:Routes=[
@@ -83,7 +87,11 @@ const appRoutes:Routes=[
     PageMenuComponent,
     NavBarComponent,
     HistorialComponent,
+
+    TooltipComponent
+
     VictoriaComponent
+
   
   ],
   imports: [

@@ -1077,6 +1077,19 @@
             102,
             122
           ]
+        },
+        {
+          "jugador1": "l;j",
+          "jugador2": "lk;",
+          "vencedor": false,
+          "pokemons": [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ]
         }
       ],
       "id": 21
