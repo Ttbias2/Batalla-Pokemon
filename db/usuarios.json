@@ -423,6 +423,19 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            151,
+            19,
+            3,
+            150,
+            14
+          ]
         }
       ],
       "id": 19
