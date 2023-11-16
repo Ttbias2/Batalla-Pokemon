@@ -1,8 +1,9 @@
 @font-face {
-    font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf');
-  }
-p{
-    font-family: 'PixelFont';
-    text-transform: capitalize;
+  font-family: 'PixelFont';
+  src: url('../../../../assets/Minecraft.ttf');
+}
+
+p {
+  font-family: 'PixelFont';
+  text-transform: capitalize;
 }
