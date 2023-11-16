@@ -22,9 +22,10 @@
 
 
 fieldset{
-    border-image: url(./../../../../assets/img/bordeVioleta120trans.png) 10 10 repeat;
-    border: 4px solid;
-    background-color: grey;
+    
+    border-image: url(src/assets/img/bordeVioleta120trans.png) 20 20 repeat;
+    
+    background-color: #FFF8DC;
     bottom: 0px; 
     left: 50%;
     transform: translateX(-50%);
@@ -32,7 +33,33 @@ fieldset{
     font-style: normal;
     font-family: 'PixelFont';
     text-shadow: 1px 1px 1px   white;
+
     
+    
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.campo{
+    margin: 2px;
+}
+
+.btn-login{
+    margin-top: 2px;
+}
+
+.btn-registrarse{
+    margin-top: 2px;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error{
@@ -42,7 +69,7 @@ fieldset{
     text-align: center;
 }
 .fondo{
-    background-color: rgb(202, 201, 201);
+    background-color: #FFF8DC;
     height: 100%;
     width: 100%;
 }
@@ -62,6 +89,7 @@ fieldset{
     background-repeat: no-repeat;
     margin: auto;
 }
+
 .iniciar-sesion{
     position: absolute;
     bottom: 12px; 

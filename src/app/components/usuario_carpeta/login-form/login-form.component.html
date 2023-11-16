@@ -1,42 +1,42 @@
 <section class="fondo">
     <div class="pika">
         <h1>BatallasPokemon</h1>
-        <fieldset>
+        <fieldset class="seccion-form">
             <legend>Inicar Sesion</legend>
             <form id="formulario" (ngSubmit)="iniciarSesion()" [formGroup]="formulario">
-                <div>
+                <div class="campo">
                     <input type="text" 
                         id="email" 
                         formControlName="email"
                         placeholder="Email">
         
-                    <div class="error">
+                    <div class="error campo">
                         <span *ngIf="formulario.controls['email'].getError('required') && formulario.touched">Campo requerido</span>
                     </div>
         
-                    <div class="error">
+                    <div class="error campo">
                         <span class="error" *ngIf="formulario.controls['email'].getError('email') && formulario.touched">Introduzca un Email valido</span>
                     </div> 
         
                 </div>
         
-                <div>
+                <div class="campo">
                     <input type="password" 
                         id="password" 
                         formControlName="password"
                         placeholder="password">
         
-                    <div class="error">
+                    <div class="error campo">
                         <span *ngIf="formulario.controls['password'].getError('required') && formulario.touched">Campo requerido</span>
                     </div>
                 </div>
         
-                <div>
+                <div class="btn-login">
                     <input type="submit" value="Iniciar Sesion">
                 </div>
                 
             </form>
-            <div>
+            <div class="btn-registrarse">
                 <button (click)="rutaRegistrarse()">Resgistrarse</button>
             </div>
         </fieldset>

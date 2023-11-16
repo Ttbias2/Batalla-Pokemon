@@ -1,19 +1,20 @@
-
-<fieldset>
-    <legend>Ingresar nombre de los Jugadores</legend>
-    <form (ngSubmit)="jugar()" #form="ngForm">
-        <div>
-            <label for="jugador1">Jugador 1: </label>
-            <input type="text" name="jugador1" id="jugador1" [(ngModel)]="j1" required>
-        </div>
-        <div>
-            <label for="jugador2">Jugador 2: </label>
-            <input type="text" name="jugador2" id="jugador2" [(ngModel)]="j2" required>
-        </div>
-
-        <div>
-            <input type="submit" value="Comenzar" [disabled]="!form.valid">
-        </div>
-
-    </form>
-</fieldset>
+<section class="campo-form">
+    <fieldset class="marco">
+        <legend>Ingresar nombre de los Jugadores</legend>
+        <form class="formulario" (ngSubmit)="jugar()" #form="ngForm">
+            <div class="campo">
+                <label for="jugador1">Jugador 1: </label>
+                <input type="text" name="jugador1" id="jugador1" [(ngModel)]="j1" required>
+            </div>
+            <div class="campo">
+                <label for="jugador2">Jugador 2: </label>
+                <input type="text" name="jugador2" id="jugador2" [(ngModel)]="j2" required>
+            </div>
+    
+            <div class="campo">
+                <input type="submit" value="Comenzar" [disabled]="!form.valid">
+            </div>
+    
+        </form>
+    </fieldset>
+</section>
