@@ -39,6 +39,7 @@ export class AppComponent {
         if (event instanceof NavigationEnd) {
           if (
             event.url === '/' ||
+            event.url === '/home' ||
             event.url === '' ||
             event.url === '/login' ||
             event.url === '/registrarse'
