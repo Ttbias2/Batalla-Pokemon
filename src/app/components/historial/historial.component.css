@@ -50,7 +50,8 @@
 
 .pokeIndividual{
     font-family: 'PixelFont';
-    background-color: #FFF8DC;
+    background: rgb(255,251,236);
+    background: radial-gradient(circle, rgba(255,251,236,1) 40%, rgba(224,218,189,1) 100%);
     margin: .5rem;
     padding: 0;
     display: flex;
