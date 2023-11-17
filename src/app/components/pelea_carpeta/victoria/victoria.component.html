@@ -1,6 +1,6 @@
 <div id="contenedor">
-    <section *ngIf="victoriaPara == 1">victoria de {{j1.nombre}}</section>
-    <section *ngIf="victoriaPara == 2">victoria de {{j2.nombre}}</section>
+    <h1 *ngIf="victoriaPara == 1">Victoria de {{j1.nombre}}</h1>
+    <h1 *ngIf="victoriaPara == 2">Victoria de {{j2.nombre}}</h1>
     
     <ul>
         <li *ngFor="let poke of listaPokesGanadores">
@@ -8,7 +8,10 @@
         </li>
     </ul>
     
-    <button (click)="mismaPelea()">pelear con los mismo pokemons</button>
-    <button (click)="otraPelea()">elegir distintos pokemons</button>
-    <button (click)="volverAlMenu()">volver al menu principal</button>    
+    <div id="contBtn">
+        <button (click)="mismaPelea()">Pelear con los mismo pokemons</button>
+        <button (click)="otraPelea()">Elegir distintos pokemons</button>
+        <button (click)="volverAlMenu()">Volver al menu principal</button>
+    </div>
+        
 </div>
