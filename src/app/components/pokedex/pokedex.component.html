@@ -34,7 +34,7 @@
                 <p> {{type.type.name}} </p>
             </ol>
             <li *ngFor="let stat of selectedPokemon.stats">
-                <p>{{stat.stat.name}}: {{stat.base_stat}}  </p>
+                <p>{{stat.stat.name}}: {{stat.stat.name === 'hp' ? (stat.base_stat * 4) : stat.base_stat}}  </p>
             </li>
         </ol>
     </div>

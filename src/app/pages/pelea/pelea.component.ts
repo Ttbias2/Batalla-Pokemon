@@ -15,9 +15,9 @@ export class PeleaComponent {
   ){}
 
   ngOnInit(): void {
-    if(-1 == this.usuarioDBService.obtenerId()){
+    /*if(-1 == this.usuarioDBService.obtenerId()){
       this.router.navigate([""]);
-    }
+    }*/
     
   }
 }
