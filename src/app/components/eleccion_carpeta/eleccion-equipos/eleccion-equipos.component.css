@@ -46,16 +46,14 @@ body{
 
 
 
-.listadoPokes{   
-    
-    width: 80rem; 
+.listadoPokes {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    width: 80rem;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  
-}
+  }
 
 .buscarPokes{
     margin: .5rem 3rem .5rem 1rem;
