@@ -1,22 +1,20 @@
+.tooltip-container{
+  color: white;
+}
 
+.tooltip-text {
+  border-width: 20px;
+  border-image: url('./../../../assets/img/bordeVioleta120trans.png') 30 fill round;
+  background-color: white;
+  color: black;
   
-  .contenido_tooltip {
-    visibility: hidden;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-.contenido_tooltip:hover {
-    visibility: visible;
-    opacity: 1;
-  }
+  visibility: hidden;
+  z-index: 1;
+  padding: 5px;
+  position: relative;
+  bottom: 50px;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+}

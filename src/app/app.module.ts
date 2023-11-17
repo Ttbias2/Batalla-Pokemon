@@ -31,7 +31,7 @@ import { IngresarJugadoresComponent } from './components/usuario_carpeta/ingresa
 import { PageMenuComponent } from './pages/page-menu/page-menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HistorialComponent } from './components/historial/historial.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { TooltipComponent } from './././components/tooltip/tooltip.component';
 
 import { VictoriaComponent } from './components/pelea_carpeta/victoria/victoria.component';
@@ -68,7 +68,7 @@ const appRoutes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    
+    //MatTooltipModule,
     EleccionEquiposComponent,
     DialogComponent,
     EleccionComponent,
@@ -104,8 +104,8 @@ const appRoutes:Routes=[
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    RouterModule.forRoot(appRoutes)
-    
+    RouterModule.forRoot(appRoutes),
+    MatTooltipModule
   ],
   providers: [PokeApiService],
   bootstrap: [AppComponent]
