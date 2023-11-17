@@ -1092,17 +1092,6 @@
           ]
         },
         {
-<<<<<<< HEAD
-          "jugador1": "abc",
-          "jugador2": "asd",
-          "vencedor": false,
-          "pokemons": [
-            1,
-            16,
-            14,
-            4,
-            7,
-=======
           "jugador1": "dfsf",
           "jugador2": "sdg",
           "vencedor": false,
@@ -1112,23 +1101,10 @@
             19,
             19,
             19,
->>>>>>> 75109a29462d6395d6432166388e7cb9146b6f7a
             19
           ]
         },
         {
-<<<<<<< HEAD
-          "jugador1": "asd",
-          "jugador2": "dsa",
-          "vencedor": false,
-          "pokemons": [
-            4,
-            127,
-            74,
-            7,
-            66,
-            101
-=======
           "jugador1": "jhk",
           "jugador2": "yukhiogyki",
           "vencedor": true,
@@ -1139,7 +1115,6 @@
             19,
             19,
             19
->>>>>>> 75109a29462d6395d6432166388e7cb9146b6f7a
           ]
         }
       ],

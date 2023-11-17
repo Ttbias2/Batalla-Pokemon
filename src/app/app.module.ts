@@ -35,29 +35,29 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { TooltipComponent } from './././components/tooltip/tooltip.component';
 
 import { VictoriaComponent } from './components/pelea_carpeta/victoria/victoria.component';
+import { authGuard } from './guards/auth.guard';
 
 
 
 const appRoutes:Routes=[
-  {path:'',component:HomeInicialComponent},
-  /*{path:'', redirectTo:'/home', pathMatch:'full'},
-  {path:'home',component:HomeInicialComponent}, */
+  //{path:'',component:HomeInicialComponent},
+  {path:'', redirectTo:'/home', pathMatch:'full'},
+  {path:'home',component:HomeInicialComponent},
   {path:'login',component:LoginFormComponent},
   {path:'registrarse',component:RegistrarseComponent },
-  {path:'nav-bar',component:NavBarComponent},
+  {path:'nav-bar',component:NavBarComponent,canMatch:[authGuard]},
 
-  {path:'page-menu',component:PageMenuComponent,
+  {path:'page-menu',component:PageMenuComponent,canMatch:[authGuard],
     children:[
-      {path:'pokedex',component:PokedexComponent},
-      {path:'ingresar-jugadores',component:IngresarJugadoresComponent},
-      {path:'historial',component:HistorialComponent},
+      {path:'pokedex',component:PokedexComponent,canMatch:[authGuard]},
+      {path:'ingresar-jugadores',component:IngresarJugadoresComponent,canMatch:[authGuard]},
+      {path:'historial',component:HistorialComponent,canMatch:[authGuard]},
     ]
   },
-
-  {path:"eleccion",component:EleccionComponent},
-  {path:'pelea',component:PeleaComponent},
-  {path:"victoria",component:VictoriaComponent}
-
+  {path:"eleccion",component:EleccionComponent,canMatch:[authGuard]},
+  {path:'pelea',component:PeleaComponent,canMatch:[authGuard]},
+  {path:"victoria",component:VictoriaComponent,canMatch:[authGuard]},
+  {path:'**', redirectTo:'home', pathMatch:'full'},
   //{path:"editar-usuario",component:EditarUsuarioComponent}  
 ];
 
