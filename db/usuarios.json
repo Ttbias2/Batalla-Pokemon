@@ -1090,6 +1090,32 @@
             20,
             20
           ]
+        },
+        {
+          "jugador1": "abc",
+          "jugador2": "asd",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            16,
+            14,
+            4,
+            7,
+            19
+          ]
+        },
+        {
+          "jugador1": "asd",
+          "jugador2": "dsa",
+          "vencedor": false,
+          "pokemons": [
+            4,
+            127,
+            74,
+            7,
+            66,
+            101
+          ]
         }
       ],
       "id": 21
