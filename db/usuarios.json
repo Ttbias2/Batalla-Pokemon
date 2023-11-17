@@ -1116,6 +1116,19 @@
             19,
             19
           ]
+        },
+        {
+          "jugador1": "saf",
+          "jugador2": "bw",
+          "vencedor": true,
+          "pokemons": [
+            1,
+            6,
+            6,
+            2,
+            3,
+            3
+          ]
         }
       ],
       "id": 21
