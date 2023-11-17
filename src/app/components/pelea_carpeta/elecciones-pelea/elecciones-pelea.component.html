@@ -13,9 +13,12 @@
 <ol *ngIf="cambioPokemon" >
     <li *ngFor="let poke of pokesParaCambio,let i = index">
         <section *ngIf="i != pokePeleandoCambio && poke.vidaActual>0" >
-            <button (click)="cambioj1(i); toggleBarraExtra()">
+            <button class="pokemon" (click)="cambioj1(i); toggleBarraExtra()">
                 <img [src]="poke.urlImgFront" alt="no se pudo cargar la imagen">
-            </button>    
+                <app-tooltip class="tooltip2" text=
+"Name: {{poke.nombre}}
+Health: {{poke.vidaActual}}/{{poke.vida}}"></app-tooltip>
+            </button>   
         </section>
     </li>
 </ol>
@@ -33,8 +36,15 @@
 
 <ol *ngIf="atacar">
     <li *ngFor="let habilidad of habilidadesMostrar,let i = index">
-        <button class="habilidades" (click)="cargarAtaque(i); toggleBarraExtra()" matTooltip="Power: {{habilidad.power}} Accuracy: {{habilidad.accuracy}} Type: {{habilidad.type}}">
-            {{habilidad.name}}
+        <button class="habilidades" (click)="cargarAtaque(i); toggleBarraExtra()">
+            <div class="button-content">
+              {{habilidad.name}}
+              <app-tooltip class="tooltip" text=
+"Power: {{habilidad.power}}
+Accuracy: {{habilidad.accuracy}}
+Type: {{habilidad.type}}
+Ailment: {{habilidad.damage_class}}"></app-tooltip>
+            </div>
           </button>
     </li>
 </ol>

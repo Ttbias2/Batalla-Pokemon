@@ -36,10 +36,10 @@ button{
     outline: none;
     width: 20vw;
     height: 10vh;
-    
+    align-items: center;
     background-color: transparent;
     font-family: 'PixelFont';
-    
+    z-index: 0;
     
     font-size: 20px;
     color: inherit;
@@ -57,7 +57,7 @@ button:hover {
         opacity: 1;
     }
     25%, 75% {
-        opacity: 0.5;
+        opacity: 0.7;
     }
 }
 
@@ -84,3 +84,28 @@ button:hover {
     text-align: center;
     font-family: 'PixelFont';
 }
+
+.button-content {
+    position: relative;
+    width: 100%;
+    
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    
+    
+  }
+  .pokemon {
+    position: relative; 
+  }
+  
+  .tooltip2 {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    left: 0;
+  }

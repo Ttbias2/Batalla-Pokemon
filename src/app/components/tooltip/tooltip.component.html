@@ -1,4 +1,4 @@
 <div class="tooltip-container">
-    <ng-content></ng-content>
-    <span class="tooltip-text">{{ text }}</span>
-  </div>
+  <ng-content></ng-content>
+  <div class="tooltip-text" [innerHTML]="text"></div>
+</div>

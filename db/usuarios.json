@@ -1090,6 +1090,32 @@
             20,
             20
           ]
+        },
+        {
+          "jugador1": "dfsf",
+          "jugador2": "sdg",
+          "vencedor": false,
+          "pokemons": [
+            19,
+            19,
+            19,
+            19,
+            19,
+            19
+          ]
+        },
+        {
+          "jugador1": "jhk",
+          "jugador2": "yukhiogyki",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            6,
+            6,
+            19,
+            19,
+            19
+          ]
         }
       ],
       "id": 21

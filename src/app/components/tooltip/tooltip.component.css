@@ -1,20 +1,49 @@
-.tooltip-container{
+.tooltip-container {
+  
   color: white;
+  animation: none;
+  /* border: 5px solid; */ /* es para comprobar hitbox */
+  height: 5vh;
+  /* display: inline-block;
+  position: relative; */
 }
 
+@font-face {
+  font-family: 'PixelFont';
+  src:url('./../../../assets/Minecraft.ttf')
+}
 .tooltip-text {
-  border-width: 20px;
-  border-image: url('./../../../assets/img/bordeVioleta120trans.png') 30 fill round;
-  background-color: white;
+  border: 10px solid ;
+  border-image: url('./../../../assets/img/bordeVioleta120trans.png') 20 20 repeat;
+  background-image: url('./../../../assets/img/Neutral/battleMessage.png');
+  text-align: center;
+    font-family: 'PixelFont';
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   color: black;
   
   visibility: hidden;
-  z-index: 1;
-  padding: 5px;
+  height: auto;
+  white-space: pre-wrap;
+  padding: 20px;
+  /* height: 10vh;
+  width: 20vw; */
   position: relative;
-  bottom: 50px;
+  bottom: 15vh;
+  animation: none;
 }
 
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
 }
