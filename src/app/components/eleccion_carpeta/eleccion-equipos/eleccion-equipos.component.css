@@ -1,19 +1,20 @@
 @font-face {
     font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf');
-  }
-p{
+    src: url('../../../../assets/Minecraft.ttf');
+}
+
+p {
     font-family: 'PixelFont';
     text-transform: capitalize;
 }
 
-body{
+body {
     margin: 0;
 }
 
 
 
-.seccion{
+.seccion {
     margin: 0;
     border: 15px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
@@ -21,17 +22,17 @@ body{
 
 
 
-.busqueda{
+.busqueda {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.seleccionarPokemonP{
+.seleccionarPokemonP {
     margin: 0;
 }
 
-.cambioPagina{
+.cambioPagina {
     display: flex;
     justify-content: space-between;
     margin: .5rem 0;
@@ -39,7 +40,7 @@ body{
 
 
 
-.seccionListadoPokes{
+.seccionListadoPokes {
     display: flex;
     justify-content: center;
 }
@@ -53,19 +54,19 @@ body{
     width: 80rem;
     margin: 0;
     padding: 0;
-  }
+}
 
-.buscarPokes{
+.buscarPokes {
     margin: .5rem 3rem .5rem 1rem;
 }
 
-.filtrarTipos{
-    
+.filtrarTipos {
+
     justify-content: space-around;
 }
 
 
-.pokeIndividual{
+.pokeIndividual {
     margin: .05rem;
     padding: 0;
     display: flex;
@@ -73,90 +74,86 @@ body{
     width: 6.6rem;
     height: 6.6rem;
     border: 10px solid;
-        border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
 
 }
 
-.nombreElegirPoke{
+.nombreElegirPoke {
     margin: 0;
     text-align: center;
 }
 
-.imagenElegirPoke{
+.imagenElegirPoke {
     object-fit: cover;
 }
 
 
 
-.elegidos{
+.elegidos {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 5fr 1fr 5fr;
     align-items: center;
 }
 
-.eleccionJugador{
+.eleccionJugador {
     display: grid;
     grid-template-rows: 2.5rem 9rem;
 }
 
-.nombreJugadorEleccion{
+.nombreJugadorEleccion {
     margin: 0;
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
     height: 2rem;
-    
-  
+
+
 }
 
-.contenedores{
+.contenedores {
 
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 
-.contenedorDeEleccion{
-    
+.contenedorDeEleccion {
+
     width: 6.6rem;
     height: 6.6rem;
     margin: 0 .5rem;
     border: 10px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
 
-    
-    
+
+
 }
 
-.bConfirmar{
+.bConfirmar {
     height: 4rem;
-    
-   
-  
-    
 }
 
-.footer{
+.footer {
     text-align: center;
 }
 
-#pokes:hover{
+#pokes:hover {
     background-color: coral;
 }
 
-#pokes:active{
+#pokes:active {
     background-color: rgb(177, 88, 55);
 }
 
 
 
 .bTipo {
-    width: 4vw; 
-    height: 2vh; 
+    width: 4vw;
+    height: 2vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -164,64 +161,81 @@ body{
     background-color: transparent;
 
     margin: 2px;
-  }
+}
 
-#normal{
+#normal {
     background-image: url(../../../../assets/img/tipos/NormalIC_XY.png);
 }
-#fighting{
+
+#fighting {
     background-image: url(../../../../assets/img/tipos/FightingIC_XY.png);
 }
-#flying{
+
+#flying {
     background-image: url(../../../../assets/img/tipos/FlyingIC_XY.png);
 }
-#poison{
+
+#poison {
     background-image: url(../../../../assets/img/tipos/PoisonIC_XY.png);
 }
-#ground{
+
+#ground {
     background-image: url(../../../../assets/img/tipos/GroundIC_XY.png);
 }
-#rock{
+
+#rock {
     background-image: url(../../../../assets/img/tipos/RockIC_XY.png);
 }
-#bug{
+
+#bug {
     background-image: url(../../../../assets/img/tipos/BugIC_XY.png);
 }
-#ghost{
+
+#ghost {
     background-image: url(../../../../assets/img/tipos/GhostIC_XY.png);
 }
-#steel{
+
+#steel {
     background-image: url(../../../../assets/img/tipos/SteelIC_XY.png);
 }
-#fire{
+
+#fire {
     background-image: url(../../../../assets/img/tipos/FireIC_XY.png);
 }
-#water{
+
+#water {
     background-image: url(../../../../assets/img/tipos/WaterIC_XY.png);
 }
-#grass{
+
+#grass {
     background-image: url(../../../../assets/img/tipos/GrassIC_XY.png);
 }
-#electric{
+
+#electric {
     background-image: url(../../../../assets/img/tipos/ElectricIC_XY.png);
 }
-#psychic{
+
+#psychic {
     background-image: url(../../../../assets/img/tipos/PsychicIC_XY.png);
 }
-#ice{
+
+#ice {
     background-image: url(../../../../assets/img/tipos/IceIC_XY.png);
 }
-#dragon{
+
+#dragon {
     background-image: url(../../../../assets/img/tipos/DragonIC_XY.png);
 }
-#dark{
+
+#dark {
     background-image: url(../../../../assets/img/tipos/DarkIC_XY.png);
 }
-#fairy{
+
+#fairy {
     background-image: url(../../../../assets/img/tipos/FairyIC_XY.png);
 }
 
-#bBuscar{
+#bBuscar {
 
     margin-left: 0.5rem;
     border-color: rgb(22, 180, 22);
@@ -230,7 +244,7 @@ body{
 
 }
 
-#bCancelar{
+#bCancelar {
 
     margin-left: 0.5rem;
     border-color: rgb(180, 22, 22);
@@ -239,10 +253,10 @@ body{
 
 }
 
-#bBuscar:hover{
+#bBuscar:hover {
     background-color: rgb(22, 180, 22);
 }
 
-#bCancelar:hover{
+#bCancelar:hover {
     background-color: rgb(180, 22, 22);
 }

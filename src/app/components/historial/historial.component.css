@@ -50,16 +50,17 @@
 
 .pokeIndividual{
     font-family: 'PixelFont';
-    background: rgb(255,251,236);
-    background: radial-gradient(circle, rgba(255,251,236,1) 40%, rgba(224,218,189,1) 100%);
     margin: .5rem;
-    padding: 0;
+    padding: .5rem;
     display: flex;
     flex-direction: column;
     width: 6.6rem;
     height: 6.6rem;
     border: 10px solid;
     border-image: url(../../../assets/img/bordeVioleta120trans.png) 50 50 repeat;
+    background-image: url(../../../assets/img/fondoV2.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .nombrePoke{

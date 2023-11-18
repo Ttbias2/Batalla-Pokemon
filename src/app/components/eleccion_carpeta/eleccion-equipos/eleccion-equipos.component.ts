@@ -18,6 +18,7 @@ export class EleccionEquiposComponent implements OnInit {
   anteriorDesabilitado: boolean = true;
   mostrarDetalle: boolean = false;
   pokeBusc: any = "";
+  cargando: boolean = false;
 
   tipos: string[] = [
     "normal",
@@ -98,7 +99,15 @@ export class EleccionEquiposComponent implements OnInit {
   }
 
   filtrarPorTipo(iTipo: number) {
-    this.datPokemons.traerPorTipo(this.tipos[iTipo]).subscribe(data => this.actualizarPokes(data));
+    if (!this.cargando) {
+      this.cargando = true;
+      this.datPokemons.traerPorTipo(this.tipos[iTipo]).subscribe(
+        data => {
+          this.actualizarPokes(data);
+          this.cargando = false;
+        }
+      );
+    }
   }
 
   actualizarPokes(pokes: any) {

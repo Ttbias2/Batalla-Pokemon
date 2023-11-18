@@ -1,9 +1,9 @@
-body{
+body {
     margin: 0;
 }
 
 
-.seccion{
+.seccion {
     margin: 0;
     border: 15px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
@@ -11,26 +11,27 @@ body{
 
 @font-face {
     font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf');
-  }
-p{
+    src: url('../../../../assets/Minecraft.ttf');
+}
+
+p {
     font-family: 'PixelFont';
     text-transform: capitalize;
 }
 
 
 
-.busqueda{
+.busqueda {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.seleccionarPokemonP{
+.seleccionarPokemonP {
     margin: 0;
 }
 
-.cambioPagina{
+.cambioPagina {
     display: flex;
     justify-content: space-between;
     margin: .5rem 0;
@@ -38,35 +39,36 @@ p{
 
 
 
-.seccionListadoPokes{
+.seccionListadoPokes {
     display: flex;
     justify-content: center;
 }
 
 
 
-.listadoPokes{   
-    
-    width: 80rem; 
+.listadoPokes {
+
+    width: 80rem;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-  
+    
+
 }
 
-.buscarPokes{
+.buscarPokes {
     margin: .5rem 3rem .5rem 1rem;
 }
 
-.filtrarTipos{
-    
+.filtrarTipos {
+
     justify-content: space-around;
 }
 
 
-.pokeIndividual{
+.pokeIndividual {
     margin: .05rem;
     padding: 0;
     display: flex;
@@ -77,110 +79,120 @@ p{
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
 }
 
-.nombreElegirPoke{
+.nombreElegirPoke {
     margin: 0;
     text-align: center;
 }
 
-.imagenElegirPoke{
+.imagenElegirPoke {
     object-fit: cover;
 }
 
 
 
-.elegidos{
+.elegidos {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 5fr 1fr 5fr;
     align-items: center;
 }
 
-.eleccionJugador{
+.eleccionJugador {
     display: grid;
     grid-template-rows: 2.5rem 9rem;
 }
 
-.nombreJugadorEleccion{
+.nombreJugadorEleccion {
     margin: 0;
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
     height: 2rem;
-    
-  
+
+
 }
 
-.contenedores{
+.contenedores {
 
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 
-.contenedorDeEleccion{
-    
+.contenedorDeEleccion {
+
     width: 6.6rem;
     height: 6.6rem;
     margin: 0 .5rem;
     border: 10px solid;
     border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
-    
-    
+
+
 }
 
-.bConfirmar{
+.bConfirmar {
     height: 4rem;
-    
-   
-  
-    
+
+
+
+
 }
 
-.footer{
+.footer {
     text-align: center;
 }
 
-button{
+button {
     background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
-    
-    background-size: 100% 100%; 
-   background-position: center; 
-   background-repeat: no-repeat;
-   border: none;
-   outline: none;
-   width: 20vw;
-   height: 10vh;
-   align-items: center;
-   background-color: transparent;
-   font-family: 'PixelFont';
-   z-index: 0;
-   
-   font-size: 20px;
-   color: inherit;
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 10vh;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'PixelFont';
+    z-index: 0;
+
+    font-size: 20px;
+    color: inherit;
 }
 
 button:hover {
-    animation: flash 2s infinite; 
+    animation: flash 2s infinite;
 }
 
 @keyframes flash {
-    0%, 50%, 100% {
+
+    0%,
+    50%,
+    100% {
         opacity: 1;
     }
-    25%, 75% {
+
+    25%,
+    75% {
         opacity: 0.7;
     }
 }
 
 @keyframes alerta {
-    0%, 50%, 100% {
+
+    0%,
+    50%,
+    100% {
         background-color: rgb(199, 40, 40);
     }
-    25%, 75% {
-        background-color: #FFF8DC;               
+
+    25%,
+    75% {
+        background-color: #FFF8DC;
     }
 }
 
@@ -188,6 +200,12 @@ button:hover {
     animation: alerta 1s infinite;
 }
 
-.verde{
+.verde {
     background-color: rgba(27, 173, 27, 0.836);
+}
+
+.elegido{
+    background-image: url(../../../../assets/img/fondoV2.jpg);
+    background-size: cover;
+    background-position: center;
 }
