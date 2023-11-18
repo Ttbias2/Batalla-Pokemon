@@ -10,16 +10,15 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   templateUrl: './victoria.component.html',
   styleUrls: ['./victoria.component.css']
 })
-export class VictoriaComponent implements OnInit{
+export class VictoriaComponent implements OnInit {
 
-  j1:jugador;
-  j2:jugador;
-  victoriaPara:number = 0;
-  listaPokesGanadores:pokemon[] = [];
+  j1: jugador;
+  j2: jugador;
+  victoriaPara: number = 0;
+  listaPokesGanadores: pokemon[] = [];
 
-  constructor(private datUsuarios:UsuariosService, private router:Router,private usuarioDBService:UsuariosDbService)
-  {
-    if(-1 == this.usuarioDBService.obtenerId()){
+  constructor(private datUsuarios: UsuariosService, private router: Router, private usuarioDBService: UsuariosDbService) {
+    if (-1 == this.usuarioDBService.obtenerId()) {
       this.router.navigate([""]);
     }
 
@@ -28,81 +27,71 @@ export class VictoriaComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+
     this.comprobarGanador();
 
-    if(this.victoriaPara == 1)
-    {
+    this.datUsuarios.cambiarPokej1(0);
+    this.datUsuarios.cambiarPokej2(0);
+
+    if (this.victoriaPara == 1) {
       this.listaPokesGanadores = this.j1.pokemons;
     }
-    else
-    {
+    else {
       this.listaPokesGanadores = this.j2.pokemons;
     }
 
   }
 
-  comprobarGanador()
-  {
-    let muertosj1:number=0;
-    let muertosj2:number=0;
+  comprobarGanador() {
+    let muertosj1: number = 0;
+    let muertosj2: number = 0;
 
     this.j1.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
+      if (poke.vidaActual <= 0) {
         muertosj1++;
       }
     })
 
     this.j2.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
+      if (poke.vidaActual <= 0) {
         muertosj2++;
       }
     })
 
-    if(muertosj1==3)
-    {
+    if (muertosj1 == 3) {
       this.victoriaPara = 2;
     }
 
-    if(muertosj2==3)
-    {
+    if (muertosj2 == 3) {
       this.victoriaPara = 1;
     }
   }
 
-  vaciarPokes()
-  {
+  vaciarPokes() {
     this.datUsuarios.pasos = 1;
     this.datUsuarios.jugador1.pokemons = [];
     this.datUsuarios.jugador2.pokemons = [];
   }
 
-  mismaPelea(){
+  mismaPelea() {
     this.j1.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
-        poke.vidaActual = poke.vida;
-      }
+      poke.vidaActual = poke.vida;
     })
 
     this.j2.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
-        poke.vidaActual = poke.vida;
-      }
+      poke.vidaActual = poke.vida;
+
     })
 
     this.router.navigate(['/pelea']);
   }
 
-  otraPelea(){
+  otraPelea() {
     this.vaciarPokes();
     this.router.navigate(['/eleccion']);
   }
 
-  volverAlMenu(){
+  volverAlMenu() {
     this.vaciarPokes();
     this.router.navigate(['/page-menu']);
   }

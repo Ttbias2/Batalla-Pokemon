@@ -8,7 +8,10 @@
 
         <section class="dato" id="datoBack">
             <p id="nombreBack"> {{j1.pokemons[pokemonPeleandoj1].nombre}}</p>
-            <div  id="lifeBarTrasero"><img src="./../../../../assets/img/imagenVida.png" alt="" srcset="" class="vida"></div>
+            <div class="barraVida1">
+                <div class="barraVidaInterior1" [style.width.%]="porcentajeVidaJ1"
+                     [ngClass]="{'verde': porcentajeVidaJ1 > 60, 'amarillo': porcentajeVidaJ1 <= 60 && porcentajeVidaJ1 > 25, 'rojo': porcentajeVidaJ1 <= 25}"></div>
+              </div>
             <p class="vidaNum">{{j1.pokemons[pokemonPeleandoj1].vidaActual}} / {{j1.pokemons[pokemonPeleandoj1].vida}}</p>
             
             <ol>
@@ -27,7 +30,10 @@
     <section>
         <section class="dato" id="datoFront">
             <p id="nombreFront">  {{j2.pokemons[pokemonPeleandoj2].nombre}}</p>
-            <div id="lifeBarDelantero"><img src="./../../../../assets/img/imagenVida.png" alt="" srcset="" class="vida"></div>
+            <div class="barraVida2">
+                <div class="barraVidaInterior2" [style.width.%]="porcentajeVidaJ2"
+                     [ngClass]="{'verde': porcentajeVidaJ2 > 60, 'amarillo': porcentajeVidaJ2 <= 60 && porcentajeVidaJ2 > 25, 'rojo': porcentajeVidaJ2 <= 25}"></div>
+              </div>
             <p class="vidaNum">{{j2.pokemons[pokemonPeleandoj2].vidaActual}} / {{j2.pokemons[pokemonPeleandoj2].vida}}</p>
             
             

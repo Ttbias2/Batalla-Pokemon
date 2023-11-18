@@ -21,7 +21,14 @@ export class UsuariosService {
   private pokemonPeleandoj2 = new BehaviorSubject<number>(0);
   pokemonPeleandoj2$ = this.pokemonPeleandoj2.asObservable();
 
-  constructor(private datHabilidades: HabilidadesService) {}
+  private porcentajeVidaJ1 = new BehaviorSubject<number>(100);
+  porcentajeVidaJ1$ = this.porcentajeVidaJ1.asObservable();
+
+
+  private porcentajeVidaJ2 = new BehaviorSubject<number>(100);
+  porcentajeVidaJ2$ = this.porcentajeVidaJ2.asObservable();
+
+  constructor(private datHabilidades: HabilidadesService) { }
 
   asignarPokemon(nuevoPokemon: any) {
 
@@ -45,28 +52,26 @@ export class UsuariosService {
 
       poke.tipo.push(tipo.type.name);
 
-      if(tipo.type.name != "normal")
-      {
+      if (tipo.type.name != "normal") {
         this.datHabilidades.llenarPorHabilidad(tipo.type.name).subscribe(() => this.datHabilidades.habilidadesTipo.forEach
-        (ataque => {
-         poke.habilidades.push(ataque);
-        }))
+          (ataque => {
+            poke.habilidades.push(ataque);
+          }))
       }
     })
 
-    if(poke.habilidades.length<4){
+    if (poke.habilidades.length < 4) {
       setTimeout(() => {
-      this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
-      (ataque => {
-        if(poke.habilidades.length<4)
-        {
-          
-            console.log("asdadsasd");//el coco
-            poke.habilidades.push(ataque);
-          
-        }
-      }))
-    }, 1000); // 1000 milliseconds = 1 second
+        this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+          (ataque => {
+            if (poke.habilidades.length < 4) {
+
+              console.log("asdadsasd");//el coco
+              poke.habilidades.push(ataque);
+
+            }
+          }))
+      }, 1000); // 1000 milliseconds = 1 second
     }
 
     switch (this.pasos) {
@@ -119,6 +124,28 @@ export class UsuariosService {
 
   cambiarPokej2(poke: number) {
     this.pokemonPeleandoj2.next(poke);
+  }
+
+  calcularPorcentajeVidaJ1(pokePeleando: number) {
+    let porcentaje = Math.round((this.jugador1.pokemons[pokePeleando].vidaActual / this.jugador1.pokemons[pokePeleando].vida) * 100);
+
+    if (this.jugador1.pokemons[pokePeleando].vidaActual <= 0) {
+      porcentaje = 0;
+    }
+
+    this.porcentajeVidaJ1.next(porcentaje);
+  }
+
+  calcularPorcentajeVidaJ2(pokePeleando: number) {
+    let porcentaje = Math.round((this.jugador2.pokemons[pokePeleando].vidaActual / this.jugador2.pokemons[pokePeleando].vida) * 100);
+
+
+    if (this.jugador2.pokemons[pokePeleando].vidaActual <= 0) {
+      porcentaje = 0;
+    }
+
+
+    this.porcentajeVidaJ2.next(porcentaje);
   }
 
 }

@@ -13,6 +13,8 @@ export class CampoDeBatallaComponent implements OnInit{
   j2:jugador;
   pokemonPeleandoj1:number;
   pokemonPeleandoj2:number;
+  porcentajeVidaJ1:number; 
+  porcentajeVidaJ2:number;
 
   images = [
     'url(./../../../../../assets/img/fondoCombate3.png)',
@@ -32,6 +34,8 @@ export class CampoDeBatallaComponent implements OnInit{
   ngOnInit(): void {
     this.datJugadores.pokemonPeleandoj1$.subscribe(data => this.pokemonPeleandoj1 = data);
     this.datJugadores.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
+    this.datJugadores.porcentajeVidaJ1$.subscribe(data => this.porcentajeVidaJ1 = data);
+    this.datJugadores.porcentajeVidaJ2$.subscribe(data => this.porcentajeVidaJ2 = data);
   }
 
 
@@ -51,5 +55,5 @@ export class CampoDeBatallaComponent implements OnInit{
     audio.load();
     audio.play();
   }
-
+  
 }

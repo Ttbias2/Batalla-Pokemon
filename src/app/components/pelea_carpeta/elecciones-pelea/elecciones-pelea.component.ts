@@ -20,7 +20,7 @@ export class EleccionesPeleaComponent implements OnInit {
 
   toggleBarraExtra() //Para esconder barra del css
   {
-      this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar       
+    this.showBarraExtra = !this.showBarraExtra; //ya funca, no tocar       
   }
 
   //variables para jugadores
@@ -65,7 +65,7 @@ export class EleccionesPeleaComponent implements OnInit {
   quitarEfecto: number = 3;
 
 
-  constructor(private datUsuario: UsuariosService, private tablatipos: TypesService, private database:UsuariosDbService, private router:Router) {
+  constructor(private datUsuario: UsuariosService, private tablatipos: TypesService, private database: UsuariosDbService, private router: Router) {
     this.j1 = datUsuario.jugador1;
     this.j2 = datUsuario.jugador2;
   }
@@ -73,13 +73,14 @@ export class EleccionesPeleaComponent implements OnInit {
   ngOnInit(): void {
     this.datUsuario.pokemonPeleandoj1$.subscribe(data => this.pokemonPeleandoj1 = data);
     this.datUsuario.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
+    this.datUsuario.calcularPorcentajeVidaJ1(this.pokemonPeleandoj1);
+    this.datUsuario.calcularPorcentajeVidaJ2(this.pokemonPeleandoj2);
   }
 
   //atacar
   seleccionAtaque() {
 
-    if(this.showBarraExtra)
-    {
+    if (this.showBarraExtra) {
       this.toggleBarraExtra();
     }
 
@@ -107,16 +108,15 @@ export class EleccionesPeleaComponent implements OnInit {
       this.turno = true;
       this.atacar = false;
       this.jugador2Ataco = true;
-      
+
       this.finDeTurno();
     }
   }
 
   //cambios de pokemon
   cambiarPokemon() {
-    
-    if(this.showBarraExtra)
-    {
+
+    if (this.showBarraExtra) {
       this.toggleBarraExtra();
     }
 
@@ -134,7 +134,7 @@ export class EleccionesPeleaComponent implements OnInit {
   }
 
   cambioj1(poke: number) {
-    let finalDeTurno=true;
+    let finalDeTurno = true;
     if (this.turno) {
       this.datUsuario.cambiarPokej1(poke);
       this.turno = false;
@@ -151,8 +151,10 @@ export class EleccionesPeleaComponent implements OnInit {
       this.cambioForzado = false;
     }
 
-    if(finalDeTurno)
-    {
+    this.datUsuario.calcularPorcentajeVidaJ1(this.pokemonPeleandoj1);
+    this.datUsuario.calcularPorcentajeVidaJ2(this.pokemonPeleandoj2);
+
+    if (finalDeTurno) {
       this.finDeTurno();
     }
 
@@ -160,12 +162,11 @@ export class EleccionesPeleaComponent implements OnInit {
 
   //uso de objetos
   usarObjeto() {
-    
-    if(this.showBarraExtra)
-    {
+
+    if (this.showBarraExtra) {
       this.toggleBarraExtra();
     }
-    
+
     this.cambioPokemon = false;
     this.atacar = false;
     this.usoObjeto = true;
@@ -368,13 +369,13 @@ export class EleccionesPeleaComponent implements OnInit {
           alert(pokej1.nombre + " esta bajo un efecto paralisante");
         }
         else {
-          if(confusionj1)
-          {
+          if (confusionj1) {
             this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+        
           }
-          else
-          {
+          else {
             this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+     
           }
 
           if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
@@ -386,23 +387,24 @@ export class EleccionesPeleaComponent implements OnInit {
 
       if (this.j2.pokemons[this.pokemonPeleandoj2].vidaActual > 0) {
         if (this.jugador2Ataco) {
-          if(paralysisj2 || sleepj2 || freezej2)
-          {
-           alert(pokej2.nombre + " esta bajo un efecto paralisante");
+          if (paralysisj2 || sleepj2 || freezej2) {
+            alert(pokej2.nombre + " esta bajo un efecto paralisante");
           }
-          else{
-            if(confusionj2)
-            {
+          else {
+            if (confusionj2) {
               this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+     
 
-            }else{
+
+            } else {
               this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+       
             }
 
 
-          if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
-            this.asignarEfectosj2(pokej2);
-          }
+            if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
+              this.asignarEfectosj2(pokej2);
+            }
           }
         }
 
@@ -417,48 +419,49 @@ export class EleccionesPeleaComponent implements OnInit {
     }
     else {
       if (this.jugador2Ataco) {
-        if(paralysisj2 || sleepj2 || freezej2)
-          {
-           alert(pokej2.nombre + "esta bajo un efecto paralisante");
-          }
-          else{
-            if(confusionj2)
-            {
-              this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+        if (paralysisj2 || sleepj2 || freezej2) {
+          alert(pokej2.nombre + "esta bajo un efecto paralisante");
+        }
+        else {
+          if (confusionj2) {
+            this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+      
 
-            }else{
-              this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
-            }
+
+          } else {
+            this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej2, pokej1, this.habilidadUsadaj2);
+    
+
+          }
 
           if (this.j2.pokemons[this.pokemonPeleandoj2].habilidades[this.habilidadUsadaj2].ailment != "none") {
             this.asignarEfectosj2(pokej2);
           }
-          }
+        }
       }
 
       if (this.j1.pokemons[this.pokemonPeleandoj1].vidaActual > 0) {
 
-        if(this.jugador1Ataco)
-        {
+        if (this.jugador1Ataco) {
           if (paralysisj1 || sleepj1 || freezej1) {
             alert(pokej1.nombre + " esta bajo un efecto paralisante");
           }
           else {
-            if(confusionj1)
-            {
+            if (confusionj1) {
               this.j1.pokemons[this.pokemonPeleandoj1].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+
             }
-            else
-            {
+            else {
               this.j2.pokemons[this.pokemonPeleandoj2].vidaActual -= this.calcularDaño(pokej1, pokej2, this.habilidadUsadaj1);
+
             }
-  
+
             if (this.j1.pokemons[this.pokemonPeleandoj1].habilidades[this.habilidadUsadaj1].ailment != "none") {
               this.asignarEfectosj1(pokej1);
             }
           }
         }
-        
+
       }
       else {
         this.comprobarGanador();
@@ -527,6 +530,9 @@ export class EleccionesPeleaComponent implements OnInit {
     this.jugador1Ataco = false;
     this.jugador2Ataco = false;
 
+    this.datUsuario.calcularPorcentajeVidaJ1(this.pokemonPeleandoj1);
+    this.datUsuario.calcularPorcentajeVidaJ2(this.pokemonPeleandoj2);
+
   }
 
   calcularDaño(poke1: pokemon, poke2: pokemon, habilidadusada: number): number {
@@ -555,14 +561,13 @@ export class EleccionesPeleaComponent implements OnInit {
     return dañio;
   }
 
-  asignarEfectosj1(poke:pokemon) {
+  asignarEfectosj1(poke: pokemon) {
 
-    let esta:boolean = false;
+    let esta: boolean = false;
 
-    this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.forEach(efecto=>{
-      if(efecto == poke.habilidades[this.habilidadUsadaj1].ailment)
-      {
-        esta=true;
+    this.j2.pokemons[this.pokemonPeleandoj2].bajo_efecto.forEach(efecto => {
+      if (efecto == poke.habilidades[this.habilidadUsadaj1].ailment) {
+        esta = true;
       }
     })
 
@@ -571,14 +576,13 @@ export class EleccionesPeleaComponent implements OnInit {
     }
   }
 
-  asignarEfectosj2(poke:pokemon) {
-    
-    let esta:boolean = false;
+  asignarEfectosj2(poke: pokemon) {
 
-    this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.forEach(efecto=>{
-      if(efecto == poke.habilidades[this.habilidadUsadaj2].ailment)
-      {
-        esta=true;
+    let esta: boolean = false;
+
+    this.j1.pokemons[this.pokemonPeleandoj1].bajo_efecto.forEach(efecto => {
+      if (efecto == poke.habilidades[this.habilidadUsadaj2].ailment) {
+        esta = true;
       }
     })
 
@@ -587,40 +591,34 @@ export class EleccionesPeleaComponent implements OnInit {
     }
   }
 
-  comprobarGanador()
-  {
-    let muertosj1:number=0;
-    let muertosj2:number=0;
-    let fin:boolean = false;
-    const nuevaPartida:partida = {jugador1:this.j1.nombre,jugador2:this.j2.nombre,vencedor:false,pokemons:[this.j1.pokemons[0].id,this.j1.pokemons[1].id,this.j1.pokemons[2].id,this.j2.pokemons[0].id,this.j2.pokemons[1].id,this.j2.pokemons[2].id]}
+  comprobarGanador() {
+    let muertosj1: number = 0;
+    let muertosj2: number = 0;
+    let fin: boolean = false;
+    const nuevaPartida: partida = { jugador1: this.j1.nombre, jugador2: this.j2.nombre, vencedor: false, pokemons: [this.j1.pokemons[0].id, this.j1.pokemons[1].id, this.j1.pokemons[2].id, this.j2.pokemons[0].id, this.j2.pokemons[1].id, this.j2.pokemons[2].id] }
 
     this.j1.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
+      if (poke.vidaActual <= 0) {
         muertosj1++;
       }
     })
 
     this.j2.pokemons.forEach(poke => {
-      if(poke.vidaActual <= 0)
-      {
+      if (poke.vidaActual <= 0) {
         muertosj2++;
       }
     })
 
-    if(muertosj1==3)
-    {
+    if (muertosj1 == 3) {
       fin = true;
     }
 
-    if(muertosj2==3)
-    {
+    if (muertosj2 == 3) {
       nuevaPartida.vencedor = true;
       fin = true;
     }
 
-    if(fin)
-    {
+    if (fin) {
       this.database.guardarPartida(nuevaPartida);
       this.router.navigate(['/victoria']);
     }
