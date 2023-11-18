@@ -60,11 +60,15 @@ export class RegistrarseComponent {
       alert("Ya existe una cuenta con ese Email");
       this.formulario.reset();
     }else{
+      usuario.historial.length = 0;
       this.usuarioDBService.postUsuarioHttp(usuario)
+      
       .subscribe(
         {
           next:(user) =>{
+            
             alert(`Usuario: ${user.apellido} registrado con exito`);
+            
             this.router.navigate(["page-menu"]);
           },
           error: (err)=>{

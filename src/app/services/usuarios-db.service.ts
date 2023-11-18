@@ -75,6 +75,24 @@ export class UsuariosDbService implements OnInit{
   }
 
 
+  resetearHistorial(){
+    if(this.id > -1){
+      this.getUsuarioHttpId(this.id)
+        .subscribe({
+          next:(us)=>{
+            if(us){
+              us.historial.length=0;
+              console.log(us.historial);
+              this.editarUsuario(us);
+            }
+          },
+          error:(er)=>{
+            console.log(er);
+          }
+        })
+    }
+  }
+
   getUsuarioHttpId(id:number):Observable<usuario>{//obtiene usuario por id -2-
     return this.http.get<usuario>(`${this.url}/${id}`);
   }
