@@ -1138,6 +1138,58 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            137,
+            128,
+            3,
+            143,
+            85
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": false,
+          "pokemons": [
+            6,
+            137,
+            128,
+            3,
+            143,
+            85
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            3,
+            3,
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": false,
+          "pokemons": [
+            6,
+            3,
+            3,
+            6,
+            3,
+            3
+          ]
         }
       ],
       "id": 19

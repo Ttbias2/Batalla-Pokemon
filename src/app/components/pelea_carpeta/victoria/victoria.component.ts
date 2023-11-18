@@ -76,11 +76,12 @@ export class VictoriaComponent implements OnInit {
   mismaPelea() {
     this.j1.pokemons.forEach(poke => {
       poke.vidaActual = poke.vida;
+      poke.bajo_efecto = [];
     })
 
     this.j2.pokemons.forEach(poke => {
       poke.vidaActual = poke.vida;
-
+      poke.bajo_efecto = [];
     })
 
     this.router.navigate(['/pelea']);
