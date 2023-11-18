@@ -12,18 +12,25 @@ export class EquiposComponent{
   
   j1:jugador = new jugador();
   j2:jugador = new jugador();
+  pasos:number;
+  mostrarAnimacion: boolean = false;
 
   constructor(private datUsuario:UsuariosService,private router:Router){
     this.j1 = this.datUsuario.jugador1;
     this.j2 = this.datUsuario.jugador2;
+    this.datUsuario.pasos$.subscribe(data => this.pasos = data);
   }
   
   iniciarPelea(){
-    if(this.datUsuario.pasos==7){
+    if(this.pasos==7){
       this.router.navigate(['/pelea']);
     }
     else{
-      alert("Tienen que elegir todos los pokemons para poder pelear");
+      this.mostrarAnimacion = true;
+      // Después de 2 segundos, cambiar el valor de mostrarAnimacion a falso
+      setTimeout(() => {
+        this.mostrarAnimacion = false;
+      }, 1000);
     }
   }
   

@@ -12,9 +12,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 7%;
+    background-image: url(../../../../assets/img/fondoV3.png);
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
 }
 
-h1{
+h1 {
     font-family: "PixelFont";
     font-size: 5rem;
 }

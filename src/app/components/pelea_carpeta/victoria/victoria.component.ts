@@ -68,7 +68,7 @@ export class VictoriaComponent implements OnInit {
   }
 
   vaciarPokes() {
-    this.datUsuarios.pasos = 1;
+    this.datUsuarios.reiniciarPasos();
     this.datUsuarios.jugador1.pokemons = [];
     this.datUsuarios.jugador2.pokemons = [];
   }

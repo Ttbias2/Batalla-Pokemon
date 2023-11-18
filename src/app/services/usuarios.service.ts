@@ -13,7 +13,9 @@ export class UsuariosService {
 
   jugador1: jugador = new jugador();
   jugador2: jugador = new jugador();
-  pasos: number = 1;
+
+  private pasos = new BehaviorSubject<number>(1);
+  pasos$ = this.pasos.asObservable();
 
   private pokemonPeleandoj1 = new BehaviorSubject<number>(0);
   pokemonPeleandoj1$ = this.pokemonPeleandoj1.asObservable();
@@ -74,7 +76,7 @@ export class UsuariosService {
       }, 1000); // 1000 milliseconds = 1 second
     }
 
-    switch (this.pasos) {
+    switch (this.pasos.getValue()) {
       case 1:
         this.jugador1.pokemons.push(poke);
         break;
@@ -102,11 +104,11 @@ export class UsuariosService {
         break;
     }
 
-    if (this.pasos == 7) {
+    if (this.pasos.getValue() == 7) {
       alert("todos los pokemons seleccionados");
     }
     else {
-      this.pasos++;
+      this.pasos.next(this.pasos.getValue() + 1);
     }
 
   }
@@ -146,6 +148,10 @@ export class UsuariosService {
 
 
     this.porcentajeVidaJ2.next(porcentaje);
+  }
+
+  reiniciarPasos(){
+    this.pasos.next(1);
   }
 
 }

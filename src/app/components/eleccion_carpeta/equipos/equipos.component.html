@@ -5,15 +5,15 @@
     <p class="nombreJugadorEleccion" id="pNombrej1">{{j1.nombre}}</p>
 
     <section class="contenedores" id="sEquipoj1">
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==1,'alert-element': mostrarAnimacion}">
             <img [src]="j1.pokemons[0]?.urlImgFront" alt="" class="imgEleccion">    
         </div>
         
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==4,'alert-element': mostrarAnimacion}">
             <img [src]="j1.pokemons[1]?.urlImgFront" alt=""  class="imgEleccion">    
         </div>
         
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==5,'alert-element': mostrarAnimacion}">
             <img [src]="j1.pokemons[2]?.urlImgFront" alt=""  class="imgEleccion">    
         </div>
         
@@ -29,15 +29,15 @@
 
     <section class="contenedores" id="sEquipoj2">
         
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==6,'alert-element': mostrarAnimacion}">
             <img [src]="j2.pokemons[2]?.urlImgFront" alt="" class="imgEleccion">    
         </div>
         
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==3,'alert-element': mostrarAnimacion}">
             <img [src]="j2.pokemons[1]?.urlImgFront" alt="" class="imgEleccion">    
         </div>
         
-        <div class="contenedorDeEleccion">
+        <div class="contenedorDeEleccion" [ngClass]="{verde:pasos==2,'alert-element': mostrarAnimacion}">
             <img [src]="j2.pokemons[0]?.urlImgFront" alt="" class="imgEleccion">    
         </div>
         

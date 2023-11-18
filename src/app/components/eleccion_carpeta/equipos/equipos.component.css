@@ -174,3 +174,20 @@ button:hover {
         opacity: 0.7;
     }
 }
+
+@keyframes alerta {
+    0%, 50%, 100% {
+        background-color: rgb(199, 40, 40);
+    }
+    25%, 75% {
+        background-color: #FFF8DC;               
+    }
+}
+
+.alert-element {
+    animation: alerta 1s infinite;
+}
+
+.verde{
+    background-color: rgba(27, 173, 27, 0.836);
+}
