@@ -1589,6 +1589,28 @@
         }
       ],
       "id": 22
+    },
+    {
+      "apellido": "Medigovich",
+      "nombre": "Agata",
+      "password": "a",
+      "email": "aga@gmail.com",
+      "historial": [
+        {
+          "jugador1": "Agata",
+          "jugador2": "Franco",
+          "vencedor": false,
+          "pokemons": [
+            47,
+            15,
+            6,
+            25,
+            134,
+            9
+          ]
+        }
+      ],
+      "id": 23
     }
   ]
 }
