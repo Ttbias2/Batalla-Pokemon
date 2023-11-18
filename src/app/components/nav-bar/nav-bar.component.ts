@@ -20,9 +20,9 @@ export class NavBarComponent implements OnInit{
   
     
   
-  jugar(){
+  /* jugar(){
     this.router.navigate(["ingresar-jugadores"]);      
-  }
+  } */
 
   historial(){
     this.router.navigate(["historial"]);      

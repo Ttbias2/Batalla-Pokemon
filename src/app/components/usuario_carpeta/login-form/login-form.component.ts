@@ -84,26 +84,30 @@ export class LoginFormComponent implements OnInit{
     pokemons:[1,2,3,4,5,6]
   }
 
-  async iniciarSesion(){
-    
-    if(this.formulario.invalid)return;
-    const usuario:user={
-      email:this.formulario.controls["email"].value,
-      password:this.formulario.controls["password"].value
+  async iniciarSesion() {
+    if (this.formulario.invalid) return;
+
+    const usuario: user = {
+      email: this.formulario.controls["email"].value,
+      password: this.formulario.controls["password"].value
     }
+
     
-    this.cargarSesion( await this.verificarUsuario(usuario));//Devuelve un usuario registrado o vacio si no lo encuentra
-    
-    if(this.sesionActiva.email!= ""){
-      alert("Logeo exitoso");
-      localStorage.setItem('id',this.sesionActiva.id.toString());//setea el id en el localStorage
-      this.usuarioDBService.setearId(this.sesionActiva.id);//setea el id para poder consultarlo al momento de guardar una partida o consultar historial
-      this.router.navigate(["/page-menu"]);
-    
-    }else{
-      alert("Email o Password incorrecto");
-      this.formulario.reset();
-    }
+      this.cargarSesion(await this.verificarUsuario(usuario)); // Devuelve un usuario registrado o vacio si no lo encuentra
+
+      if (this.sesionActiva.email != "") {
+        alert("Logeo exitoso");
+        localStorage.setItem('id', this.sesionActiva.id.toString()); // setea el id en el localStorage
+        this.usuarioDBService.setearId(this.sesionActiva.id); // setea el id para poder consultarlo al momento de guardar una partida o consultar historial
+        /* setTimeout(async () => { */
+        this.router.navigate(["/page-menu/ingresar-jugadores"]);
+      /* }, 1000); */
+
+      } else {
+        alert("Email o Password incorrecto");
+        this.formulario.reset();
+      }
+     // 2000 milliseconds (2 seconds) timeout
   }
 
   async verificarUsuario(usuario:user){

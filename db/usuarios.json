@@ -1857,6 +1857,19 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "da",
+          "jugador2": "fq",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            17,
+            6,
+            5,
+            16,
+            3
+          ]
         }
       ],
       "id": 21
@@ -1919,6 +1932,14 @@
         }
       ],
       "id": 24
+    },
+    {
+      "apellido": "aaa",
+      "nombre": "aaa",
+      "password": "a",
+      "email": "aa@a",
+      "historial": [],
+      "id": 25
     }
   ]
 }
