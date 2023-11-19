@@ -51,7 +51,7 @@ const appRoutes:Routes=[
     children:[
       {path:'pokedex',component:PokedexComponent,canMatch:[authGuard]},
       {path:'ingresar-jugadores',component:IngresarJugadoresComponent,canMatch:[authGuard]},
-      {path:'historial',component:HistorialComponent,canMatch:[authGuard]},
+      {path:'historial',component:HistorialComponent,canMatch:[authGuard]}
     ]
   },
   {path:"eleccion",component:EleccionComponent,canMatch:[authGuard]},

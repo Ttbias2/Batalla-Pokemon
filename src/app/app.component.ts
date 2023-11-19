@@ -14,6 +14,7 @@ export class AppComponent {
   audioCombate = new Audio('./../assets/battleTheme.mp3');
   audioLobby = new Audio('./../assets/pokemonCenter.mp3');
   audioGym = new Audio('./../assets/gymTheme.mp3');
+  audioVictory = new Audio('./../assets/Victory.mp3');
 
   constructor(private router: Router, private audioService: AudioService) {
     this.audio.loop = true;
@@ -27,11 +28,12 @@ export class AppComponent {
     this.audioCombate.loop = true;
     this.audioLobby.loop = true;
     this.audioGym.loop = true;
-
+    this.audioVictory.loop = true;
     this.audio.volume = 0.5; 
     this.audioCombate.volume = 0.5;
     this.audioLobby.volume = 0.5;
     this.audioGym.volume = 0.5;
+    this.audioVictory.volume = 0.5;
 
     this.audio.addEventListener('canplaythrough', () => {
       this.audio.muted = false;
@@ -69,6 +71,12 @@ export class AppComponent {
           } else {
             this.audioGym.pause();
             this.audioGym.currentTime = 0;
+          }
+          if (event.url === '/victoria') {
+            this.audioVictory.play();
+          } else {
+            this.audioVictory.pause();
+            this.audioVictory.currentTime = 0;
           }
         }
       });

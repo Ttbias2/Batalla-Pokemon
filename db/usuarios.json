@@ -1857,6 +1857,58 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "da",
+          "jugador2": "fq",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            17,
+            6,
+            5,
+            16,
+            3
+          ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Padu",
+          "vencedor": true,
+          "pokemons": [
+            150,
+            144,
+            143,
+            149,
+            145,
+            146
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "a",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "jugador1": "a",
+          "jugador2": "d",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
         }
       ],
       "id": 21
@@ -1919,6 +1971,41 @@
         }
       ],
       "id": 24
+    },
+    {
+      "apellido": "aaa",
+      "nombre": "aaa",
+      "password": "a",
+      "email": "aa@a",
+      "historial": [
+        {
+          "jugador1": "Franco",
+          "jugador2": "Padu",
+          "vencedor": false,
+          "pokemons": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "jugador1": "Franco",
+          "jugador2": "Padu",
+          "vencedor": true,
+          "pokemons": [
+            4,
+            5,
+            6,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "id": 25
     }
   ]
 }

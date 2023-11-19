@@ -1,6 +1,9 @@
 <section class="fondo">
-<p *ngIf="turno" class="turn">turno del jugador 1</p>
-<p *ngIf="!turno" class="turn">turno del jugador 2</p>
+<section class="turnos">
+    <p *ngIf="turno" class="turn">Turno de {{j1.nombre}}</p>
+    <p *ngIf="!turno" class="turn">Turno de {{j2.nombre}}</p>
+</section>
+
 <section class="barraEleccion">
     <button [disabled]="cambioForzado"  (click)="seleccionAtaque(); toggleBarraExtra()">Atacar</button>
     <button [disabled]="cambioForzado"  (click)="usarObjeto(); toggleBarraExtra()">Objeto</button>
@@ -42,8 +45,8 @@ Health: {{poke.vidaActual}}/{{poke.vida}}"></app-tooltip>
               <app-tooltip class="tooltip" text=
 "Power: {{habilidad.power}}
 Accuracy: {{habilidad.accuracy}}
-Type: {{habilidad.type}}
-Ailment: {{habilidad.damage_class}}"></app-tooltip>
+Ailment: {{habilidad.ailment}}
+Ailment Chance {{habilidad.ailment_chance}}"></app-tooltip>
             </div>
           </button>
     </li>
