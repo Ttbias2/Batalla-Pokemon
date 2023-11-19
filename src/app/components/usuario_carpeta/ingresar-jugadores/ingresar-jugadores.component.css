@@ -23,8 +23,8 @@ label{
 .campo-form{
     margin: 0;
     padding: 0;
-    width: 97.6vw;
-    height: 80vh;
+    width: 97vw;
+    height: 85vh;
     border: 20px solid ;
     border-image: url(src/assets/img/bordeMarron120Trans.png) 40 40  repeat; 
     

@@ -10,8 +10,8 @@
   align-items: center;
   border: 20px solid ;
   border-image: url(src/assets/img/bordeMarron120Trans.png) 40 40  repeat; 
-  height: 90vh;
   width: 97vw;
+  height: 87vh;
     
 }
 
@@ -24,7 +24,8 @@ h2, h3 {
     
     display: block;
     overflow-y: scroll;
-    height: 88vh;
+    
+    height: 87vh;
     /* width: 100%; */
     background-color: #FFF8DC;
     text-align: center;
