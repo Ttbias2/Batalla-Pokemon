@@ -10,7 +10,7 @@
   align-items: center;
   border: 20px solid ;
   border-image: url(src/assets/img/bordeMarron120Trans.png) 40 40  repeat; 
-  height: 100%;
+  height: 90vh;
   width: 97vw;
     
 }
@@ -66,9 +66,10 @@ thead th  {
   }
   
   #datosPokemon{
+    position: relative;
     display: flex;
-    width: 40.6rem;
-    height: 40.6rem;
+    width: 30vw;
+    height: 75vh;
     margin: 5rem;
     border: 10px solid;
     justify-content: center;
@@ -107,3 +108,37 @@ thead th  {
   
   height: 100%;
 }
+
+/* .PokeName {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  height: 20vh;
+  width: 50vw;
+
+}
+.imgPokeSeleccionado{
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  height: 30vh;
+  width: 50vw;
+}
+.stat1 {
+  position: absolute;
+  top: 60%; 
+  left: 10%;
+  height: 50vh;
+  width: 50vw;
+  size: 20px;
+}
+.stat2{
+  position: absolute;
+  top: 10%; 
+  left: 50%;
+  height: 100vh;
+  width: 50vw;
+  size: 20px;
+} */

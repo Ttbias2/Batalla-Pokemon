@@ -23,19 +23,22 @@
     <div id="datosPokemon">
         <ol *ngIf="selectedPokemon">
             <!-- <img [src]="selectedPokemon.sprites.front_default" (error)="handleImageError($event)" alt="no se encontro la imagen"> --> <!-- Problemas en la API, tenemos que implementar la alternativa -->
-            <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + selectedPokemon.id + '.png'" (error)="handleImageError($event)" alt="no se encontro la imagen">
-            <h2>{{ selectedPokemon.name }}</h2>
+            <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + selectedPokemon.id + '.png'" (error)="handleImageError($event)" alt="no se encontro la imagen" class="imgPokeSeleccionado">
+            <h2 class="PokeName">{{ selectedPokemon.name }}</h2>
 
             <!-- <p> {{selectedPokemon.sprites.back_default}} </p> -->
-            
+            <section class="stat1">
             <h3>weight: {{selectedPokemon.weight}} </h3>
             <h3>Type:</h3>
             <ol *ngFor="let type of selectedPokemon.types">
                 <p> {{type.type.name}} </p>
             </ol>
+            </section>
+            <section class="stat2">
             <li *ngFor="let stat of selectedPokemon.stats">
                 <p>{{stat.stat.name}}: {{stat.stat.name === 'hp' ? (stat.base_stat * 4) : stat.base_stat}}  </p>
             </li>
+        </section>
         </ol>
     </div>
 </section>
