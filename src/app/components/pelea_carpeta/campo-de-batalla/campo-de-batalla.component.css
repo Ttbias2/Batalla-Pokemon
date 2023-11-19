@@ -37,7 +37,7 @@
 #datoBack {
 
     position: absolute;
-    top: 90%;
+    top: 85%;
     left: 70%;
     transform: translate(-50%, -50%);
 
@@ -66,6 +66,7 @@
     background-position: center;
     border: 3rem solid;
     border-image: url(src\assets\img\ataqueMarco.png) 40 40 repeat;
+    border-radius: 30px;
 
     font-family: "PixelFont";
     font-size: 25px;
