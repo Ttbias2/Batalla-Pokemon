@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { partida } from 'src/app/interfaces/interface-partida';
 import { PokeApiService } from 'src/app/services/poke-api.service';
 import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
-
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-historial',
@@ -22,29 +22,29 @@ export class HistorialComponent implements OnInit {
   
 
   
-  cargarPokes(historial:partida[]){
 
-    historial.forEach((partida)=>{
 
-      var parti:any={//partida con datos de pokemones
-        jugador1: "",
-        jugador2: "",
-        vencedor: true,
-        pokemons:[]
-      };
-      parti.jugador1=partida.jugador1;
-      parti.jugador2=partida.jugador2;
-      parti.vencedor=partida.vencedor;
+// ...
 
-      partida.pokemons.forEach((poke)=>{
+cargarPokes(historial:partida[]){
+  historial.forEach((partida)=>{
+    var parti:any={//partida con datos de pokemones
+      jugador1: "",
+      jugador2: "",
+      vencedor: true,
+      pokemons:[]
+    };
+    parti.jugador1=partida.jugador1;
+    parti.jugador2=partida.jugador2;
+    parti.vencedor=partida.vencedor;
 
-        this.pokeService.traerUnPokemon(poke)
-          .subscribe(data => parti.pokemons.push(data));
-      });
-
+    const observables = partida.pokemons.map(poke => this.pokeService.traerUnPokemon(poke));
+    forkJoin(observables).subscribe(data => {
+      parti.pokemons = data;
       this.cargarArregloHisto(parti);
     });
-  }
+  });
+}
   
   cargarArregloHisto(partida:any){
     this.histo.push(partida);
