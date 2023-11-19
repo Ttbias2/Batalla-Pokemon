@@ -54,8 +54,12 @@
     z-index: 1;
 }
 
-
-
+#nombreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Adjust as needed */
+  }
+  
 
 .dato {
     position: relative;
