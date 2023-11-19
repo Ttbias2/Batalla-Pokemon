@@ -62,6 +62,8 @@ export class UsuariosService {
       }
     })
 
+    this.datHabilidades.habilidadesTipo = [];
+
     if (poke.habilidades.length < 4) {
       setTimeout(() => {
         this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
@@ -75,6 +77,8 @@ export class UsuariosService {
           }))
       }, 1000); // 1000 milliseconds = 1 second
     }
+
+    this.datHabilidades.habilidadesTipo = [];
 
     switch (this.pasos.getValue()) {
       case 1:

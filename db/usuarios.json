@@ -3144,6 +3144,32 @@
             3,
             3
           ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "aa",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            6,
+            6,
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "aa",
+          "vencedor": false,
+          "pokemons": [
+            6,
+            6,
+            6,
+            9,
+            9,
+            9
+          ]
         }
       ],
       "id": 21
