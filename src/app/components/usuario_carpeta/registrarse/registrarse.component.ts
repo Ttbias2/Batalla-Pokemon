@@ -69,7 +69,7 @@ export class RegistrarseComponent {
             
             alert(`Usuario: ${user.apellido} registrado con exito`);
             
-            this.router.navigate(["page-menu"]);
+            this.router.navigate(["login"]);
           },
           error: (err)=>{
             console.log(err);
