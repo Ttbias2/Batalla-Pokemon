@@ -104,7 +104,9 @@ export class EleccionEquiposComponent implements OnInit {
       this.datPokemons.traerPorTipo(this.tipos[iTipo]).subscribe(
         data => {
           this.actualizarPokes(data);
-          this.cargando = false;
+          setTimeout(() => {
+            this.cargando = false;
+          }, 125);
         }
       );
     }
