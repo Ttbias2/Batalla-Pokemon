@@ -260,3 +260,21 @@ body {
 #bCancelar:hover {
     background-color: rgb(180, 22, 22);
 }
+
+.btn {
+    background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 10vh;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'PixelFont';
+    z-index: 0;
+
+    font-size: 20px;
+    color: inherit;
+}

@@ -75,6 +75,8 @@ export class EleccionesPeleaComponent implements OnInit {
     this.datUsuario.pokemonPeleandoj2$.subscribe(data => this.pokemonPeleandoj2 = data);
     this.datUsuario.calcularPorcentajeVidaJ1(this.pokemonPeleandoj1);
     this.datUsuario.calcularPorcentajeVidaJ2(this.pokemonPeleandoj2);
+
+    this.comprobarGanador();
   }
 
   //atacar

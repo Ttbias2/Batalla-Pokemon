@@ -28,6 +28,12 @@ export class VictoriaComponent implements OnInit {
 
   ngOnInit(): void {
 
+      
+    if(!this.j1.pokemons.length ||!this.j2.pokemons.length)
+    {
+      this.router.navigate(['/eleccion']);
+    }
+
     this.comprobarGanador();
 
     this.datUsuarios.cambiarPokej1(0);
@@ -65,13 +71,13 @@ export class VictoriaComponent implements OnInit {
     if (muertosj2 == 3) {
       this.victoriaPara = 1;
     }
+
+    if(muertosj1!=3 && muertosj2 !=3)
+    {
+      this.router.navigate(['/pelea']);
+    }
   }
 
-  vaciarPokes() {
-    this.datUsuarios.reiniciarPasos();
-    this.datUsuarios.jugador1.pokemons = [];
-    this.datUsuarios.jugador2.pokemons = [];
-  }
 
   mismaPelea() {
     this.j1.pokemons.forEach(poke => {
@@ -88,13 +94,11 @@ export class VictoriaComponent implements OnInit {
   }
 
   otraPelea() {
-    this.vaciarPokes();
     this.router.navigate(['/eleccion']);
   }
 
   volverAlMenu() {
-    this.vaciarPokes();
-    this.router.navigate(['/page-menu']);
+    this.router.navigate(['/page-menu/ingresar-jugadores']);
   }
 
 }
