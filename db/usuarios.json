@@ -3170,6 +3170,45 @@
             9,
             9
           ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            6,
+            6,
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "tt",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            25,
+            144,
+            112,
+            82,
+            36
+          ]
+        },
+        {
+          "jugador1": "tobias",
+          "jugador2": "a",
+          "vencedor": true,
+          "pokemons": [
+            6,
+            6,
+            6,
+            3,
+            3,
+            3
+          ]
         }
       ],
       "id": 21
