@@ -3306,6 +3306,30 @@
         }
       ],
       "id": 25
+    },
+    {
+      "apellido": "Lopez",
+      "nombre": "Lopez",
+      "password": "a",
+      "email": "lopez@lopez",
+      "historial": [],
+      "id": 26
+    },
+    {
+      "apellido": "abc",
+      "nombre": "abc",
+      "password": "a",
+      "email": "abc@abc",
+      "historial": [],
+      "id": 27
+    },
+    {
+      "apellido": "das",
+      "nombre": "das",
+      "password": "dase",
+      "email": "das@a",
+      "historial": [],
+      "id": 28
     }
   ]
 }
