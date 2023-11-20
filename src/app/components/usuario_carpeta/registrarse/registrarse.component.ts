@@ -24,7 +24,7 @@ export class RegistrarseComponent {
 
     nombre: ["", [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z ]*')]],
 
-    password: ["", [Validators.required, /*Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{4,15}')*/]],
+    password: ["", [Validators.required,Validators.minLength(4) /*Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{4,15}')*/]],
 
     email: ["", [Validators.email, Validators.required]],
 

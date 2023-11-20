@@ -93,11 +93,20 @@
                 >Campo requerido</span
               >
             </div>
+            <div class="error">
+              <span
+                *ngIf="
+                  formulario.controls['password'].getError('minlength') &&
+                  formulario.touched
+                "
+                >Minimo 4 caracteres</span
+              >
+            </div>
 
-            <!--  <div class="error">
+              <!--<div class="error">
                     <span *ngIf="formulario.controls['password'].getError('pattern') && formulario.touched">La contraseña debe tener al entre 4 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
                         Puede tener otros símbolos.</span>
-                </div>-->
+              </div>-->
           </div>
 
           <div class="campo">
