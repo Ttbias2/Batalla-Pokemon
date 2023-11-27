@@ -3291,6 +3291,28 @@
       "email": "das@a",
       "historial": [],
       "id": 28
+    },
+    {
+      "apellido": "Paduan",
+      "nombre": "Dante",
+      "password": "1234",
+      "email": "dante@gmail.com",
+      "historial": [
+        {
+          "jugador1": "Franco",
+          "jugador2": "Dante",
+          "vencedor": false,
+          "pokemons": [
+            9,
+            150,
+            143,
+            16,
+            149,
+            150
+          ]
+        }
+      ],
+      "id": 29
     }
   ]
 }
