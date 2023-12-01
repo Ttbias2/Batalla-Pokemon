@@ -3170,6 +3170,19 @@
             9,
             9
           ]
+        },
+        {
+          "jugador1": "Lau",
+          "jugador2": "Dami",
+          "vencedor": true,
+          "pokemons": [
+            36,
+            64,
+            95,
+            80,
+            121,
+            73
+          ]
         }
       ],
       "id": 21
