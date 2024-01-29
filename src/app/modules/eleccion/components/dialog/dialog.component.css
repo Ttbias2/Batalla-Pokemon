@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url('/src/assets/Minecraft.ttf');
+}
+
+div {
+  background-color: #FFF8DC;
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+  border-style: solid;
+  border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+  background-image: url(/src/assets/img/fondoV2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#imgNom {
+  display: flex;
+  flex-direction: column;
+}
+
+#stats {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+p {
+  font-family: 'PixelFont';
+  text-transform: capitalize;
+}
+
+#bAceptar {
+
+  margin-left: 0.5rem;
+  font-family: 'PixelFont';
+
+}
+
+#bCancelar {
+
+  margin-left: 0.5rem;
+  font-family: 'PixelFont';
+
+}
+
+#bAceptar:hover {
+  background-color: rgb(22, 180, 22);
+}
+
+#bCancelar:hover {
+  background-color: rgb(180, 22, 22);
+}

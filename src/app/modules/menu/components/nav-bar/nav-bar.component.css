@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'PixelFont';
+    src:url('../../../../../assets/Minecraft.ttf');
+}
+.nav {
+    display: flex; 
+    justify-content: space-around; 
+    width: 97vw;
+    height: 6vh;
+    background-color:#FFF8DC;
+    border: 20px solid ;
+    border-image: url(src/assets/img/bordeMarron120Trans.png) 40 40  repeat; 
+    align-items: center;
+}
+.nav button{
+    height: 5vh;
+    width: 30vw;
+    font-family: 'PixelFont';
+    font-size: 1.5vw;
+}
+

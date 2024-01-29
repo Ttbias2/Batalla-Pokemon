@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'PixelFont';
+    src:url('../../../../../assets/Minecraft.ttf');
+}
+
+legend{
+    font-family: 'PixelFont';
+    src:url('../../../../../assets/Minecraft.ttf');
+}
+
+label{
+    font-family: 'PixelFont';
+    src:url('../../../../../assets/Minecraft.ttf');
+}
+.marco{
+    border-image: url(../../../../../assets/img/bordeVioleta120trans.png) 20 20 repeat;
+}
+
+.campo{
+    margin: 5px;
+}
+
+.campo-form{
+    margin: 0;
+    padding: 0;
+    width: 97vw;
+    height: 85vh;
+    border: 20px solid ;
+    border-image: url(../../../../../assets/img/bordeMarron120Trans.png) 40 40  repeat; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
