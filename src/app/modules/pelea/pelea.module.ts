@@ -6,6 +6,7 @@ import { VictoriaComponent } from './components/victoria/victoria.component';
 import { PeleaComponent } from './pages/pelea/pelea.component';
 import { RouterModule } from '@angular/router';
 import { PeleaRoutingModule } from './pelea-routing.module';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 
 
@@ -15,7 +16,8 @@ import { PeleaRoutingModule } from './pelea-routing.module';
         CampoDeBatallaComponent,
         EleccionesPeleaComponent,
         VictoriaComponent,
-        PeleaComponent
+        PeleaComponent,
+        TooltipComponent
     ],
     
     exports:[

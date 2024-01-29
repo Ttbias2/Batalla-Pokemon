@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, catchError, map, of, tap, throwError } from 'rxjs';
+import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 
 import { usuario } from 'src/app/interfaces/interface-usuario';
 import { partida } from 'src/app/interfaces/interface-partida';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -211,8 +210,5 @@ export class UsuariosDbService implements OnInit{
   deleteUsuarioHttp(id:number | undefined){
     return this.http.delete(`${this.url}/${id}`);
   }
-
-
-
 }
  
