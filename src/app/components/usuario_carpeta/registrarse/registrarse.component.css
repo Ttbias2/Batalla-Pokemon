@@ -98,3 +98,19 @@ fieldset{
     position: absolute;
     font-style: normal;
 }
+.btn {
+    background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+
+    align-items: center;
+    background-color: transparent;
+    font-family: 'PixelFont';
+    z-index: 0;
+
+    font-size: 20px;
+    color: inherit;
+}

@@ -106,7 +106,7 @@ export class EleccionEquiposComponent implements OnInit {
           this.actualizarPokes(data);
           setTimeout(() => {
             this.cargando = false;
-          }, 125);
+          }, 175);
         }
       );
     }

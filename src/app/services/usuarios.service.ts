@@ -62,9 +62,39 @@ export class UsuariosService {
       }
     })
 
-    this.datHabilidades.habilidadesTipo = [];
+    console.log(poke.habilidades)
+    console.log(poke.tipo.length)
 
-    if (poke.habilidades.length < 4) {
+    if(poke.tipo.length == 1)
+    {
+      if(poke.tipo[0]!="normal")
+      {
+        this.datHabilidades.llenarPorHabilidad("emergencia").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+        (ataque => {
+          poke.habilidades.push(ataque);
+        }))
+      }else
+      {
+        this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+            (ataque => {
+              poke.habilidades.push(ataque);
+            }))
+      }
+    }
+
+    if(poke.tipo.length == 2 && poke.tipo[0]=="normal")
+    {
+      this.datHabilidades.llenarPorHabilidad("emergencia").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
+        (ataque => {
+          poke.habilidades.push(ataque);
+        }))
+    }
+    
+
+    console.log(poke.habilidades.length)
+
+
+   /*if (poke.habilidades.length < 4) {
       setTimeout(() => {
         this.datHabilidades.llenarPorHabilidad("normal").subscribe(() => this.datHabilidades.habilidadesTipo.forEach
           (ataque => {
@@ -76,9 +106,10 @@ export class UsuariosService {
             }
           }))
       }, 1000); // 1000 milliseconds = 1 second
-    }
+    }*/
 
-    this.datHabilidades.habilidadesTipo = [];
+    console.log(poke.habilidades.length)
+
 
     switch (this.pasos.getValue()) {
       case 1:

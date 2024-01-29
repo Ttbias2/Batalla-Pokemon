@@ -31,7 +31,7 @@ export class HabilidadesService {
   psychic:number[]= [60, 95];
   ice:number[]= [58, 8];
   dragon: number[]=[82];
-  fairy:number[]=  [];
+  emergencia:number[]=  [130,63];
 
 
   public traerHabilidad(id: number): Observable<any>{
@@ -129,10 +129,14 @@ export class HabilidadesService {
         });
         break;
       case 'fairy':
-        this.fairy.forEach(id => {
+        this.normal.forEach(id => {
           requests.push(this.traerHabilidad(id));
         });
         break;
+      case 'emergencia':
+        this.emergencia.forEach(id => {
+          requests.push(this.traerHabilidad(id));
+        })
     }
       
 
