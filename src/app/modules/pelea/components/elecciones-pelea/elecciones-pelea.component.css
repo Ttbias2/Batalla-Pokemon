@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf')
+    src:url('./../../../../../assets/Minecraft.ttf')
   }
   
   ol{
@@ -15,7 +15,7 @@
 
 .barraEleccion{
     width: 100vw;
-    background-image: url(./../../../../assets/img/Neutral/battleMessage.png);
+    background-image: url(./../../../../../assets/img/Neutral/battleMessage.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 11vh;
@@ -27,7 +27,7 @@
 }
 
 button{
-    background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
+    background-image: url(./../../../../../assets/img/Neutral/battleFightButtons1.png);
     
      background-size: 100% 100%; 
     background-position: center; 
@@ -52,7 +52,7 @@ button{
 .barraExtra{
     display: none; 
     width: 100vw;
-    background-image: url(./../../../../assets/img/Neutral/battleMessage.png);
+    background-image: url(./../../../../../assets/img/Neutral/battleMessage.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 11vh;

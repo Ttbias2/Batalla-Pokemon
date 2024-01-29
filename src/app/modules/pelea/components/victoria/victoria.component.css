@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'PixelFont';
-    src:url('../../../../assets/Minecraft.ttf')
+    src:url('./../../../../../assets/Minecraft.ttf')
   }
 
 #contenedor{
@@ -13,7 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 7%;
-    background-image: url(../../../../assets/img/fondoV3.png);
+    background-image: url(./../../../../../assets/img/fondoV3.png);
     background-size: cover; /* Hace que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
@@ -36,7 +36,7 @@ ul img{
 }
 
 button{
-    background-image: url(./../../../../assets/img/Neutral/battleFightButtons1.png);
+    background-image: url(./../../../../../assets/img/Neutral/battleFightButtons1.png);
     
     background-size: 100% 100%; 
    background-position: center; 

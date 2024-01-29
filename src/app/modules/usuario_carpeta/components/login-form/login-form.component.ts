@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { usuario } from 'src/app/interfaces/interface-usuario'; 
 import { partida } from 'src/app/interfaces/interface-partida';
-import { UsuariosDbService } from '../../../../services/usuarios-db.service';
+import { UsuariosDbService } from 'src/app/services/usuarios-db.service';
 
 export interface user{
   email:string,

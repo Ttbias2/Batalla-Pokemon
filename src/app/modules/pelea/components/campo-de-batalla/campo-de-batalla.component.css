@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'PixelFont';
-    src: url('../../../../assets/Minecraft.ttf')
+    src: url('./../../../../../assets/Minecraft.ttf')
 }
 
 .fondo {
@@ -64,12 +64,12 @@
 .dato {
     position: relative;
     border-style: solid;
-    background-image: url(../../../../assets/img/pokeUI.png);
+    background-image: url(./../../../../../assets/img/pokeUI.png);
     background-size: 100vw 25vh;
     background-repeat: no-repeat;
     background-position: center;
     border: 3rem solid;
-    border-image: url(src\assets\img\ataqueMarco.png) 40 40 repeat;
+    border-image: url(./../../../../../assets\img\ataqueMarco.png) 40 40 repeat;
     border-radius: 30px;
 
     font-family: "PixelFont";

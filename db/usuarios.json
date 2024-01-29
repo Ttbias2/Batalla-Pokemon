@@ -3223,6 +3223,19 @@
             3
 
           ]
+        },
+        {
+          "jugador1": "das",
+          "jugador2": "deww",
+          "vencedor": true,
+          "pokemons": [
+            5,
+            17,
+            20,
+            9,
+            16,
+            1
+          ]
         }
       ],
       "id": 21

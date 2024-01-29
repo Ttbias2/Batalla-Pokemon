@@ -10,12 +10,12 @@
 
 @font-face {
   font-family: 'PixelFont';
-  src:url('./../../../assets/Minecraft.ttf')
+  src:url('./../../../../../assets/Minecraft.ttf')
 }
 .tooltip-text {
   border: 10px solid ;
-  border-image: url('./../../../assets/img/bordeVioleta120trans.png') 20 20 repeat;
-  background-image: url('./../../../assets/img/Neutral/battleMessage.png');
+  border-image: url('./../../../../../assets/img/bordeVioleta120trans.png') 20 20 repeat;
+  background-image: url('./../../../../../assets/img/Neutral/battleMessage.png');
   text-align: center;
     font-family: 'PixelFont';
   background-repeat: no-repeat;
