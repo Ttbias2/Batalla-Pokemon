@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url('/src/assets/Minecraft.ttf');
+}
+
+p {
+    font-family: 'PixelFont';
+    text-transform: capitalize;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+.seccion {
+    margin: 0;
+    border: 15px solid;
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+}
+
+
+
+.busqueda {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.seleccionarPokemonP {
+    margin: 0;
+}
+
+.cambioPagina {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+
+
+.seccionListadoPokes {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.listadoPokes {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    width: 80rem;
+    margin: 0;
+    padding: 0;
+}
+
+.buscarPokes {
+    margin: .5rem 3rem .5rem 1rem;
+}
+
+.filtrarTipos {
+
+    justify-content: space-around;
+}
+
+
+.pokeIndividual {
+    margin: .05rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 6.6rem;
+    height: 6.6rem;
+    border: 10px solid;
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+
+}
+
+.nombreElegirPoke {
+    margin: 0;
+    text-align: center;
+}
+
+.imagenElegirPoke {
+    object-fit: cover;
+}
+
+
+
+.elegidos {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
+}
+
+.eleccionJugador {
+    display: grid;
+    grid-template-rows: 2.5rem 9rem;
+}
+
+.nombreJugadorEleccion {
+    margin: 0;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+
+
+}
+
+.contenedores {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.contenedorDeEleccion {
+
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 .5rem;
+    border: 10px solid;
+    border-image: url(src\assets\img\bordeVioleta120trans.png) 20 20 repeat;
+
+
+
+}
+
+.bConfirmar {
+    height: 4rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+#pokes:hover {
+    background-color: coral;
+}
+
+#pokes:active {
+    background-color: rgb(177, 88, 55);
+}
+
+
+
+.bTipo {
+    width: 4vw;
+    height: 2vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    background-color: transparent;
+
+    margin: 2px;
+}
+
+#normal {
+    background-image: url(./../../../../../assets/img/tipos/NormalIC_XY.png);
+}
+
+#fighting {
+    background-image: url(./../../../../../assets/img/tipos/FightingIC_XY.png);
+}
+
+#flying {
+    background-image: url(./../../../../../assets/img/tipos/FlyingIC_XY.png);
+}
+
+#poison {
+    background-image: url(./../../../../../assets/img/tipos/PoisonIC_XY.png);
+}
+
+#ground {
+    background-image: url(./../../../../../assets/img/tipos/GroundIC_XY.png);
+}
+
+#rock {
+    background-image: url(./../../../../../assets/img/tipos/RockIC_XY.png);
+}
+
+#bug {
+    background-image: url(./../../../../../assets/img/tipos/BugIC_XY.png);
+}
+
+#ghost {
+    background-image: url(./../../../../../assets/img/tipos/GhostIC_XY.png);
+}
+
+#steel {
+    background-image: url(./../../../../../assets/img/tipos/SteelIC_XY.png);
+}
+
+#fire {
+    background-image: url(./../../../../../assets/img/tipos/FireIC_XY.png);
+}
+
+#water {
+    background-image: url(./../../../../../assets/img/tipos/WaterIC_XY.png);
+}
+
+#grass {
+    background-image: url(./../../../../../assets/img/tipos/GrassIC_XY.png);
+}
+
+#electric {
+    background-image: url(./../../../../../assets/img/tipos/ElectricIC_XY.png);
+}
+
+#psychic {
+    background-image: url(./../../../../../assets/img/tipos/PsychicIC_XY.png);
+}
+
+#ice {
+    background-image: url(./../../../../../assets/img/tipos/IceIC_XY.png);
+}
+
+#dragon {
+    background-image: url(./../../../../../assets/img/tipos/DragonIC_XY.png);
+}
+
+#dark {
+    background-image: url(./../../../../../assets/img/tipos/DarkIC_XY.png);
+}
+
+#fairy {
+    background-image: url(./../../../../../assets/img/tipos/FairyIC_XY.png);
+}
+
+#bBuscar {
+
+    margin-left: 0.5rem;
+    border-color: rgb(22, 180, 22);
+    border-radius: 15%;
+    font-family: 'PixelFont';
+
+}
+
+#bCancelar {
+
+    margin-left: 0.5rem;
+    border-color: rgb(180, 22, 22);
+    border-radius: 15%;
+    font-family: 'PixelFont';
+
+}
+
+#bBuscar:hover {
+    background-color: rgb(22, 180, 22);
+}
+
+#bCancelar:hover {
+    background-color: rgb(180, 22, 22);
+}
+
+.btn {
+    background-image: url(./../../../../../assets/img/Neutral/battleFightButtons1.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 10vh;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'PixelFont';
+    z-index: 0;
+
+    font-size: 20px;
+    color: inherit;
+}

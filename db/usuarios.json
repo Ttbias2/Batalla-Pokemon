@@ -3183,6 +3183,58 @@
             121,
             73
           ]
+        },
+        {
+          "jugador1": "Damian",
+          "jugador2": "Emmanuel",
+          "vencedor": false,
+          "pokemons": [
+            15,
+            24,
+            44,
+            8,
+            19,
+            57
+          ]
+        },
+        {
+          "jugador1": "damian",
+          "jugador2": "martita",
+          "vencedor": false,
+          "pokemons": [
+            46,
+            143,
+            93,
+            65,
+            145,
+            91
+          ]
+        },
+        {
+          "jugador1": "dsa",
+          "jugador2": "asd",
+          "vencedor": false,
+          "pokemons": [
+            4,
+            7,
+            8,
+            5,
+            6,
+            9
+          ]
+        },
+        {
+          "jugador1": "dasd",
+          "jugador2": "dede",
+          "vencedor": false,
+          "pokemons": [
+            3,
+            10,
+            12,
+            18,
+            19,
+            16
+          ]
         }
       ],
       "id": 21
